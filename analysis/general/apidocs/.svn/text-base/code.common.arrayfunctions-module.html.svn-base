@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.common.arrayfunctions</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.common-module.html">Package&nbsp;common</a> ::
+        Module&nbsp;arrayfunctions
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.common.arrayfunctions-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module arrayfunctions</h1><p class="nomargin-top"><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(shape, shape(element))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#create" class="summary-sig-name">create</a>(<span class="summary-sig-arg">shape</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Returns:
+      an array filled with element, with shape specified by the parameter 
+      shape.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#create">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(shape(array),shape(element))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#fill" class="summary-sig-name">fill</a>(<span class="summary-sig-arg">array</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Returns:
+      an array filled with element, with the shape of the input array.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#fill">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#normalize" class="summary-sig-name">normalize</a>(<span class="summary-sig-arg">array</span>)</span><br />
+      Returns:
+      an array which has been normalized by dividing by its euclidean norm 
+      (the root-sum-square).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#normalize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#standardize" class="summary-sig-name">standardize</a>(<span class="summary-sig-arg">array</span>)</span><br />
+      Returns:
+      standardized array.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#standardize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#projection_filter" class="summary-sig-name">projection_filter</a>(<span class="summary-sig-arg">vector</span>,
+        <span class="summary-sig-arg">projection</span>,
+        <span class="summary-sig-arg">normalized_projection</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Filters out the projection of vector along the parameter projection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#projection_filter">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of numpy arrays</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#meshgrid" class="summary-sig-name">meshgrid</a>(<span class="summary-sig-arg">array_list</span>,
+        <span class="summary-sig-arg">dim_list</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Mesh the grid of the arrays in array_list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#meshgrid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">function(element, index)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#wrap" class="summary-sig-name">wrap</a>(<span class="summary-sig-arg">function</span>)</span><br />
+      Wraps a function which takes in only one required parameter in a 
+      function that has two input parameters, the second of which is a 
+      dummy parameter.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#wrap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list, shape(*,dim)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#get_specs" class="summary-sig-name">get_specs</a>(<span class="summary-sig-arg">operant</span>,
+        <span class="summary-sig-arg">condition</span>,
+        <span class="summary-sig-arg">dim</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Checks a condition for all elements in the array operant.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#get_specs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list, shape:(shape(first dim dimensions of operant), shape(element))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#modify_array" class="summary-sig-name">modify_array</a>(<span class="summary-sig-arg">operant</span>,
+        <span class="summary-sig-arg">function</span>,
+        <span class="summary-sig-arg">dim</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Modifies each element of an array.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#modify_array">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, dimension: op_dim</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#sum_space_array_function" class="summary-sig-name">sum_space_array_function</a>(<span class="summary-sig-arg">operant_array</span>,
+        <span class="summary-sig-arg">function</span>,
+        <span class="summary-sig-arg">op_dim</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">op_ar_dim</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Finds the image of a function that takes an element array as input.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#sum_space_array_function">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array/list</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.arrayfunctions-module.html#product_space_array_function" class="summary-sig-name">product_space_array_function</a>(<span class="summary-sig-arg">operant_list</span>,
+        <span class="summary-sig-arg">function</span>,
+        <span class="summary-sig-arg">op_dim_list</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">to_array</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Apply a function to each entry of the product space of all the 
+      operant lists.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#product_space_array_function">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="create"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create</span>(<span class="sig-arg">shape</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#create">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>element</code></strong> (float/numpy array) - the object to be placed in each index of the array.</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+        <li><strong class="pname"><code>shape</code></strong> (list, shape:(*))</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape:(shape, shape(element))</dt>
+        <dd>an array filled with element, with shape specified by the 
+          parameter shape.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fill"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fill</span>(<span class="sig-arg">array</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#fill">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>element</code></strong> (float/numpy array) - the object to be placed in each index of the array.</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+        <li><strong class="pname"><code>array</code></strong> (numpy array)</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape:(shape(array),shape(element))</dt>
+        <dd>an array filled with element, with the shape of the input array.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="normalize"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">normalize</span>(<span class="sig-arg">array</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#normalize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>array</code></strong> (numpy array) - the array to be normalized.</li>
+    </ul></dd>
+    <dt>Returns: numpy array</dt>
+        <dd>an array which has been normalized by dividing by its euclidean 
+          norm (the root-sum-square).</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="standardize"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">standardize</span>(<span class="sig-arg">array</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#standardize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>array</code></strong> (numpy array) - the array to be standardized.</li>
+    </ul></dd>
+    <dt>Returns: numpy array</dt>
+        <dd>standardized array. The array is standardized by subtracting its 
+          mean, and then dividing by its euclidean norm (the 
+          root-sum-square).</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="projection_filter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">projection_filter</span>(<span class="sig-arg">vector</span>,
+        <span class="sig-arg">projection</span>,
+        <span class="sig-arg">normalized_projection</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#projection_filter">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Filters out the projection of vector along the parameter projection. 
+  Vector and projection are both treated as vectors. The inner product 
+  between two arrays is the sum of the products of corresponding values in 
+  the array.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>vector</code></strong> (numpy array) - the input vector from which its projection along the parameter 
+          projection will be subtracted.</li>
+        <li><strong class="pname"><code>normalized_projection</code></strong> (boolean) - indicates whether or not the parameter projectio has been 
+          normalized. If it has not been normalized, it will be normalized 
+          in this function.</li>
+        <li><strong class="pname"><code>projection</code></strong> (numpy array)</li>
+    </ul></dd>
+    <dt>Returns: numpy array</dt>
+        <dd>the input vector with its projection along the input projection 
+          subtracted out. The returned vector is the largest component of 
+          parameter vector that is orthogonal to projection.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="meshgrid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">meshgrid</span>(<span class="sig-arg">array_list</span>,
+        <span class="sig-arg">dim_list</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#meshgrid">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Mesh the grid of the arrays in array_list. If the ith value of 
+  dim_list is j, then the ith array in array_list is considered to be a j 
+  dimensional array of elements. The meshgrid of A1,... An, returns n 
+  arrays, mesh(A1),..., mesh(An). Each element in mesh(Ai) is the ith 
+  element of the tuple element of the product space of A1,...,An (See 
+  product_space_array_function.).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>array_list</code></strong> (list of numpy arrays) - a list of arrays to be meshed. Each array is an array of 
+          elements. Each element can be an array or a single value.</li>
+        <li><strong class="pname"><code>dim_list</code></strong> - a list of the same length as array list. The ith array will be 
+          considered to be a (ith value) dimension array of elements. If 
+          the input is an integer, it will be converted to a list of with 
+          the same length as array_list, filled with that integer.</li>
+    </ul></dd>
+    <dt>Returns: list of numpy arrays</dt>
+        <dd>a list of the meshed grid.</dd>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        product_space_array_function
+      </p>
+      <p><strong>Warning:</strong>
+        need theory checking
+      </p>
+</div></td></tr></table>
+</div>
+<a name="wrap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">wrap</span>(<span class="sig-arg">function</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#wrap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Wraps a function which takes in only one required parameter in a 
+  function that has two input parameters, the second of which is a dummy 
+  parameter. The output function can be used as input for the functions 
+  whcih requires a function with the parameters element and index as 
+  input.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, **args)) - a function that will be wrapped. It is to have only one required 
+          parameter.</li>
+    </ul></dd>
+    <dt>Returns: function(element, index)</dt>
+        <dd>a function with two parameters. The first of the parameter is the
+          required parameter of the input function. The second is 
+          irrelevant.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_specs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_specs</span>(<span class="sig-arg">operant</span>,
+        <span class="sig-arg">condition</span>,
+        <span class="sig-arg">dim</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#get_specs">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks a condition for all elements in the array operant. The function
+  considers operant to be a dim dimension array of elements. If the 
+  dimension of operant is n, the function considers operant to be a 
+  dim*(n-dim) array, where an array of (n-dim) dimension is considered to 
+  be a single element. The function checks condition upon each element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>condition</code></strong> (boolean function (element, index)) - a boolean function that takes in 2 parameters, an element and its
+          index, a dim length list that indicates the index of the element.</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+        <li><strong class="pname"><code>operant</code></strong> (numpy array)</li>
+        <li><strong class="pname"><code>dim</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns: list, shape(*,dim)</dt>
+        <dd>A list of indices of elements for which condition is true. Each 
+          index is represented by a dim length list, which indicates the 
+          location of the element in the array.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="modify_array"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">modify_array</span>(<span class="sig-arg">operant</span>,
+        <span class="sig-arg">function</span>,
+        <span class="sig-arg">dim</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#modify_array">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Modifies each element of an array. This function considers operant to 
+  be a dim dimension array of elements. If the dimension of operant is n, 
+  the function considers operant to be a dim*(n-dim) array, where an array 
+  of (n-dim) dimension is considered to be a single element. This function 
+  modifies each element according to the parameter function.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function (element, index)) - a function that takes in 2 parameters, an element and its index, 
+          a dim length list that indicates the index of the element.</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+        <li><strong class="pname"><code>operant</code></strong> (numpy array)</li>
+        <li><strong class="pname"><code>dim</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns: list, shape:(shape(first dim dimensions of operant), shape(element))</dt>
+        <dd>A dim dimensional list of element, with the same shape as the 
+          first dim dimensions of the operant array. Each element is object
+          returned by function acting upon the corresponding element in 
+          operant.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sum_space_array_function"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sum_space_array_function</span>(<span class="sig-arg">operant_array</span>,
+        <span class="sig-arg">function</span>,
+        <span class="sig-arg">op_dim</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">op_ar_dim</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#sum_space_array_function">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the image of a function that takes an element array as input. 
+  The operant_array is an op_ar_dim dimensional array of operant, and each 
+  operant is an op_dim dimensional array of element. The element array is 
+  an op_ar_dim dimensional array of element, with each element's index 
+  corresponding to the operant's index in the operant_array.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>operant_array</code></strong> (numpy array) - an array of operant. Each operant is an array of elements.</li>
+        <li><strong class="pname"><code>function</code></strong> - a function that takes in an element array, and the element's 
+          index in operant as input. Each element in the array corresponds 
+          to the operant in the operant_array. @type function(element 
+          array, index)</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+        <li><strong class="pname"><code>op_dim</code></strong> (int)</li>
+        <li><strong class="pname"><code>op_ar_dim</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns: numpy array, dimension: op_dim</dt>
+        <dd>an array of the image of function upon each element array. Each 
+          image's index corresponds to the index of the element in operant.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="product_space_array_function"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">product_space_array_function</span>(<span class="sig-arg">operant_list</span>,
+        <span class="sig-arg">function</span>,
+        <span class="sig-arg">op_dim_list</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">to_array</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.arrayfunctions-pysrc.html#product_space_array_function">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Apply a function to each entry of the product space of all the operant
+  lists. If A is an array of shape (a1,...,ai), and B is an array of shape 
+  (b1,...,bj), then the product space of A and B (abbreviated to AB), is 
+  defined to be an array of shape (a1,...,ai,b1,...bj). If the element in 
+  the index (x1,...,xi) of A is p1, and the element in the index 
+  (y1,...,yj) of B is p2, then the element in the index 
+  (x1,...,xi,y1,...,yi) of AB is the tuple element (p1, p2). The product of
+  more than 2 arrays is defined recursively. The shape of ABC = the shape 
+  of (AB)C = shape of A(BC). If p3 is an element of C, then the 
+  corresponding element of (AB)C is the tuple element of AB extended by p3,
+  in other words, (p1,p2,p3). Similarly, if (p2 , p3) is the tuple element 
+  of BC, and p1 is an element of A, then A(BC) would be p1 extended by (p2,
+  p3), giving (p1, p2, p3). Thus ABC is defined to be (AB)C = A(BC). In 
+  this function, the ith array of operant_list is considered to be an 
+  op_dim_list[i] dimensional 9array of elements. The product space of all 
+  the array in operant_list is calculated, and then function is applied to 
+  each tuple element of the product space.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>operant_list</code></strong> (list of numpy arrays) - a list of operant arrays. Each operant array is considered to be 
+          an array of elements. Each element can be an array or a single 
+          value.</li>
+        <li><strong class="pname"><code>function</code></strong> (function(tuple element,index)) - The function to be applied to each tuple element of the product 
+          space. The function needs two parameters: the first is the tuple 
+          element, and the second is the index of that element in the 
+          product space.</li>
+        <li><strong class="pname"><code>op_dim_list</code></strong> (int; list, shape:(*)) - a list of operant dimensions. If the ith value of this list is x,
+          then the ith array of operant_list is considered to be a x 
+          dimensional array of elements. If an integer is given, the 
+          op_dim_list is considered to be a list with the same length as 
+          operant_list filled with that integer.</li>
+        <li><strong class="pname"><code>to_array</code></strong> (boolean) - indicate whether or not the returned value should be a numpy 
+          array.</li>
+    </ul></dd>
+    <dt>Returns: numpy array/list</dt>
+        <dd>the modified product space</dd>
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        VERY DEEP MAGIC!
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+python ellipsesdrawer.py ~/data/20130115/hwp_loading_alloff/computation_results.txt Power AB --min-max 0 150 --title "HWP loading: enclosure and baffles off" --cbar-label "1e-2 pW" --save ~/data/20130115/hwp_alloff_ellipse.png
+
+python ellipsesdrawer.py ~/data/20130115/hwp_loading_allon/computation_results.txt Power AB --min-max 0 150 --title "HWP loading: enclosure and baffles on" --cbar-label "1e-2 pW" --save ~/data/20130115/hwp_allon_ellipse.png
+
+
+python ellipsesdrawer.py ~/data/20130115/hwp_loading_bothbaffle_off/computation_results.txt Power AB --min-max 0 150 --title "HWP loading:enclosure on and both baffles off" --cbar-label "1e-2 pW" --save ~/data/20130115/hwp_bothbaffle_off_ellipse.png
+
+python ellipsesdrawer.py ~/data/20130115/hwp_loading_bottombaffle_off/computation_results.txt Power AB --min-max 0 150 --title "HWP loading:enclosure on and bottom baffle off" --cbar-label "1e-2 pW" --save ~/data/20130115/hwp_bottombaffle_off_ellipse.png
+
+python ellipsesdrawer.py ~/data/20130115/hwp_loading_topbaffle_off/computation_results.txt Power AB --min-max 0 150 --title "HWP loading:enclosure on and top baffle off" --cbar-label "1e-2 pW" --save ~/data/20130115/hwp_topbaffle_off_ellipse.png

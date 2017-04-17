@@ -1,0 +1,109 @@
+Authors & copyright: Shawn Xu, Michael Zhang
+Send bug reports to: *
+jappel@princeton.edu
+mzzhang@princeton.edu
+xiaoheng@princeton.edu
+
+This is the top level of our code repository.  All command-line interfaces
+that are part of our code can be used by running one of the .py files in this
+directory. To get detailed help for each interface, type python file.py -h.
+
+Here is a brief description of each interface:
+===============================================================================
+dpa.py: Analyzes and plots extreme dips in all data in a directory.
+
+ellipsesdrawer.py: Plots detector array, with each detector's properties
+	color-coded. Uses a .out file to determine detector properties.
+
+fifty_mhz_psd.py: Plots waterfall PSD of 50MHz data in all files of a
+directory.
+
+heater.py: Analyzes heater blocks. It is actually composed of 3 subcommands,
+each of which serves a distinct purpose.
+
+hf.py: this is an enigma
+
+outanalyzer.py: Analyzes a .out file and, for each column, prints out
+statistics along with drawing a histogram. Also does this for the dataset as a
+whole.
+
+plot_common.py: Plots the common mode of columns, as well as that of all the
+data combined. Unless otherwise specified, saves plots to the current directory
+
+power_script.py: Plots the power spectra and/or timestreams of specified
+detectors
+
+pwp.py: Calculate and plot normalized pointwise products.
+
+itfrn.py: draws a picture of a interference pattern. In a new computer, needs
+to be installed. Go to code/interferenceanalyzer/INSTALL, and follow
+instructions.
+===============================================================================
+
+It should be noted that the code expect the user to have some minimal levels of
+intelligence. It is strongly advised that the user uses the -h option the first
+time they use a particular code. A few of the programs could delete themselves
+to prevent further abuse if the user does something stupid.
+
+If this happens, svn update, or recode.
+
+Here are the code in each file:
+
+dpa.py:
+from code.dipanalyzer import run
+run.run()
+
+ellipsedrawer.py
+import code.ellipsesdrawer.script
+
+fifty_mhz_psd.py
+import code.powerspectrum.fifty_mhz_psd
+
+heater.py:
+import code.stepdetector.script
+
+hf.py:
+from code.enigma import fun
+fun.run()
+
+outanalyzer.py
+import code.outanalyzer.script
+
+plot_common.py:
+import code.common_mode.script
+
+power_script.py:
+import code.powerspectrum.script
+
+pwp.py:
+from code.innerproduct import run
+run.run()
+
+itfrn.py:
+from code.interferenceanalyzer import run
+run.run()
+
+===============================================================================
+
+APIDOCS:
+
+documentations are in apidocs. To see them, type firefox apidocs/index.html.
+To regenerate them: go to apidocs and type:
+
+epydoc --config .epydoc_config --parse-only
+
+The rest of this file is only useful for code maintainers.
+
+All of the actual code is in code/; the top-level .py files are simply
+very thin wrappers around this code. The documentation for this code can be
+found by viewing apidocs/index.html.
+
+The structure of code/ should be self-explanatory. However, there are a few
+peculiarities worth noting. First, code/misc is not currently used by any
+command-line interface. code/misc/edited holds the IV analysis code that we
+edited. code/misc/not_used holds filter.py, a module for applying a Butterworth
+filter to data.
+
+KTHXBAI!
+
+*It probably won't be read.

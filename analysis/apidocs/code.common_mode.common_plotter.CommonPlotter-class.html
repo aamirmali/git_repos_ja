@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.common_mode.common_plotter.CommonPlotter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.common_mode-module.html">Package&nbsp;common_mode</a> ::
+        <a href="code.common_mode.common_plotter-module.html">Module&nbsp;common_plotter</a> ::
+        Class&nbsp;CommonPlotter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class CommonPlotter</h1><p class="nomargin-top"><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter">source&nbsp;code</a></span></p>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">include_col</span>,
+        <span class="summary-sig-arg">normalize</span>)</span><br />
+      data must be a 3D array already converted to Amperes.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="find_common"></a><span class="summary-sig-name">find_common</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">set_of_data</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.find_common">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="plot_data"></a><span class="summary-sig-name">plot_data</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">to_be_plotted</span>,
+        <span class="summary-sig-arg">x_axis</span>=<span class="summary-sig-default">'default'</span>,
+        <span class="summary-sig-arg">plot_format</span>=<span class="summary-sig-default">'linear'</span>,
+        <span class="summary-sig-arg">save_dir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">xlabel</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">ylabel</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">overplot</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">title_prefix</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">filename_prefix</span>=<span class="summary-sig-default">''</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_psds" class="summary-sig-name">plot_psds</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">NFFT</span>=<span class="summary-sig-default">1024</span>,
+        <span class="summary-sig-arg">sampling_freq</span>=<span class="summary-sig-default">399.</span>,
+        <span class="summary-sig-arg">plot_format</span>=<span class="summary-sig-default">'semilogy'</span>,
+        <span class="summary-sig-arg">save_dir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">overplot</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the PSDs of common modes of all valid columns using the 
+      specified parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_psds">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_timestreams" class="summary-sig-name">plot_timestreams</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">save_dir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">overplot</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Plots the timestreams of common modes of all valid columns using the 
+      specified parameters.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_timestreams">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_timestream_all" class="summary-sig-name">plot_timestream_all</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">save_dir</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Plots the timestream of the common mode of all non-zero data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_timestream_all">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_psd_all" class="summary-sig-name">plot_psd_all</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">save_dir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">sampling_freq</span>=<span class="summary-sig-default">399.</span>,
+        <span class="summary-sig-arg">NFFT</span>=<span class="summary-sig-default">1024</span>,
+        <span class="summary-sig-arg">plot_format</span>=<span class="summary-sig-default">'linear'</span>)</span><br />
+      Plots the PSD of the common mode of all non-zero data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_psd_all">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#new_fig" class="summary-sig-name">new_fig</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Code should call this function instead of pyplot's figure().</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.new_fig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="show"></a><span class="summary-sig-name">show</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Convenience function, so that external code doesn't need to import 
+      matplotlib.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.show">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="data"></a><span class="summary-name">data</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ncols"></a><span class="summary-name">ncols</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="nrows"></a><span class="summary-name">nrows</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="col_commons"></a><span class="summary-name">col_commons</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="n_invalid"></a><span class="summary-name">n_invalid</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="common_all"></a><span class="summary-name">common_all</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="n_invalid_all"></a><span class="summary-name">n_invalid_all</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="include_col"></a><span class="summary-name">include_col</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="normalize"></a><span class="summary-name">normalize</span> = <code title="None">None</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="code.common_mode.common_plotter.CommonPlotter-class.html#formatset" class="summary-name">formatset</a> = <code title="['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b--', 'g--', 'r--', 'c--', 'm--',\
+ 'y--', 'k--', 'b-+', 'g-+', 'r-+', 'c-+', 'm-+', 'y-+', 'k-+', 'b-^',\
+ 'g-^', 'r-^']">['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b--', 'g--', <code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="pos_in_formatset"></a><span class="summary-name">pos_in_formatset</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>,
+        <span class="sig-arg">include_col</span>,
+        <span class="sig-arg">normalize</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>data must be a 3D array already converted to Amperes. include_col 
+  should be an array-like object with length equal to the number of columns
+  in data, where each element is True if the column is to be included and 
+  False otherwise. normalize indicates whether the data should be 
+  normalized before adding to get the common mode.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_psds"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_psds</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">NFFT</span>=<span class="sig-default">1024</span>,
+        <span class="sig-arg">sampling_freq</span>=<span class="sig-default">399.</span>,
+        <span class="sig-arg">plot_format</span>=<span class="sig-default">'semilogy'</span>,
+        <span class="sig-arg">save_dir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">overplot</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_psds">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the PSDs of common modes of all valid columns using the 
+  specified parameters.  Saves to save_dir/psd_col0.png, 
+  save_dir/psd_col1.png, etc if save_dir isn't None; otherwise, doesn't 
+  save. Plots all columns on one figure if overplot is True, and plots on 
+  different figures if it's False. Units are arbitrary (and labelled as 
+  such) if self.normalize is True, and A^2/Hz if it's False. plot_format 
+  can be linear, semilogx, semilogy, or loglog.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_timestreams"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_timestreams</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">save_dir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">overplot</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_timestreams">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the timestreams of common modes of all valid columns using the 
+  specified parameters. Saves to save_dir/time_col0.png, 
+  save_dir/time_col1.png, etc. if save_dir isn't None; otherwise, doesn't 
+  save. Plots all columns on one figure if overplot is True, and plots on 
+  different figures if it's False.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_timestream_all"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_timestream_all</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">save_dir</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_timestream_all">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the timestream of the common mode of all non-zero data. Saves to
+  save_dir/time_common_all.png if save_dir is not None.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_psd_all"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_psd_all</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">save_dir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">sampling_freq</span>=<span class="sig-default">399.</span>,
+        <span class="sig-arg">NFFT</span>=<span class="sig-default">1024</span>,
+        <span class="sig-arg">plot_format</span>=<span class="sig-default">'linear'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.plot_psd_all">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the PSD of the common mode of all non-zero data. Saves to 
+  save_dir/psd_common_all.png if save_dir is not None. plot_format can be 
+  linear, semilogx, semilogy, or loglog.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="new_fig"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">new_fig</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common_mode.common_plotter-pysrc.html#CommonPlotter.new_fig">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Code should call this function instead of pyplot's figure(). This 
+  function resets the position in the object's format set to 0, meaning the
+  format cycle starts from the beginning for each figure.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="formatset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">formatset</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b--', 'g--', 'r--', 'c--', 'm--',<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ 'y--', 'k--', 'b-+', 'g-+', 'r-+', 'c-+', 'm-+', 'y-+', 'k-+', 'b-^',<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ 'g-^', 'r-^']
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

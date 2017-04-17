@@ -1,0 +1,317 @@
+import sys
+import os
+import glob
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+import argparse
+from dipanalyzer import DipAnalyzer
+from code.common import filehandler
+from code.common import exceptions
+from matplotlib.backends.backend_pdf import PdfPages
+from code.common import drawer
+import code.common.functionanalyzer as fa
+
+
+
+def parse_arguments():
+    '''Parses the command-line arguments
+    @return: the parsed arguments in a Namespace. The argument x is accessed 
+    with (name of Namespace).x 
+    @rtype: Namespace '''
+    parser = argparse.ArgumentParser(
+        description='Analyzes and plots extreme dips in all data in a'\
+            ' directory.',
+        fromfile_prefix_chars='@', 
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument(
+        'input_directory', nargs='?', 
+        help = 'the name of the directory from where data is to be gathered.' 
+        + 'The files from which the data is to be read must be named in' 
+        + 'rc-col format.')
+    parser.add_argument(
+        '-sdn', default='drawings', 
+        help = 'the name of the directory where the images will be saved.', 
+        dest='save_directory_name')
+    parser.add_argument(
+        '-nsd', '--new_save_directory', action='store_true', default=False, 
+        help = 'If an old directory with the same same as the' 
+        + 'save_directory_name exist, keep the old directory' 
+        + 'and create a new directory to keep the new data.', 
+        dest='new_save_directory')
+    parser.add_argument(
+        '-dsl', '--directory_save_location', default=None,
+        help = 'The location to place the save directory. If None is'\
+            ' specified, the save directory will be placed within the'\
+            ' input_directory.',
+        dest = 'directory_save_location')
+    parser.add_argument(
+        '-nc', '--non_columns', nargs='*', default=[], type=str, 
+        help='the columns to be ignored. These columns will not be plotted.' 
+        + ' These must be in [rc, col] format.', 
+        dest='non_columns')
+    parser.add_argument(
+        '-flp', '--flipped_columns', nargs='*', default=[], type=str, 
+        help='indicates which columns are flipped.' 
+        + ' These must be in [rc, col] format.', 
+        dest='flipped_columns')
+    parser.add_argument('-flpa', action='store_true', default=False, 
+                        help='Flip all data.', dest='flip_all')
+    parser.add_argument(
+        '-mt', '--min_threshold', default=100, type=int, 
+        help='the minimum depth of a dip.' 
+        + ' Depth is measured from the closest relative maximum on the left.', 
+        dest='min_threshold')
+    parser.add_argument(
+        '-drt', '--dip_rise_threshold', default=5, type=int, 
+        help='the amount by which a relative maximum have to rise' 
+        + ' from the minimum to be considered a relative maximum.' 
+        + ' The nearby relative maximums are used in finding the dips.')
+    parser.add_argument('-ph', action='store_true', default=False, 
+                        help='Shows all histograms.', dest='plot_histograms')
+    parser.add_argument('-st', action='store_true', default=False, 
+                        help='Saves all timestreams.', dest='save_timestreams')
+    parser.add_argument('-pt', action='store_true', default=False, 
+                        help='Shows all timestreams.', dest='plot_timestreams')
+    parser.add_argument('-min', type=int, 
+                        help='the minimum value for the width of special dips.' 
+                        + ' The special dips will be plotted in black.', 
+                        dest='min')
+    parser.add_argument('-max', type=int, 
+                        help='the maximum value for the width of special dips.' 
+                        + ' The special dips will be plotted in black.', 
+                        dest='max')
+    parser.add_argument(
+        '-sc', action='store_true', default=False, 
+        help='Saves a closeups for each special dips indicated by -min and'\
+            ' -max.',dest='save_closeups')
+    parser.add_argument(
+        '-john', action='store_true', default=False, 
+        help='Makes Johns plot')
+    parser.add_argument(
+        '-pc', action='store_true', default=False, 
+        help='Shows a closeup for each special dips indicated by -min and'\
+            ' -max.',dest='plot_closeups')
+    return parser.parse_args()
+
+
+def interpret_and_run(args):
+    if args.input_directory==None:
+        raise exceptions.StupidityError('No input directory is given.')
+    if args.min==None and args.max==None:
+        spec_range=None
+    elif args.min!=None and args.max==None:
+        spec_range=(args.min, np.inf)
+    elif args.min==None and args.max!=None:
+        spec_range=(0, args.max)
+    else:
+        spec_range=(args.min, args.max)
+    save_directory_path = create_save_directory(
+        args.save_directory_name, args.input_directory, 
+        args.new_save_directory, args.directory_save_location)
+    control=create_control(flipped_columns=args.flipped_columns, 
+                           non_cols=args.non_columns, flip_all=args.flip_all)
+    analyze_all(input_directory=args.input_directory, 
+                save_directory_path=save_directory_path, 
+                control=control, min_threshold=args.min_threshold, 
+                dip_rise_threshold=args.dip_rise_threshold, 
+                plot_histograms=args.plot_histograms, 
+                save_timestreams=args.save_timestreams, 
+                plot_timestreams=args.plot_timestreams, 
+                spec_range=spec_range, save_closeups=args.save_closeups, 
+                plot_closeups=args.plot_closeups,john=args.john)
+
+
+def create_save_directory(save_directory_name, input_directory, 
+                          new_save_directory, directory_save_location):
+    if os.path.exists(input_directory)==False:
+        raise ValueError('The input_directory does not exist.')
+    if directory_save_location == None:
+        save_directory_path = os.path.join(input_directory, save_directory_name)
+    else:
+        save_directory_path = os.path.join(directory_save_location, 
+                                           save_directory_name)
+    if new_save_directory==False:
+        if os.path.exists(save_directory_path)==True:
+            for filename in os.listdir(save_directory_path):
+                file_path=os.path.join(save_directory_path, filename)
+                os.remove(file_path)
+        else:
+            os.mkdir(save_directory_path)
+    else:
+        original_save_directory_path=save_directory_path
+        copy_number=1
+        while os.path.exists(save_directory_path)==True:
+            copy_number+=1
+            save_directory_path = (original_save_directory_path 
+                                   + '_copy(' + str(copy_number) + ')')
+        os.mkdir(save_directory_path)
+    return save_directory_path
+
+
+def create_control(flipped_columns, non_cols, flip_all):
+    if flip_all==False:
+        control=np.ones((3,8), dtype=np.int32)
+    else:
+        control=-np.ones((3,8), dtype=np.int32)
+    for rc_col in flipped_columns:
+        rc_col=eval(rc_col)
+        if 1<=rc_col[0]<=3 and 0<=rc_col[1]<=7:
+            control[rc_col[0]-1][rc_col[1]]=-1
+        else:
+            raise ValueError('One of the flipped_columns does not exist')
+    for rc_col in non_cols:
+        rc_col=eval(rc_col)
+        if 1<=rc_col[0]<=3 and 0<=rc_col[1]<=7:
+            control[rc_col[0]-1][rc_col[1]]=0
+        else:
+            raise ValueError('One of the non_columns does not exist')
+    return control
+
+
+def analyze_all(input_directory, save_directory_path, control, 
+                min_threshold, dip_rise_threshold, 
+                plot_histograms, save_timestreams, plot_timestreams, 
+                spec_range, save_closeups, plot_closeups, john):
+    all_dip_widths=np.array([])
+    for rc in range (1,4):
+        for col in range(0, 8):
+            if control[rc-1][col]==0:
+                continue
+            filename='*rc' + str(rc) + '_col' + str(col)
+            dir_filename=glob.glob(os.path.join(input_directory, filename))[0]
+            data=filehandler.get_mce_data(dir_filename, row_col=True)[0][0]
+            data=control[rc-1][col]*data
+            analyzer=DipAnalyzer(data, min_thres=min_threshold, 
+                                 dip_rise_thres=dip_rise_threshold)
+            if analyzer.dip_widths.size!=0:
+                analyzer.plot_hist(
+                    analyzer.dip_widths, bins=20, 
+                    data_name='SQ1 Multiplexing Time Delay (50MHz MCE Cycles)' 
+                    + 'of rc ' +str(rc) + ' col ' +str(col))
+                plt.savefig(save_directory_path + '/Histogram_of_rc' + str(rc) 
+                            + '_col' + str(col))
+                if plot_histograms==False:
+                    plt.close()
+            if save_timestreams==True or plot_timestreams==True \
+            or save_closeups==True or plot_closeups==True:
+                if spec_range==None and (save_closeups or plot_closeups):
+                    raise exceptions.StupidityError(
+                        'Operation on closeup called with no range specified.')
+                elif spec_range==None:
+                    analyzer.plot_data(
+                        plot_name='Timestream of rc ' + str(rc)  
+                        + ' col ' + str(col), 
+                        xlabel="50 MHz MCE Cycles", ylabel="Raw DAC counts")
+                    if save_timestreams==True:
+                        plt.savefig(save_directory_path 
+                                    + '/Timestream of rc' + str(rc) 
+                                    + '_col' +str(col))
+                    if plot_timestreams==False:
+                        plt.close()
+                else:
+                    if plot_closeups==True or save_closeups==True:
+                        original_fignum=plt.get_fignums()
+                        analyzer.plot_data(
+                            plot_name='Timestream of rc ' + str(rc) 
+                            + ' col ' + str(col), 
+                            xlabel="50 MHz MCE Cycles", 
+                            ylabel="Raw DAC counts", 
+                            plot_spec='range', 
+                            plot_spec_args=(
+                                {'operant':analyzer.dip_widths, 
+                                 'min_val':spec_range[0], 
+                                 'max_val':spec_range[1], 
+                                 'closeup':True, 
+                                 'closeup_name':('rc ' + str(rc) 
+                                                 + ' col ' + str(col))
+                                 })
+                            )
+                        final_fignum=plt.get_fignums()
+                        timestream_index=final_fignum[len(original_fignum)]
+                        special_dip_index=0
+                        for index in final_fignum[len(original_fignum)+1
+                                                  :len(final_fignum)]:
+                            plt.figure(index)
+                            if save_closeups==True:
+                                plt.savefig(
+                                    save_directory_path 
+                                    + '/Special Dip ' + str(special_dip_index)
+                                    + ' of rc' + str(rc) + '_col' +str(col))
+                            if plot_closeups==False:
+                                plt.close()
+                            special_dip_index+=1
+                        if save_timestreams==True:
+                            plt.figure(timestream_index)
+                            plt.savefig(
+                                save_directory_path 
+                                + '/Timestream of rc' + str(rc) + '_col' 
+                                + str(col))
+                        if plot_timestreams==False:
+                            plt.figure(timestream_index)
+                            plt.close()
+                        if len(plt.get_fignums())!=0:
+                            plt.figure(
+                                plt.get_fignums()[len(plt.get_fignums())-1]
+                                )
+                    else:
+                        analyzer.plot_data(
+                            plot_name='Timestream of rc ' + str(rc) 
+                            + ' col ' + str(col), 
+                            xlabel="50 MHz MCE Cycles", 
+                            ylabel="Raw DAC counts", 
+                            plot_spec='range', 
+                            plot_spec_args={'operant':analyzer.dip_widths, 
+                                            'min_val':spec_range[0], 
+                                            'max_val':spec_range[1]})
+                        if save_timestreams==True:
+                            plt.savefig(save_directory_path 
+                                        + '/Timestream of rc' + str(rc) 
+                                        + '_col' +str(col))
+                        if plot_timestreams==False:
+                            plt.close()
+            all_dip_widths=np.hstack([all_dip_widths, analyzer.dip_widths])
+    if all_dip_widths.size!=0:
+        analyzer.plot_hist(
+            all_dip_widths, bins=100, 
+            data_name='SQ1 Multiplexing Time Delay (50MHz MCE Cycles) of'\
+                ' all Data')
+        plt.savefig(save_directory_path + '/Histogram_of_All_Data')
+        if plot_histograms==False:
+            plt.close()
+    if len(plt.get_fignums())!=0:
+        plt.show()
+    ## John plots
+    if john == True:
+        matplotlib.rcParams['lines.linewidth']=3
+        fontsize=10
+        fontweight='bold'
+        fig=plt.figure(1)
+        fig.subplots_adjust(hspace=0.4)
+        ax1=fig.add_subplot(211)
+#        analyzer.plot_data(plot_name='Timestream of rc ' + str(rc) + ' col ' + str(col),xlabel="50 MHz MCE Cycles", ylabel="Raw DAC counts")
+        analyzer.data=analyzer.data/100.+30
+        ax1.plot(analyzer.data,'b-')
+        ax1.plot(analyzer.min_indices, analyzer.data[analyzer.min_indices], 'bd')
+        flat_dip_ends=np.array(analyzer.dip_ends_indices.flat)
+        ax1.plot(flat_dip_ends, analyzer.data[flat_dip_ends], 'ro')
+        for i in analyzer.dip_ends_indices:
+               fa.plot_range(analyzer.data, i[0], i[1]+1, 'r-')
+        ax1.set_title('50Mhz raw data ABS Column 23')
+        ax1.set_xlabel('Time in units of 50MHz MCE Cycles')
+        ax1.set_ylabel('Response of SA channel (a.u)')
+        ax1.set_xlim([1000,2600])
+        ax2=fig.add_subplot(212)
+        ax2.hist(all_dip_widths,bins=40)
+        ax2.set_title('SQ1 Multiplexing Time Delay')
+        ax2.set_xlabel('Time Delay (50MHz MCE Cycles)')
+        ax2.set_ylabel('Number of SQ1 row switches')
+        ax2.set_xlim([0,140])
+
+        drawer.set_size_weight(fontsize,fontweight)
+
+        pp=PdfPages(save_directory_path+'dips_plot.pdf')
+        pp.savefig(1)
+        pp.close()
+
+

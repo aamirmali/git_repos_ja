@@ -1,0 +1,25 @@
+#!/bin/bash
+
+label='det_on_100mK_mux11_v1_bias'
+biases="20000 19000 18000 17000 16000 15000 14000 13000 12000 11000 10000 9000 8000 7000"
+#biases="23000 22000 21000 18000 17000 16000 15000 14000 13000 12000 11000 10000 9000 8000"
+n_points=131072
+dsp_cmd -qx write P 0x053c 0xa7011
+sleep 1
+dsp_cmd -qx write P 0x0577 0xa7011
+sleep 1
+
+mce_cmd -x wb tes bias 65000 65000 65000
+mce_cmd -x rb tes bias
+
+for bias in $biases
+do
+     filename=$label'_'$bias
+     echo $filename
+     mce_cmd -x wb tes bias $bias $bias $bias $bias
+     sleep 1
+     mce_cmd -x rb tes bias
+     sleep 20
+     mce_run $filename $n_points s
+     sleep 20
+done

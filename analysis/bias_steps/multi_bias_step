@@ -1,0 +1,12 @@
+#!/bin/bash
+
+temp='185mK_v2'
+biases="3500 3400 3350 3300 3250 3200"
+n_points=16600
+depth=50
+step_period=500000
+
+for bias in $biases
+do
+    bias_step_acq_john 3 s $temp $bias $n_points $depth $step_period
+done

@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.ellipsesdrawer.script</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.ellipsesdrawer-module.html">Package&nbsp;ellipsesdrawer</a> ::
+        Module&nbsp;script
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.ellipsesdrawer.script-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="code.ellipsesdrawer.script-module.html">Module code.ellipsesdrawer.script</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""This is a command-line interface for using draw_ellipses."""</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">argparse</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">matplotlib</tt><tt class="py-op">.</tt><tt class="py-name">pyplot</tt> <tt class="py-keyword">as</tt> <tt class="py-name">plt</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module code.ellipsesdrawer.prettythingsdrawer=code.ellipsesdrawer.prettythingsdrawer-module.html"><a title="code.ellipsesdrawer.prettythingsdrawer" class="py-name" href="#" onclick="return doclink('link-0', 'prettythingsdrawer', 'link-0');">prettythingsdrawer</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer" class="py-name" href="#" onclick="return doclink('link-1', 'PrettyThingsDrawer', 'link-1');">PrettyThingsDrawer</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment">#collect arguments</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable code.common_mode.script.parser=code.common_mode.script-module.html#parser,Variable code.ellipsesdrawer.script.parser=code.ellipsesdrawer.script-module.html#parser,Variable code.outanalyzer.script.parser=code.outanalyzer.script-module.html#parser,Variable code.powerspectrum.script.parser=code.powerspectrum.script-module.html#parser,Variable code.stepdetector.script.parser=code.stepdetector.script-module.html#parser"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-2', 'parser', 'link-2');">parser</a></tt><tt class="py-op">=</tt><tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentParser</tt><tt class="py-op">(</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">    <tt class="py-name">description</tt><tt class="py-op">=</tt><tt class="py-string">"Plots detector array, with each detector's properties color-"</tt>\ </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">        <tt class="py-string">"coded."</tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt class="py-name">formatter_class</tt><tt class="py-op">=</tt><tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentDefaultsHelpFormatter</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt id="link-3" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-3', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'file'</tt><tt class="py-op">,</tt><tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'file containing detector data, in the format'</tt>\ </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">                        <tt class="py-string">'of .out files.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-4" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-4', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'search_string'</tt><tt class="py-op">,</tt><tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'string used to identify which'</tt>\ </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">                        <tt class="py-string">' property in the file should be used'</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt id="link-5" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-5', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'probe'</tt><tt class="py-op">,</tt><tt class="py-name">choices</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-string">'A'</tt><tt class="py-op">,</tt><tt class="py-string">'B'</tt><tt class="py-op">,</tt><tt class="py-string">'AB'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'chooses which probe should be used. Note that if AB'</tt>\ </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">                        <tt class="py-string">' is specified, --other-data cannot be used. Also'</tt>\ </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">                        <tt class="py-string">' note that if AB is specified, A ellipses are'</tt>\ </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">                        <tt class="py-string">' horizontal; B ellipses are vertical'</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-6" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-6', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--frequency'</tt><tt class="py-op">,</tt><tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-number">145</tt><tt class="py-op">,</tt><tt id="link-7" class="py-name" targets="Variable code.stepdetector.stepanalyzer.Transition.type=code.stepdetector.stepanalyzer.Transition-class.html#type"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-7', 'type', 'link-7');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">int</tt><tt class="py-op">,</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'specifies which frequency to search for in '</tt>\ </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">                        <tt class="py-string">'beam centers file.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt id="link-8" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-8', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--mapfile'</tt><tt class="py-op">,</tt><tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-string">'code/ellipsesdrawer/mce_pod_map.txt'</tt><tt class="py-op">,</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">"set custom map file, containing the correspondance"</tt>\ </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                        <tt class="py-string">" between row/col format and pod/feed/probe format."</tt>\ </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">                        <tt class="py-string">" The first line of the map file is discarded. The"</tt>\ </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">                        <tt class="py-string">" remaining lines' columns must be in the following"</tt>\ </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">                        <tt class="py-string">" order: pod #, feed #, MCE col (starting from 0),"</tt>\ </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">                        <tt class="py-string">" MCE row for probe A (starting from 1), and MCE row"</tt>\ </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">                        <tt class="py-string">" for probe B (starting from 1)"</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt id="link-9" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-9', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--angle-file'</tt><tt class="py-op">,</tt><tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">"use this file to specify angles of"</tt>\ </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">                        <tt class="py-string">" the ellipses. The first line is discarded. The"</tt>\ </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">                        <tt class="py-string">" remaining lines' 3rd and 4th columns must be probe"</tt>\ </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">                        <tt class="py-string">" A's angle and probe B's angle, respectively. The"</tt>\ </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">                        <tt class="py-string">" file must be ordered: the 2nd line must be for pod"</tt>\ </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">                        <tt class="py-string">" 1 feed 1, the 3rd for pod 1 feed 2, etc."</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt id="link-10" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-10', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'-o'</tt><tt class="py-op">,</tt><tt class="py-string">'--other-data'</tt><tt class="py-op">,</tt><tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">                    <tt class="py-name">metavar</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-string">'FILE'</tt><tt class="py-op">,</tt><tt class="py-string">'SEARCH_STRING'</tt><tt class="py-op">,</tt><tt class="py-string">'PROBE'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'plots other set of data. Arguments should be in'</tt>\ </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">                        <tt class="py-string">'exactly the same order and format as the main'</tt>\ </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                        <tt class="py-string">'positional arguments of this program. other-data is '</tt>\ </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">                        <tt class="py-string">'represented as vertical ellipses; the original data '</tt>\ </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">                        <tt class="py-string">'is represented as horizontal ellipses.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt id="link-11" class="py-name" targets="Variable code.ellipsesdrawer.script.converter=code.ellipsesdrawer.script-module.html#converter"><a title="code.ellipsesdrawer.script.converter" class="py-name" href="#" onclick="return doclink('link-11', 'converter', 'link-11');">converter</a></tt><tt class="py-op">=</tt><tt id="link-12" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-12', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_mutually_exclusive_group</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt id="link-13" class="py-name"><a title="code.ellipsesdrawer.script.converter" class="py-name" href="#" onclick="return doclink('link-13', 'converter', 'link-11');">converter</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--set-clim'</tt><tt class="py-op">,</tt><tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt id="link-14" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-14', 'type', 'link-7');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">                       <tt class="py-name">metavar</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-string">'LOWER'</tt><tt class="py-op">,</tt><tt class="py-string">'UPPER'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">                       <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'sets the lower and upper color limits.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt id="link-15" class="py-name"><a title="code.ellipsesdrawer.script.converter" class="py-name" href="#" onclick="return doclink('link-15', 'converter', 'link-11');">converter</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'-t'</tt><tt class="py-op">,</tt><tt class="py-string">'--threshold'</tt><tt class="py-op">,</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                       <tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-string">'+'</tt><tt class="py-op">,</tt><tt class="py-name">metavar</tt><tt class="py-op">=</tt><tt class="py-string">'THRES'</tt><tt class="py-op">,</tt><tt id="link-16" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-16', 'type', 'link-7');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                       <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">"thresholds the data. The thresholds must be in"</tt>\ </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                           <tt class="py-string">" order, from lowest to highest. Data points are"</tt>\ </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                           <tt class="py-string">" assigned discrete values depending on which"</tt>\ </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                           <tt class="py-string">" interval they fall under. There's no need to"</tt>\ </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                           <tt class="py-string">" know what these values are, because an"</tt>\ </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                           <tt class="py-string">" informative legend will be created."</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt id="link-17" class="py-name"><a title="code.ellipsesdrawer.script.converter" class="py-name" href="#" onclick="return doclink('link-17', 'converter', 'link-11');">converter</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--min-max'</tt><tt class="py-op">,</tt><tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt id="link-18" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-18', 'type', 'link-7');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt><tt class="py-name">metavar</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-string">'MIN'</tt><tt class="py-op">,</tt><tt class="py-string">'MAX'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'If specified, sets everything below min to min, and'</tt>\ </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                        <tt class="py-string">' above max to max.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt id="link-19" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-19', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--title'</tt><tt class="py-op">,</tt><tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'manually set the title'</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt id="link-20" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-20', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--fontsize'</tt><tt class="py-op">,</tt><tt id="link-21" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-21', 'type', 'link-7');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">int</tt><tt class="py-op">,</tt><tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'set the font size of title'</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt id="link-22" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-22', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--fontweight'</tt><tt class="py-op">,</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'set font weight of title. Valid options: 0-1000, or'</tt>\ </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                        <tt class="py-string">' ultralight, light, normal, regular, book, medium, '</tt>\ </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                        <tt class="py-string">'roman, semibold, demibold, demi, bold, heavy, extra'</tt>\ </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                        <tt class="py-string">' bold, black'</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt id="link-23" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-23', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'--save'</tt><tt class="py-op">,</tt><tt class="py-name">metavar</tt><tt class="py-op">=</tt><tt class="py-string">'FILENAME'</tt><tt class="py-op">,</tt><tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-string">'?'</tt><tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                    <tt class="py-name">const</tt><tt class="py-op">=</tt><tt class="py-string">'ellipses_plot.png'</tt><tt class="py-op">,</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                    <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'Saves graph instead of showing it on screen. If an '</tt>\ </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                        <tt class="py-string">'argument is specified, saves to that file. If not,'</tt>\ </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                        <tt class="py-string">' saves to %(const)s in current directory.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt id="link-24" class="py-name" targets="Variable code.common_mode.script.args=code.common_mode.script-module.html#args,Variable code.ellipsesdrawer.script.args=code.ellipsesdrawer.script-module.html#args,Variable code.outanalyzer.script.args=code.outanalyzer.script-module.html#args,Variable code.powerspectrum.script.args=code.powerspectrum.script-module.html#args,Variable code.stepdetector.script.args=code.stepdetector.script-module.html#args"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-24', 'args', 'link-24');">args</a></tt><tt class="py-op">=</tt><tt id="link-25" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-25', 'parser', 'link-2');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">parse_args</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-comment">#validate arguments                 </tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-26" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-26', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Variable code.ellipsesdrawer.script.probe=code.ellipsesdrawer.script-module.html#probe"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-27', 'probe', 'link-27');">probe</a></tt><tt class="py-op">==</tt><tt class="py-string">'AB'</tt> <tt class="py-keyword">and</tt> <tt id="link-28" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-28', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Both probe=AB and --other-data were specified! Can only use one"</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-29" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-29', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt id="link-30" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-30', 'probe', 'link-27');">probe</a></tt><tt class="py-op">=</tt><tt id="link-31" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-31', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-32" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-32', 'probe', 'link-27');">probe</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">'A'</tt> <tt class="py-keyword">and</tt> <tt id="link-33" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-33', 'probe', 'link-27');">probe</a></tt> <tt class="py-op">!=</tt> <tt class="py-string">'B'</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Probe for --other-data must be either A or B!"</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-34" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-34', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-35" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-35', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">&gt;=</tt><tt id="link-36" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-36', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Lower limit greater than or equal to upper limit for --set-clim!"</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-37" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-37', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt> <tt class="py-keyword">and</tt> <tt id="link-38" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-38', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">&gt;=</tt><tt id="link-39" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-39', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Lower limit greater than or equal to upper limit for --min-max!"</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-40" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-40', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Function code.ellipsesdrawer.script.threshold()=code.ellipsesdrawer.script-module.html#threshold"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-41', 'threshold', 'link-41');">threshold</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-42', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-43', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-44" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-44', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-45', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">&lt;=</tt><tt id="link-46" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-46', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-47', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">"--threshold arguments invalid!"</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-comment">#execute</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt id="link-48" class="py-name" targets="Module code.common.drawer=code.common.drawer-module.html,Variable code.ellipsesdrawer.script.drawer=code.ellipsesdrawer.script-module.html#drawer"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-48', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">=</tt><tt id="link-49" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer" class="py-name" href="#" onclick="return doclink('link-49', 'PrettyThingsDrawer', 'link-1');">PrettyThingsDrawer</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt id="link-50" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.map_file=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#map_file"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.map_file" class="py-name" href="#" onclick="return doclink('link-50', 'map_file', 'link-50');">map_file</a></tt><tt class="py-op">=</tt><tt id="link-51" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-51', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">mapfile</tt><tt class="py-op">,</tt><tt id="link-52" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.frequency=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#frequency"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.frequency" class="py-name" href="#" onclick="return doclink('link-52', 'frequency', 'link-52');">frequency</a></tt><tt class="py-op">=</tt><tt id="link-53" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-53', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.frequency" class="py-name" href="#" onclick="return doclink('link-54', 'frequency', 'link-52');">frequency</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt id="link-55" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.beam_centers_file=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_file"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.beam_centers_file" class="py-name" href="#" onclick="return doclink('link-55', 'beam_centers_file', 'link-55');">beam_centers_file</a></tt><tt class="py-op">=</tt><tt class="py-string">'code/ellipsesdrawer/beamCenters.txt'</tt><tt class="py-op">,</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt id="link-56" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#angle_file"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file" class="py-name" href="#" onclick="return doclink('link-56', 'angle_file', 'link-56');">angle_file</a></tt><tt class="py-op">=</tt><tt id="link-57" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-57', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file" class="py-name" href="#" onclick="return doclink('link-58', 'angle_file', 'link-56');">angle_file</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-comment">#Basic arguments to draw_ellipses. Code further down modifies this dictionary</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-comment">#before passing to to draw_ellipses.</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt id="link-59" class="py-name" targets="Variable code.ellipsesdrawer.script.ellipses_args=code.ellipsesdrawer.script-module.html#ellipses_args"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-59', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-string">'raw_data_file'</tt><tt class="py-op">:</tt><tt id="link-60" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-60', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">file</tt><tt class="py-op">,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">               <tt class="py-string">'search_string'</tt><tt class="py-op">:</tt><tt id="link-61" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-61', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">,</tt><tt class="py-string">'A_or_B'</tt><tt class="py-op">:</tt><tt id="link-62" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-62', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-63', 'probe', 'link-27');">probe</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">               <tt class="py-string">'angle'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-string">'major_axis'</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">,</tt><tt class="py-string">'minor_axis'</tt><tt class="py-op">:</tt><tt class="py-number">3</tt><tt class="py-op">,</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">               <tt class="py-string">'title'</tt><tt class="py-op">:</tt><tt id="link-64" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-64', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.fig.title=code.ellipsesdrawer.prettythingsdrawer.fig-class.html#title"><a title="code.ellipsesdrawer.prettythingsdrawer.fig.title" class="py-name" href="#" onclick="return doclink('link-65', 'title', 'link-65');">title</a></tt><tt class="py-op">,</tt><tt class="py-string">'fontsize'</tt><tt class="py-op">:</tt><tt id="link-66" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-66', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">fontsize</tt><tt class="py-op">,</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">               <tt class="py-string">'fontweight'</tt><tt class="py-op">:</tt><tt id="link-67" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-67', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">fontweight</tt><tt class="py-op">}</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-68" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-68', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file" class="py-name" href="#" onclick="return doclink('link-69', 'angle_file', 'link-56');">angle_file</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt id="link-70" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-70', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'angle'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-71" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-71', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt id="link-72" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-72', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'convert'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-string">'normal'</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt id="link-73" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-73', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'min_val'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-74" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-74', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt id="link-75" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-75', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'max_val'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-76" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-76', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">min_max</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-77" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-77', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-78" class="py-name" targets="Variable code.ellipsesdrawer.script.clim=code.ellipsesdrawer.script-module.html#clim"><a title="code.ellipsesdrawer.script.clim" class="py-name" href="#" onclick="return doclink('link-78', 'clim', 'link-78');">clim</a></tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt id="link-79" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-79', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt id="link-80" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-80', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">set_clim</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt id="link-81" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-81', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'colorbar_lim'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-82" class="py-name"><a title="code.ellipsesdrawer.script.clim" class="py-name" href="#" onclick="return doclink('link-82', 'clim', 'link-78');">clim</a></tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-83" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-83', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-84', 'threshold', 'link-41');">threshold</a></tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt id="link-85" class="py-name" targets="Variable code.ellipsesdrawer.script.nthres=code.ellipsesdrawer.script-module.html#nthres"><a title="code.ellipsesdrawer.script.nthres" class="py-name" href="#" onclick="return doclink('link-85', 'nthres', 'link-85');">nthres</a></tt><tt class="py-op">=</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-86" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-86', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-87', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">)</tt> </tt>
+<a name="threshold"></a><div id="threshold-def"><a name="L116"></a><tt class="py-lineno">116</tt> <a class="py-toggle" href="#" id="threshold-toggle" onclick="return toggle('threshold');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="code.ellipsesdrawer.script-module.html#threshold">threshold</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="threshold-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="threshold-expanded"><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-comment">#return first i for which x&lt;=args.threshold[i]. If no such i exists,</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-comment">#return len(args.threshold). This way, if the thresholds are 0,1,and 2,</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-comment">#the 0 will be x&lt;=0, 1 is 0&lt;x&lt;=1, 2 is 1&lt;x&lt;=2, and 3 is x&gt;2</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt id="link-88" class="py-name"><a title="code.ellipsesdrawer.script.nthres" class="py-name" href="#" onclick="return doclink('link-88', 'nthres', 'link-85');">nthres</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">x</tt><tt class="py-op">&lt;=</tt><tt id="link-89" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-89', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-90', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">i</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-91" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-91', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-92', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">    <tt class="py-comment">#now build up the legend using the rules used for threshold(x)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt id="link-93" class="py-name" targets="Variable code.ellipsesdrawer.script.legend=code.ellipsesdrawer.script-module.html#legend"><a title="code.ellipsesdrawer.script.legend" class="py-name" href="#" onclick="return doclink('link-93', 'legend', 'link-93');">legend</a></tt><tt class="py-op">=</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt id="link-94" class="py-name"><a title="code.ellipsesdrawer.script.nthres" class="py-name" href="#" onclick="return doclink('link-94', 'nthres', 'link-85');">nthres</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">==</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-name">key</tt> <tt class="py-op">=</tt> <tt class="py-string">'&lt;= '</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-95" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-95', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-96', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">            <tt class="py-name">key</tt> <tt class="py-op">=</tt> <tt class="py-string">'&gt; '</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-97" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-97', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-98', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">', &lt;= '</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-99" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-99', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-100', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt id="link-101" class="py-name"><a title="code.ellipsesdrawer.script.legend" class="py-name" href="#" onclick="return doclink('link-101', 'legend', 'link-93');">legend</a></tt><tt class="py-op">[</tt><tt class="py-name">key</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">i</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt id="link-102" class="py-name"><a title="code.ellipsesdrawer.script.legend" class="py-name" href="#" onclick="return doclink('link-102', 'legend', 'link-93');">legend</a></tt><tt class="py-op">[</tt><tt class="py-string">'&gt; '</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-103" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-103', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-104" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-104', 'threshold', 'link-41');">threshold</a></tt><tt class="py-op">[</tt><tt id="link-105" class="py-name"><a title="code.ellipsesdrawer.script.nthres" class="py-name" href="#" onclick="return doclink('link-105', 'nthres', 'link-85');">nthres</a></tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-106" class="py-name"><a title="code.ellipsesdrawer.script.nthres" class="py-name" href="#" onclick="return doclink('link-106', 'nthres', 'link-85');">nthres</a></tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt id="link-107" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-107', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'convert'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-string">'function'</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt id="link-108" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-108', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'function'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-109" class="py-name"><a title="code.ellipsesdrawer.script.threshold" class="py-name" href="#" onclick="return doclink('link-109', 'threshold', 'link-41');">threshold</a></tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt id="link-110" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-110', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'legend'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-111" class="py-name"><a title="code.ellipsesdrawer.script.legend" class="py-name" href="#" onclick="return doclink('link-111', 'legend', 'link-93');">legend</a></tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-comment">#check for 3 cases: plotting 1 set of data, plotting both A and B probes for a</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-comment">#single set of data, and plotting 2 different sets of data (specified using</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-comment">#--other-data)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-112" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-112', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-113" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-113', 'probe', 'link-27');">probe</a></tt> <tt class="py-op">!=</tt><tt class="py-string">'AB'</tt> <tt class="py-keyword">and</tt> <tt id="link-114" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-114', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt id="link-115" class="py-name"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-115', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">.</tt><tt id="link-116" class="py-name" targets="Method code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses()=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#draw_ellipses"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses" class="py-name" href="#" onclick="return doclink('link-116', 'draw_ellipses', 'link-116');">draw_ellipses</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt id="link-117" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-117', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-keyword">elif</tt> <tt id="link-118" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-118', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="code.ellipsesdrawer.script.probe" class="py-name" href="#" onclick="return doclink('link-119', 'probe', 'link-27');">probe</a></tt><tt class="py-op">==</tt><tt class="py-string">'AB'</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt id="link-120" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-120', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'A_or_B'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-string">'A'</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">    <tt id="link-121" class="py-name"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-121', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">.</tt><tt id="link-122" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses" class="py-name" href="#" onclick="return doclink('link-122', 'draw_ellipses', 'link-116');">draw_ellipses</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt id="link-123" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-123', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-124" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-124', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-125" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file" class="py-name" href="#" onclick="return doclink('link-125', 'angle_file', 'link-56');">angle_file</a></tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt id="link-126" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-126', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'angle'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-number">90</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">    <tt id="link-127" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-127', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'A_or_B'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-string">'B'</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt id="link-128" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-128', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'new_figure'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">False</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">    <tt id="link-129" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-129', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'combine_colorbar'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">True</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">    <tt id="link-130" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-130', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'cbar_label'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-131" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-131', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-132" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-132', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'title'</tt><tt class="py-op">]</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt id="link-133" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-133', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'title'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-134" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-134', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">+</tt><tt class="py-string">" of "</tt><tt class="py-op">+</tt><tt class="py-string">"A and B in "</tt><tt class="py-op">+</tt><tt id="link-135" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-135', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">file</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt id="link-136" class="py-name"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-136', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses" class="py-name" href="#" onclick="return doclink('link-137', 'draw_ellipses', 'link-116');">draw_ellipses</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt id="link-138" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-138', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-keyword">elif</tt> <tt id="link-139" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-139', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt id="link-140" class="py-name"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-140', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">.</tt><tt id="link-141" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses" class="py-name" href="#" onclick="return doclink('link-141', 'draw_ellipses', 'link-116');">draw_ellipses</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt id="link-142" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-142', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">    <tt id="link-143" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-143', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'raw_data_file'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-144" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-144', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt id="link-145" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-145', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'search_string'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-146" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-146', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt id="link-147" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-147', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'A_or_B'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-148" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-148', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-149" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-149', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt id="link-150" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.angle_file" class="py-name" href="#" onclick="return doclink('link-150', 'angle_file', 'link-56');">angle_file</a></tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt id="link-151" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-151', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'angle'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-number">90</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">    <tt id="link-152" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-152', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'combine_colorbar'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">True</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt id="link-153" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-153', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'cbar_label'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt id="link-154" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-154', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">search_string</tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">+</tt><tt id="link-155" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-155', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">other_data</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">    <tt id="link-156" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-156', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">[</tt><tt class="py-string">'new_figure'</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">False</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt id="link-157" class="py-name"><a title="code.common.drawer
+code.ellipsesdrawer.script.drawer" class="py-name" href="#" onclick="return doclink('link-157', 'drawer', 'link-48');">drawer</a></tt><tt class="py-op">.</tt><tt id="link-158" class="py-name"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.draw_ellipses" class="py-name" href="#" onclick="return doclink('link-158', 'draw_ellipses', 'link-116');">draw_ellipses</a></tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt id="link-159" class="py-name"><a title="code.ellipsesdrawer.script.ellipses_args" class="py-name" href="#" onclick="return doclink('link-159', 'ellipses_args', 'link-59');">ellipses_args</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-comment">#ellipses_args is no longer equal to its original value! Should no longer be</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-comment">#used</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt id="link-160" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-160', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">save</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt id="link-161" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-161', 'args', 'link-24');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">save</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt id="link-162" class="py-name" targets="Method code.common_mode.common_plotter.CommonPlotter.show()=code.common_mode.common_plotter.CommonPlotter-class.html#show,Method code.dipanalyzer.dipanalyzer.DipAnalyzer.show()=code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#show,Method code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.show()=code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#show"><a title="code.common_mode.common_plotter.CommonPlotter.show
+code.dipanalyzer.dipanalyzer.DipAnalyzer.show
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.show" class="py-name" href="#" onclick="return doclink('link-162', 'show', 'link-162');">show</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:36 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

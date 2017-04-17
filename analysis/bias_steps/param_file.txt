@@ -1,0 +1,15 @@
+--filenames
+/data/cryo/current_data/1372455029_bc3_step_bias_3500_185mK
+/data/cryo/current_data/1372455071_bc3_step_bias_3400_185mK
+/data/cryo/current_data/1372455113_bc3_step_bias_3350_185mK
+/data/cryo/current_data/1372455157_bc3_step_bias_3300_185mK
+/data/cryo/current_data/1372455202_bc3_step_bias_3250_185mK
+/data/cryo/current_data/1372455248_bc3_step_bias_3200_185mK
+--row
+14
+--col
+2
+--G_guess
+65e-12
+--sampfreq
+411

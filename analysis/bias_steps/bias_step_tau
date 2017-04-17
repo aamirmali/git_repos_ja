@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import sys
+import os
+import time
+import numpy as np
+
+ACQ_BIAS_STEPS = './step_tes_bias_CLASS %s s %s %s 10 0'
+
+num=20
+max_bias=4000
+step_size=50
+temp=193
+tes_bias=np.arange(num)*max_bias/num
+
+for bias in tes_bias:
+    name='temp'+str(temp)+'mk_bias_'+str(bias)+'step_'+str(step_size)
+    os.system(ACQ_BIAS_STEPS % ('bias_steps_'+name,tes_bias,step_size,))

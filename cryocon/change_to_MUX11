@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo 'MUX11' > /data/cryo/array_id
+cp /etc/mce/mce_mux11.cfg /etc/mce/mce.cfg
+rm $MAS_DATA/experiment.cfg
+rm $MAS_DATA/config_mce_auto_setup_*
+mce_reconfig
+mce_reset_clean
+auto_setup

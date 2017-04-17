@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.stepdetector.crosscorr_detect</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.stepdetector-module.html">Package&nbsp;stepdetector</a> ::
+        Module&nbsp;crosscorr_detect
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.stepdetector.crosscorr_detect-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="code.stepdetector.crosscorr_detect-module.html">Module code.stepdetector.crosscorr_detect</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">"""Internal module used to determine heater block amplitudes using the</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">cross correlation method. Only master_get_amplitudes should be called </tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">directly."""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">matplotlib</tt><tt class="py-op">.</tt><tt class="py-name">pyplot</tt> <tt class="py-keyword">as</tt> <tt class="py-name">plt</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">scipy</tt> <tt class="py-keyword">import</tt> <tt class="py-name">stats</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">scipy</tt><tt class="py-op">.</tt><tt class="py-name">signal</tt> <tt class="py-keyword">as</tt> <tt class="py-name">sig</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package code=code-module.html"><a title="code" class="py-name" href="#" onclick="return doclink('link-0', 'code', 'link-0');">code</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package code.common=code.common-module.html"><a title="code.common" class="py-name" href="#" onclick="return doclink('link-1', 'common', 'link-1');">common</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module code.common.functionanalyzer=code.common.functionanalyzer-module.html"><a title="code.common.functionanalyzer" class="py-name" href="#" onclick="return doclink('link-2', 'functionanalyzer', 'link-2');">functionanalyzer</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">fa</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="cross_corr_block"></a><div id="cross_corr_block-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="cross_corr_block-toggle" onclick="return toggle('cross_corr_block');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#cross_corr_block">cross_corr_block</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">period</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="cross_corr_block-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="cross_corr_block-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-comment">#Finds the cross correlation of data with a step-function kernel of</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt class="py-comment">#period period.  Returns the cross-correlation.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">    <tt class="py-name">length</tt><tt class="py-op">=</tt><tt id="link-3" class="py-name" targets="Variable code.stepdetector.stepanalyzer.StepAnalyzer.period=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#period"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-3', 'period', 'link-3');">period</a></tt><tt class="py-op">/</tt><tt class="py-number">2</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">    <tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-name">length</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">&lt;</tt><tt class="py-name">length</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">:</tt> <tt class="py-name">kernel</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">==</tt><tt class="py-name">length</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">:</tt> <tt class="py-name">kernel</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">&gt;</tt><tt class="py-name">length</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">:</tt> <tt class="py-name">kernel</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">    <tt class="py-name">corr</tt><tt class="py-op">=</tt><tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Function code.common.functionanalyzer.correlate()=code.common.functionanalyzer-module.html#correlate"><a title="code.common.functionanalyzer.correlate" class="py-name" href="#" onclick="return doclink('link-4', 'correlate', 'link-4');">correlate</a></tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Variable code.common_mode.common_plotter.CommonPlotter.data=code.common_mode.common_plotter.CommonPlotter-class.html#data,Variable code.common_mode.script.data=code.common_mode.script-module.html#data,Variable code.dipanalyzer.dipanalyzer.DipAnalyzer.data=code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#data,Variable code.innerproduct.pointwiseproduct.PointwiseProduct.data=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#data,Variable code.outanalyzer.script.data=code.outanalyzer.script-module.html#data,Variable code.powerspectrum.script.data=code.powerspectrum.script-module.html#data,Variable code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data=code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#data,Variable code.stepdetector.stepanalyzer.StepAnalyzer.data=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#data"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-5', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">kernel</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'same'</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">corr</tt> </tt>
+</div><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="compute_amplitudes_block"></a><div id="compute_amplitudes_block-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="compute_amplitudes_block-toggle" onclick="return toggle('compute_amplitudes_block');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_block">compute_amplitudes_block</a><tt class="py-op">(</tt><tt class="py-param">corr</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">period</tt><tt class="py-op">,</tt><tt class="py-param">plot</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="compute_amplitudes_block-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="compute_amplitudes_block-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-comment">#Computes amplitudes, assuming the heater blocks look more like square</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-comment">#waves than sine waves. corr is the cross-correlation with the appropriate</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-comment">#kernel, indicating the positions of the transitions. data is the</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-comment">#timestream, period is the period of the blocks, and plot indicates</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-comment">#whether the function should plot its results. Returns tuple</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">    <tt class="py-comment">#(amplitudes,fractional_error), where amplitudes is a list and</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-comment">#fractional_error is between 0 and 1. Returns None if period is invalid, or</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-comment">#if 2 or fewer transitions were detected.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-name">abs_corr</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">)</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-name">abs_corr</tt><tt class="py-op">=</tt><tt class="py-name">sig</tt><tt class="py-op">.</tt><tt class="py-name">convolve</tt><tt class="py-op">(</tt><tt class="py-name">sig</tt><tt class="py-op">.</tt><tt class="py-name">hann</tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-6', 'period', 'link-3');">period</a></tt><tt class="py-op">/</tt><tt class="py-number">8</tt><tt class="py-op">)</tt><tt class="py-op">,</tt><tt class="py-name">abs_corr</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'same'</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Variable code.stepdetector.stepanalyzer.StepAnalyzer.rises=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#rises"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.rises" class="py-name" href="#" onclick="return doclink('link-7', 'rises', 'link-7');">rises</a></tt><tt class="py-op">=</tt><tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Function code.common.functionanalyzer.get_all_rises()=code.common.functionanalyzer-module.html#get_all_rises"><a title="code.common.functionanalyzer.get_all_rises" class="py-name" href="#" onclick="return doclink('link-8', 'get_all_rises', 'link-8');">get_all_rises</a></tt><tt class="py-op">(</tt><tt class="py-name">abs_corr</tt><tt class="py-op">,</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">std</tt><tt class="py-op">(</tt><tt class="py-name">abs_corr</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-name">extrema</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">transpose</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.rises" class="py-name" href="#" onclick="return doclink('link-9', 'rises', 'link-7');">rises</a></tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt id="link-10" class="py-name" targets="Variable code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#amplitudes"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-10', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-name">errors</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">extrema</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-comment">#calculate median value for flat part to the left</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">lowerlim</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">upperlim</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">upperlim</tt><tt class="py-op">-</tt><tt class="py-name">lowerlim</tt><tt class="py-op">-</tt><tt id="link-11" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-11', 'period', 'link-3');">period</a></tt><tt class="py-op">/</tt><tt class="py-number">2.</tt><tt class="py-op">)</tt><tt class="py-op">&gt;</tt><tt class="py-number">0.05</tt><tt class="py-op">*</tt><tt id="link-12" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-12', 'period', 'link-3');">period</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-name">errors</tt><tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">left_med</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">median</tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-13', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">lowerlim</tt><tt class="py-op">:</tt><tt class="py-name">upperlim</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">plot</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Function code.common.functionanalyzer.plot_const()=code.common.functionanalyzer-module.html#plot_const"><a title="code.common.functionanalyzer.plot_const" class="py-name" href="#" onclick="return doclink('link-14', 'plot_const', 'link-14');">plot_const</a></tt><tt class="py-op">(</tt><tt class="py-name">lowerlim</tt><tt class="py-op">,</tt><tt class="py-name">upperlim</tt><tt class="py-op">,</tt><tt class="py-name">left_med</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-comment">#calculate median value for flat part to right</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">lowerlim</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">upperlim</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">right_med</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">median</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-15', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">lowerlim</tt><tt class="py-op">:</tt><tt class="py-name">upperlim</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">plot</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="code.common.functionanalyzer.plot_const" class="py-name" href="#" onclick="return doclink('link-16', 'plot_const', 'link-14');">plot_const</a></tt><tt class="py-op">(</tt><tt class="py-name">lowerlim</tt><tt class="py-op">,</tt><tt class="py-name">upperlim</tt><tt class="py-op">,</tt><tt class="py-name">right_med</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt id="link-17" class="py-name" targets="Variable code.stepdetector.stepanalyzer.Transition.amplitude=code.stepdetector.stepanalyzer.Transition-class.html#amplitude"><a title="code.stepdetector.stepanalyzer.Transition.amplitude" class="py-name" href="#" onclick="return doclink('link-17', 'amplitude', 'link-17');">amplitude</a></tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">right_med</tt><tt class="py-op">-</tt><tt class="py-name">left_med</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt id="link-18" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-18', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.amplitude" class="py-name" href="#" onclick="return doclink('link-19', 'amplitude', 'link-17');">amplitude</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">extrema</tt><tt class="py-op">)</tt><tt class="py-op">&gt;</tt><tt class="py-number">2</tt> <tt class="py-keyword">and</tt> <tt id="link-20" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-20', 'period', 'link-3');">period</a></tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-21', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">fractional_error</tt><tt class="py-op">=</tt><tt class="py-number">1.</tt><tt class="py-op">*</tt><tt class="py-name">errors</tt><tt class="py-op">/</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">extrema</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-22', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">,</tt><tt class="py-name">fractional_error</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="cross_corr_sine"></a><div id="cross_corr_sine-def"><a name="L62"></a><tt class="py-lineno"> 62</tt> <a class="py-toggle" href="#" id="cross_corr_sine-toggle" onclick="return toggle('cross_corr_sine');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#cross_corr_sine">cross_corr_sine</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">period</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="cross_corr_sine-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="cross_corr_sine-expanded"><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-comment">#Finds the cross correlation of data with a constant-value kernel of</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-comment">#period period.  Returns the cross-correlation.</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-name">length</tt><tt class="py-op">=</tt><tt id="link-23" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-23', 'period', 'link-3');">period</a></tt><tt class="py-op">/</tt><tt class="py-number">2</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-name">kernel</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-name">length</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-comment">#create triangle wave kernel</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-name">val</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">-</tt><tt class="py-number">2.</tt><tt class="py-op">*</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">-</tt><tt class="py-name">length</tt><tt class="py-op">/</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">length</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">val</tt><tt class="py-op">=</tt><tt class="py-number">1</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">kernel</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">val</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-name">corr</tt><tt class="py-op">=</tt><tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="code.common.functionanalyzer.correlate" class="py-name" href="#" onclick="return doclink('link-24', 'correlate', 'link-4');">correlate</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-25', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">kernel</tt><tt class="py-op">,</tt><tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'same'</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">corr</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="find_larger_neighbor"></a><div id="find_larger_neighbor-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="find_larger_neighbor-toggle" onclick="return toggle('find_larger_neighbor');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#find_larger_neighbor">find_larger_neighbor</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">pos</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="find_larger_neighbor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="find_larger_neighbor-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt class="py-comment">#Returns position of maximum among 3 data points: pos, pos-1, and pos+1.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-comment">#pos must not be outside array bounds</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-name">ref_val</tt><tt class="py-op">=</tt><tt id="link-26" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-26', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">]</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> <tt class="py-op">&gt;=</tt><tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt id="link-27" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-27', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">&gt;</tt><tt class="py-name">ref_val</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">ref_val</tt><tt class="py-op">=</tt><tt id="link-28" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-28', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-29', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt id="link-30" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-30', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">&gt;</tt><tt class="py-name">ref_val</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">best_pos</tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"> </tt>
+<a name="find_smaller_neighbor"></a><div id="find_smaller_neighbor-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="find_smaller_neighbor-toggle" onclick="return toggle('find_smaller_neighbor');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#find_smaller_neighbor">find_smaller_neighbor</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">pos</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="find_smaller_neighbor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="find_smaller_neighbor-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-comment">#Returns position of minimum among 3 data points: pos, pos-1, and pos+1.</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-comment">#pos must not be outside array bounds</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-name">ref_val</tt><tt class="py-op">=</tt><tt id="link-31" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-31', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">]</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">    <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> <tt class="py-op">&gt;=</tt><tt class="py-number">0</tt> <tt class="py-keyword">and</tt> <tt id="link-32" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-32', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">&lt;</tt><tt class="py-name">ref_val</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-name">ref_val</tt><tt class="py-op">=</tt><tt id="link-33" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-33', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt><tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-34', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt id="link-35" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-35', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">ref_val</tt><tt class="py-op">:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">best_pos</tt><tt class="py-op">=</tt><tt class="py-name">pos</tt><tt class="py-op">+</tt><tt class="py-number">1</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">best_pos</tt> </tt>
+</div><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt>
+<a name="compute_amplitudes_sine"></a><div id="compute_amplitudes_sine-def"><a name="L102"></a><tt class="py-lineno">102</tt> <a class="py-toggle" href="#" id="compute_amplitudes_sine-toggle" onclick="return toggle('compute_amplitudes_sine');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_sine">compute_amplitudes_sine</a><tt class="py-op">(</tt><tt class="py-param">corr</tt><tt class="py-op">,</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">period</tt><tt class="py-op">,</tt><tt class="py-param">plot</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="compute_amplitudes_sine-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="compute_amplitudes_sine-expanded"><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-comment">#Computes amplitudes, assuming the heater blocks look more like sine</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-comment">#waves than square waves. corr is the cross-correlation with the appropriate</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-comment">#kernel, indicating the positions of the maxima. data is the</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-comment">#timestream, period is the period of the blocks, and plot indicates</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt class="py-comment">#whether the function should plot its results. Returns tuple</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-comment">#(amplitudes,fractional_error), where amplitudes is a list and</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-comment">#fractional_error is between 0 and 1. Returns None if period is invalid, or</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-comment">#if 2 or fewer maxima were detected in the data.</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-name">corr</tt><tt class="py-op">=</tt><tt class="py-name">corr</tt><tt class="py-op">-</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt id="link-36" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.rises" class="py-name" href="#" onclick="return doclink('link-36', 'rises', 'link-7');">rises</a></tt><tt class="py-op">=</tt><tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="code.common.functionanalyzer.get_all_rises" class="py-name" href="#" onclick="return doclink('link-37', 'get_all_rises', 'link-8');">get_all_rises</a></tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">,</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">std</tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-name">maxes</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">transpose</tt><tt class="py-op">(</tt><tt id="link-38" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.rises" class="py-name" href="#" onclick="return doclink('link-38', 'rises', 'link-7');">rises</a></tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt>     </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt id="link-39" class="py-name" targets="Variable code.stepdetector.stepanalyzer.StepAnalyzer.falls=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#falls"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.falls" class="py-name" href="#" onclick="return doclink('link-39', 'falls', 'link-39');">falls</a></tt><tt class="py-op">=</tt><tt class="py-name">fa</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Function code.common.functionanalyzer.get_all_falls()=code.common.functionanalyzer-module.html#get_all_falls"><a title="code.common.functionanalyzer.get_all_falls" class="py-name" href="#" onclick="return doclink('link-40', 'get_all_falls', 'link-40');">get_all_falls</a></tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">,</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">std</tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-name">mins</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">transpose</tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.falls" class="py-name" href="#" onclick="return doclink('link-41', 'falls', 'link-39');">falls</a></tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-name">max_phases</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-name">min_phases</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">    <tt class="py-name">errors</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">fraction_error</tt><tt class="py-op">=</tt><tt class="py-number">0</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">maxes</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">max_phases</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">maxes</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">%</tt><tt id="link-42" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-42', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">maxes</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">maxes</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt class="py-name">maxes</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-43" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-43', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt><tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                <tt class="py-name">errors</tt><tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">mins</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">min_phases</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">mins</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">%</tt><tt id="link-44" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-44', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">mins</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">abs</tt><tt class="py-op">(</tt><tt class="py-name">mins</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt class="py-name">mins</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-45" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-45', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-name">errors</tt><tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-name">fraction_error</tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">errors</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">maxes</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">mins</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-name">max_phase</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">median</tt><tt class="py-op">(</tt><tt class="py-name">max_phases</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">    <tt class="py-name">min_phase</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">median</tt><tt class="py-op">(</tt><tt class="py-name">min_phases</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-name">extrema</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">min_phase</tt><tt class="py-op">&lt;</tt><tt class="py-name">max_phase</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">n</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-46', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt id="link-47" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-47', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">            <tt class="py-name">curr_min</tt><tt class="py-op">=</tt><tt class="py-name">n</tt><tt class="py-op">*</tt><tt id="link-48" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-48', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-name">min_phase</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-name">curr_max</tt><tt class="py-op">=</tt><tt class="py-name">n</tt><tt class="py-op">*</tt><tt id="link-49" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-49', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-name">max_phase</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">curr_min</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-50" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-50', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                <tt class="py-name">curr_min</tt><tt class="py-op">=</tt><tt id="link-51" class="py-name" targets="Function code.stepdetector.crosscorr_detect.find_smaller_neighbor()=code.stepdetector.crosscorr_detect-module.html#find_smaller_neighbor"><a title="code.stepdetector.crosscorr_detect.find_smaller_neighbor" class="py-name" href="#" onclick="return doclink('link-51', 'find_smaller_neighbor', 'link-51');">find_smaller_neighbor</a></tt><tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-52', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">curr_min</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                <tt class="py-name">extrema</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">curr_min</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">curr_max</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-53" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-53', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                <tt class="py-name">curr_max</tt><tt class="py-op">=</tt><tt id="link-54" class="py-name" targets="Function code.stepdetector.crosscorr_detect.find_larger_neighbor()=code.stepdetector.crosscorr_detect-module.html#find_larger_neighbor"><a title="code.stepdetector.crosscorr_detect.find_larger_neighbor" class="py-name" href="#" onclick="return doclink('link-54', 'find_larger_neighbor', 'link-54');">find_larger_neighbor</a></tt><tt class="py-op">(</tt><tt id="link-55" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-55', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">curr_max</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                <tt class="py-name">extrema</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">curr_max</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt class="py-name">max_phase</tt> <tt class="py-op">&lt;</tt> <tt class="py-name">min_phase</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">n</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-56', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt id="link-57" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-57', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">            <tt class="py-name">curr_min</tt><tt class="py-op">=</tt><tt class="py-name">n</tt><tt class="py-op">*</tt><tt id="link-58" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-58', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-name">min_phase</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">            <tt class="py-name">curr_max</tt><tt class="py-op">=</tt><tt class="py-name">n</tt><tt class="py-op">*</tt><tt id="link-59" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-59', 'period', 'link-3');">period</a></tt><tt class="py-op">+</tt><tt class="py-name">max_phase</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">curr_max</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-60" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-60', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                <tt class="py-name">curr_max</tt><tt class="py-op">=</tt><tt id="link-61" class="py-name"><a title="code.stepdetector.crosscorr_detect.find_larger_neighbor" class="py-name" href="#" onclick="return doclink('link-61', 'find_larger_neighbor', 'link-54');">find_larger_neighbor</a></tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-62', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">curr_max</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                <tt class="py-name">extrema</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">curr_max</tt><tt class="py-op">)</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">curr_min</tt><tt class="py-op">&lt;</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-63" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-63', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">                <tt class="py-name">curr_min</tt><tt class="py-op">=</tt><tt id="link-64" class="py-name"><a title="code.stepdetector.crosscorr_detect.find_smaller_neighbor" class="py-name" href="#" onclick="return doclink('link-64', 'find_smaller_neighbor', 'link-51');">find_smaller_neighbor</a></tt><tt class="py-op">(</tt><tt id="link-65" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-65', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt class="py-name">curr_min</tt><tt class="py-op">)</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-name">extrema</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">curr_min</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">extrema</tt><tt class="py-op">)</tt><tt class="py-op">&lt;</tt><tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt id="link-66" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-66', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">extrema</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">curr_extrem</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">next_extrem</tt><tt class="py-op">=</tt><tt class="py-name">extrema</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">plot</tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">plot</tt><tt class="py-op">(</tt><tt class="py-name">curr_extrem</tt><tt class="py-op">,</tt><tt id="link-67" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-67', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">curr_extrem</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'go'</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">            <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">plot</tt><tt class="py-op">(</tt><tt class="py-name">next_extrem</tt><tt class="py-op">,</tt><tt id="link-68" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-68', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">next_extrem</tt><tt class="py-op">]</tt><tt class="py-op">,</tt><tt class="py-string">'go'</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt id="link-69" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.amplitude" class="py-name" href="#" onclick="return doclink('link-69', 'amplitude', 'link-17');">amplitude</a></tt><tt class="py-op">=</tt><tt class="py-name">abs</tt><tt class="py-op">(</tt><tt id="link-70" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-70', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">curr_extrem</tt><tt class="py-op">]</tt><tt class="py-op">-</tt><tt id="link-71" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-71', 'data', 'link-5');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">next_extrem</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt id="link-72" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-72', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt id="link-73" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.amplitude" class="py-name" href="#" onclick="return doclink('link-73', 'amplitude', 'link-17');">amplitude</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt id="link-74" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-74', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt id="link-75" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.amplitudes" class="py-name" href="#" onclick="return doclink('link-75', 'amplitudes', 'link-10');">amplitudes</a></tt><tt class="py-op">,</tt><tt class="py-name">fraction_error</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">     </tt>
+<a name="get_amplitudes"></a><div id="get_amplitudes-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="get_amplitudes-toggle" onclick="return toggle('get_amplitudes');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.stepdetector.crosscorr_detect-module.html#get_amplitudes">get_amplitudes</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt><tt class="py-param">period</tt><tt class="py-op">,</tt><tt class="py-param">plot</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_amplitudes-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_amplitudes-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">    <tt class="py-docstring">"""Master function of this internal module. Uses the cross-correlation</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">    method to determine amplitudes. plot determines whether the module plots</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">    its results.</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-docstring">    @return: (amplitudes,fractional_error) if successful where amplitudes is</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring">    a list. fractional_error is a number between 0 and 1, indicating the</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">    percentage of heater blocks that weren't detected. Returns None if</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring">    period couldn't be detected, or if the number of heater blocks detected</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">    is less than 3"""</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">plot</tt><tt class="py-op">:</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">plot</tt><tt class="py-op">(</tt><tt id="link-76" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-76', 'data', 'link-5');">data</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.fig.title=code.ellipsesdrawer.prettythingsdrawer.fig-class.html#title"><a title="code.ellipsesdrawer.prettythingsdrawer.fig.title" class="py-name" href="#" onclick="return doclink('link-77', 'title', 'link-77');">title</a></tt><tt class="py-op">(</tt><tt class="py-string">"Cross correlation method"</tt><tt class="py-op">)</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-78" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-78', 'period', 'link-3');">period</a></tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">None</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-79" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-79', 'period', 'link-3');">period</a></tt><tt class="py-op">&gt;</tt><tt class="py-number">20</tt><tt class="py-op">:</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-name">corr</tt><tt class="py-op">=</tt><tt id="link-80" class="py-name" targets="Function code.stepdetector.crosscorr_detect.cross_corr_block()=code.stepdetector.crosscorr_detect-module.html#cross_corr_block"><a title="code.stepdetector.crosscorr_detect.cross_corr_block" class="py-name" href="#" onclick="return doclink('link-80', 'cross_corr_block', 'link-80');">cross_corr_block</a></tt><tt class="py-op">(</tt><tt id="link-81" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-81', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt id="link-82" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-82', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-name">ret</tt><tt class="py-op">=</tt><tt id="link-83" class="py-name" targets="Function code.stepdetector.crosscorr_detect.compute_amplitudes_block()=code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_block"><a title="code.stepdetector.crosscorr_detect.compute_amplitudes_block" class="py-name" href="#" onclick="return doclink('link-83', 'compute_amplitudes_block', 'link-83');">compute_amplitudes_block</a></tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">,</tt><tt id="link-84" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-84', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt id="link-85" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-85', 'period', 'link-3');">period</a></tt><tt class="py-op">,</tt><tt class="py-name">plot</tt><tt class="py-op">)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">        <tt class="py-name">corr</tt><tt class="py-op">=</tt><tt id="link-86" class="py-name" targets="Function code.stepdetector.crosscorr_detect.cross_corr_sine()=code.stepdetector.crosscorr_detect-module.html#cross_corr_sine"><a title="code.stepdetector.crosscorr_detect.cross_corr_sine" class="py-name" href="#" onclick="return doclink('link-86', 'cross_corr_sine', 'link-86');">cross_corr_sine</a></tt><tt class="py-op">(</tt><tt id="link-87" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-87', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt id="link-88" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-88', 'period', 'link-3');">period</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">        <tt class="py-name">ret</tt><tt class="py-op">=</tt><tt id="link-89" class="py-name" targets="Function code.stepdetector.crosscorr_detect.compute_amplitudes_sine()=code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_sine"><a title="code.stepdetector.crosscorr_detect.compute_amplitudes_sine" class="py-name" href="#" onclick="return doclink('link-89', 'compute_amplitudes_sine', 'link-89');">compute_amplitudes_sine</a></tt><tt class="py-op">(</tt><tt class="py-name">corr</tt><tt class="py-op">,</tt><tt id="link-90" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-90', 'data', 'link-5');">data</a></tt><tt class="py-op">,</tt><tt id="link-91" class="py-name"><a title="code.stepdetector.stepanalyzer.StepAnalyzer.period" class="py-name" href="#" onclick="return doclink('link-91', 'period', 'link-3');">period</a></tt><tt class="py-op">,</tt><tt class="py-name">plot</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">ret</tt> </tt>
+</div><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:36 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

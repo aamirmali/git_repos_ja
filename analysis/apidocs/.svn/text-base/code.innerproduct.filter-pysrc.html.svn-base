@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.innerproduct.filter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.innerproduct-module.html">Package&nbsp;innerproduct</a> ::
+        Module&nbsp;filter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.innerproduct.filter-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="code.innerproduct.filter-module.html">Module code.innerproduct.filter</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package code=code-module.html"><a title="code" class="py-name" href="#" onclick="return doclink('link-0', 'code', 'link-0');">code</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package code.common=code.common-module.html"><a title="code.common" class="py-name" href="#" onclick="return doclink('link-1', 'common', 'link-1');">common</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module code.common.arrayfunctions=code.common.arrayfunctions-module.html"><a title="code.common.arrayfunctions" class="py-name" href="#" onclick="return doclink('link-2', 'arrayfunctions', 'link-2');">arrayfunctions</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">arf</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-3" class="py-name"><a title="code" class="py-name" href="#" onclick="return doclink('link-3', 'code', 'link-0');">code</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="code.common" class="py-name" href="#" onclick="return doclink('link-4', 'common', 'link-1');">common</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Module code.common.multistreamfunctions=code.common.multistreamfunctions-module.html"><a title="code.common.multistreamfunctions" class="py-name" href="#" onclick="return doclink('link-5', 'multistreamfunctions', 'link-5');">multistreamfunctions</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">msf</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="general_filter"></a><div id="general_filter-def"><a name="L6"></a><tt class="py-lineno"> 6</tt> <a class="py-toggle" href="#" id="general_filter-toggle" onclick="return toggle('general_filter');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.innerproduct.filter-module.html#general_filter">general_filter</a><tt class="py-op">(</tt><tt class="py-param">data</tt><tt class="py-op">,</tt> <tt class="py-param">non_rows</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">non_cols</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">non_elements</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">mean_filter</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">sum_filter</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="general_filter-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="general_filter-expanded"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">    <tt class="py-docstring">'''Filters data.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    @return: filtered data. This will be a 2 dimensional array of data, each of</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">    which is a 1 dimensional array.</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: numpy array, 3 dimensional</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    @param data: the data to be filtered.This parameter is to be a 2</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    dimensional array of data elements. The index in the first dimension is the</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    row number, and the index in the second dimension is the column</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">    number. Each data element is to be a 1 dimensional array.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    @type data: numpy array, 3 dimensional</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">    @param non_rows: the rows (first dimension) to be ignored. The data in</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    these rows will be set a stream of 0.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    @type non_rows: numpy array/list/tuple, shape:(*)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">    @param non_cols: the columns (second dimension) to be ignored. The data in</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">    these columns will be set a stream of 0.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">    @type non_cols: numpy array/list/tuple, shape:(*)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    @param non_elements: the elements to be ignored. This parameter is to be an</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    array of elements. Each element is represented by (row, col).</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">    @type non_elements: numpy array/list, shape:(*,2)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">    @param mean_filter: indicates whether or not the mean is subtracted from</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    data.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">    @type mean_filter: boolean</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    @param sum_filter: indicates how data should be filtered. The data is</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">    treated as a vector. This parameter can take values of None, 'array_sum',</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt class="py-docstring">    'col_sum', or 'row_sum'. None: data is not filtered. 'array_sum': the</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    projection of the data along the sum of all data is filtered</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-docstring">    out. 'row_sum': the projection of data along its respective sum within a</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring">    row is filtered out. 'col_sum': the projection of data along its respective</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">    sum within a column is filtered out.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    @type sum_filter: str '''</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt id="link-6" class="py-name" targets="Variable code.innerproduct.pointwiseproduct.PointwiseProduct.non_rows=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_rows,Variable code.innerproduct.similaritydrawer.SimilarityDrawer.non_rows=code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_rows"><a title="code.innerproduct.pointwiseproduct.PointwiseProduct.non_rows
+code.innerproduct.similaritydrawer.SimilarityDrawer.non_rows" class="py-name" href="#" onclick="return doclink('link-6', 'non_rows', 'link-6');">non_rows</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt id="link-7" class="py-name" targets="Variable code.common_mode.common_plotter.CommonPlotter.data=code.common_mode.common_plotter.CommonPlotter-class.html#data,Variable code.common_mode.script.data=code.common_mode.script-module.html#data,Variable code.dipanalyzer.dipanalyzer.DipAnalyzer.data=code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#data,Variable code.innerproduct.pointwiseproduct.PointwiseProduct.data=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#data,Variable code.outanalyzer.script.data=code.outanalyzer.script-module.html#data,Variable code.powerspectrum.script.data=code.powerspectrum.script-module.html#data,Variable code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data=code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#data,Variable code.stepdetector.stepanalyzer.StepAnalyzer.data=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#data"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-7', 'data', 'link-7');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt id="link-8" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-8', 'data', 'link-7');">data</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">j</tt> <tt class="py-keyword">in</tt> <tt id="link-9" class="py-name" targets="Variable code.innerproduct.pointwiseproduct.PointwiseProduct.non_cols=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_cols,Variable code.innerproduct.similaritydrawer.SimilarityDrawer.non_cols=code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_cols"><a title="code.innerproduct.pointwiseproduct.PointwiseProduct.non_cols
+code.innerproduct.similaritydrawer.SimilarityDrawer.non_cols" class="py-name" href="#" onclick="return doclink('link-9', 'non_cols', 'link-9');">non_cols</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">row</tt> <tt class="py-keyword">in</tt> <tt id="link-10" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-10', 'data', 'link-7');">data</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">            <tt class="py-name">row</tt><tt class="py-op">[</tt><tt class="py-name">j</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt class="py-name">row</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">index</tt> <tt class="py-keyword">in</tt> <tt id="link-11" class="py-name" targets="Variable code.innerproduct.pointwiseproduct.PointwiseProduct.non_elements=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_elements"><a title="code.innerproduct.pointwiseproduct.PointwiseProduct.non_elements" class="py-name" href="#" onclick="return doclink('link-11', 'non_elements', 'link-11');">non_elements</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt id="link-12" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-12', 'data', 'link-7');">data</a></tt><tt class="py-op">[</tt><tt class="py-name">index</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-name">index</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">]</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">zeros</tt><tt class="py-op">(</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt id="link-13" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-13', 'data', 'link-7');">data</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">mean_filter</tt><tt class="py-op">==</tt><tt class="py-name">True</tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">subtract_mean</tt><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">i</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-name">mean</tt><tt class="py-op">=</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">mean</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">x</tt><tt class="py-op">-</tt><tt class="py-name">mean</tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-14', 'data', 'link-7');">data</a></tt><tt class="py-op">=</tt><tt class="py-name">arf</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Function code.common.arrayfunctions.modify_array()=code.common.arrayfunctions-module.html#modify_array"><a title="code.common.arrayfunctions.modify_array" class="py-name" href="#" onclick="return doclink('link-15', 'modify_array', 'link-15');">modify_array</a></tt><tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-16', 'data', 'link-7');">data</a></tt><tt class="py-op">,</tt> <tt class="py-name">subtract_mean</tt><tt class="py-op">,</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">shape</tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-17', 'data', 'link-7');">data</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-18" class="py-name" targets="Function code.common.multistreamfunctions.sum_filter()=code.common.multistreamfunctions-module.html#sum_filter"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-18', 'sum_filter', 'link-18');">sum_filter</a></tt><tt class="py-op">!=</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-19" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-19', 'sum_filter', 'link-18');">sum_filter</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'array_sum'</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">            <tt id="link-20" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-20', 'data', 'link-7');">data</a></tt><tt class="py-op">=</tt><tt class="py-name">msf</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-21', 'sum_filter', 'link-18');">sum_filter</a></tt><tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-22', 'data', 'link-7');">data</a></tt><tt class="py-op">,</tt> <tt class="py-name">equal_weight</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt id="link-23" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-23', 'sum_filter', 'link-18');">sum_filter</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'row_sum'</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt id="link-24" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-24', 'data', 'link-7');">data</a></tt><tt class="py-op">=</tt><tt class="py-name">msf</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-25', 'sum_filter', 'link-18');">sum_filter</a></tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-26', 'data', 'link-7');">data</a></tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">equal_weight</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt id="link-27" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-27', 'sum_filter', 'link-18');">sum_filter</a></tt> <tt class="py-op">==</tt> <tt class="py-string">'col_sum'</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt id="link-28" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-28', 'data', 'link-7');">data</a></tt><tt class="py-op">=</tt><tt class="py-name">msf</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="code.common.multistreamfunctions.sum_filter" class="py-name" href="#" onclick="return doclink('link-29', 'sum_filter', 'link-18');">sum_filter</a></tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-30', 'data', 'link-7');">data</a></tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">equal_weight</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt> <tt class="py-op">(</tt><tt class="py-string">"The parameter sum_filter can only be None, 'array_sum', 'col_sum', or 'row_sum'."</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-31" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-31', 'data', 'link-7');">data</a></tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

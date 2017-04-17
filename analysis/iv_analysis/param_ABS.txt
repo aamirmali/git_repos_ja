@@ -1,0 +1,25 @@
+--filenames
+/home/mce/analysis/iv_analysis/ABS/iv_1358261152
+--row
+11
+--col
+23
+--index
+100
+--temp
+0.330
+--PsatRn
+0
+--G_guess
+120e-12
+--To_guess
+510e-3
+--num
+10
+--ABS
+--Rsh
+150e-6
+--polarity
+-1
+--title
+ABS detector r11c23 

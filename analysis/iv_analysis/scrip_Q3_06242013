@@ -1,0 +1,7 @@
+#/etc/bash/
+
+python analyze_iv.py  @test_dewar/Q3_06242013/rs01.txt
+python analyze_iv.py  @test_dewar/Q3_06242013/rs02.txt
+python analyze_iv.py  @test_dewar/Q3_06242013/rs03.txt
+python analyze_iv.py  @test_dewar/Q3_06242013/rs12.txt
+python analyze_iv.py  @test_dewar/Q3_06242013/rs14.txt

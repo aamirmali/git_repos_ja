@@ -1,0 +1,4 @@
+added 'linear' tag to power spectrum finder, so that outanalyzer can pick out log or linear amplitudes
+--This line, and those below, will be ignored--
+
+M    powerspectrum/script.py

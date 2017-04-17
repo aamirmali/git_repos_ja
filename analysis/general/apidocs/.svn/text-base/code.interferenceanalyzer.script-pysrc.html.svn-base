@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.interferenceanalyzer.script</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.interferenceanalyzer-module.html">Package&nbsp;interferenceanalyzer</a> ::
+        Module&nbsp;script
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.interferenceanalyzer.script-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="code.interferenceanalyzer.script-module.html">Module code.interferenceanalyzer.script</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">shutil</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">argparse</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">numpy</tt> <tt class="py-keyword">as</tt> <tt class="py-name">np</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">matplotlib</tt><tt class="py-op">.</tt><tt class="py-name">pyplot</tt> <tt class="py-keyword">as</tt> <tt class="py-name">plt</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Module code.interferenceanalyzer.parse_data=code.interferenceanalyzer.parse_data-module.html"><a title="code.interferenceanalyzer.parse_data" class="py-name" href="#" onclick="return doclink('link-0', 'parse_data', 'link-0');">parse_data</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Module code.interferenceanalyzer.sphericalinterpreter=code.interferenceanalyzer.sphericalinterpreter-module.html"><a title="code.interferenceanalyzer.sphericalinterpreter" class="py-name" href="#" onclick="return doclink('link-1', 'sphericalinterpreter', 'link-1');">sphericalinterpreter</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter" class="py-name" href="#" onclick="return doclink('link-2', 'SphericalInterpreter', 'link-2');">SphericalInterpreter</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name" targets="Package code=code-module.html"><a title="code" class="py-name" href="#" onclick="return doclink('link-3', 'code', 'link-3');">code</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Package code.common=code.common-module.html"><a title="code.common" class="py-name" href="#" onclick="return doclink('link-4', 'common', 'link-4');">common</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Module code.common.exceptions=code.common.exceptions-module.html"><a title="code.common.exceptions" class="py-name" href="#" onclick="return doclink('link-5', 'exceptions', 'link-5');">exceptions</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="parse_arguments"></a><div id="parse_arguments-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="parse_arguments-toggle" onclick="return toggle('parse_arguments');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#parse_arguments">parse_arguments</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="parse_arguments-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="parse_arguments-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name" targets="Function code.interferenceanalyzer.script.get_colour_plot_base_parser()=code.interferenceanalyzer.script-module.html#get_colour_plot_base_parser"><a title="code.interferenceanalyzer.script.get_colour_plot_base_parser" class="py-name" href="#" onclick="return doclink('link-6', 'get_colour_plot_base_parser', 'link-6');">get_colour_plot_base_parser</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Variable code.common_mode.script.parser=code.common_mode.script-module.html#parser,Variable code.ellipsesdrawer.script.parser=code.ellipsesdrawer.script-module.html#parser,Variable code.outanalyzer.script.parser=code.outanalyzer.script-module.html#parser,Variable code.powerspectrum.script.parser=code.powerspectrum.script-module.html#parser,Variable code.stepdetector.script.parser=code.stepdetector.script-module.html#parser"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-7', 'parser', 'link-7');">parser</a></tt> <tt class="py-op">=</tt> <tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentParser</tt><tt class="py-op">(</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-name">description</tt> <tt class="py-op">=</tt> <tt class="py-string">'Analyzes interference. '</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'To read arguments from the file filepath, use @filepath.'</tt><tt class="py-op">,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-name">epilog</tt> <tt class="py-op">=</tt> <tt class="py-string">'All angles are in degrees.'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-name">fromfile_prefix_chars</tt><tt class="py-op">=</tt><tt class="py-string">'@'</tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-name">formatter_class</tt><tt class="py-op">=</tt><tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentDefaultsHelpFormatter</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable code.stepdetector.script.subparsers=code.stepdetector.script-module.html#subparsers"><a title="code.stepdetector.script.subparsers" class="py-name" href="#" onclick="return doclink('link-8', 'subparsers', 'link-8');">subparsers</a></tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-9', 'parser', 'link-7');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">add_subparsers</tt><tt class="py-op">(</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt id="link-10" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.fig.title=code.ellipsesdrawer.prettythingsdrawer.fig-class.html#title"><a title="code.ellipsesdrawer.prettythingsdrawer.fig.title" class="py-name" href="#" onclick="return doclink('link-10', 'title', 'link-10');">title</a></tt><tt class="py-op">=</tt><tt class="py-string">'subcommands'</tt><tt class="py-op">,</tt> <tt class="py-name">description</tt><tt class="py-op">=</tt><tt class="py-string">'valid subcommands'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'here are valid subcommands'</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'subcommand'</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">=</tt><tt id="link-11" class="py-name"><a title="code.stepdetector.script.subparsers" class="py-name" href="#" onclick="return doclink('link-11', 'subparsers', 'link-8');">subparsers</a></tt><tt class="py-op">.</tt><tt class="py-name">add_parser</tt><tt class="py-op">(</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-string">'data'</tt><tt class="py-op">,</tt> <tt class="py-name">parents</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'Finds the interference pattern of the sources and '</tt>  </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'saves it as a picture and an analysis file. '</tt>  </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'By default, it will save the files in a directory '</tt>  </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'in the same directory as the input_file. '</tt><tt class="py-op">,</tt>  </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-name">formatter_class</tt><tt class="py-op">=</tt><tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentDefaultsHelpFormatter</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-string">'data_file'</tt><tt class="py-op">,</tt> <tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-string">'?'</tt><tt class="py-op">,</tt> <tt class="py-name">help</tt><tt class="py-op">=</tt> <tt class="py-string">'the path of the data file'</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-string">'-dsl'</tt><tt class="py-op">,</tt> <tt class="py-string">'--directory_save_location'</tt><tt class="py-op">,</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'The location to place the save directory. If None, '</tt>  </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'the save directory will be placed in the same directory '</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'as the input_file.'</tt><tt class="py-op">,</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'directory_save_location'</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-string">'-sdn'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-string">'stuff'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'the tag of the directory where the analysis will be saved. '</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'This tag will be appended to a generated name to create '</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'the name of the save directory.'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'save_directory_name'</tt><tt class="py-op">)</tt>  </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-string">'-nsd'</tt><tt class="py-op">,</tt> <tt class="py-string">'--new_save_directory'</tt><tt class="py-op">,</tt> <tt class="py-name">action</tt><tt class="py-op">=</tt><tt class="py-string">'store_true'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt>  </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">'If an old directory with the same name as the save directory '</tt>  </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'exists ,keep it and create a new directory to keep the new data.'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'new_save_directory'</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-string">'-f'</tt><tt class="py-op">,</tt> <tt class="py-string">'--frequency'</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name" targets="Variable code.stepdetector.stepanalyzer.Transition.type=code.stepdetector.stepanalyzer.Transition-class.html#type"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-12', 'type', 'link-12');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt> <tt class="py-name">required</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt>  </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'the frequency of the wave in Hz.'</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'frequency'</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-string">'-r'</tt><tt class="py-op">,</tt> <tt class="py-string">'--distance'</tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-13', 'type', 'link-12');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt> <tt class="py-name">required</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt>  </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'the radial distance from the center of the sources '</tt>  </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'to plot the interference pattern.'</tt><tt class="py-op">,</tt>  </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'distance'</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'-c'</tt><tt class="py-op">,</tt> <tt class="py-string">'--center'</tt><tt class="py-op">,</tt> <tt class="py-name">required</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">"specifies the location of the center of the plot relative to the normal of the source disk's center. The input must be in spherical coordinates (theta, phi). Positive theta rotates x-axis towards postive y. Positive phi rotates original y axis towards postive x."</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt><tt class="py-op">=</tt><tt class="py-string">'center'</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'-s'</tt><tt class="py-op">,</tt> <tt class="py-string">'--size'</tt><tt class="py-op">,</tt> <tt class="py-name">required</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">help</tt><tt class="py-op">=</tt> <tt class="py-string">'specifies the angular coverage of the plot in (theta, phi) format.'</tt><tt class="py-op">,</tt> <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'size'</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-name">data_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt><tt class="py-string">'-res'</tt><tt class="py-op">,</tt> <tt class="py-string">'--resolution'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-number">20</tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name"><a title="code.stepdetector.stepanalyzer.Transition.type" class="py-name" href="#" onclick="return doclink('link-14', 'type', 'link-12');">type</a></tt><tt class="py-op">=</tt><tt class="py-name">float</tt><tt class="py-op">,</tt> <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'The resolution of the image in pixels per degree'</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-name">npz_parser</tt> <tt class="py-op">=</tt><tt id="link-15" class="py-name"><a title="code.stepdetector.script.subparsers" class="py-name" href="#" onclick="return doclink('link-15', 'subparsers', 'link-8');">subparsers</a></tt><tt class="py-op">.</tt><tt class="py-name">add_parser</tt><tt class="py-op">(</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-string">'npz'</tt><tt class="py-op">,</tt> <tt class="py-name">parents</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">help</tt><tt class="py-op">=</tt><tt class="py-string">"Reads a .npz file previously generated by this program, and"</tt>\ </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-string">" saves the interference pattern to .png files and an analysis"</tt>\ </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-string">" file.  By default, it will save the files in the same directory"</tt>\ </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-string">" as the input_file."</tt><tt class="py-op">,</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">formatter_class</tt><tt class="py-op">=</tt><tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentDefaultsHelpFormatter</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-name">npz_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-string">'npz_file'</tt><tt class="py-op">,</tt> <tt class="py-name">nargs</tt><tt class="py-op">=</tt><tt class="py-string">'?'</tt><tt class="py-op">,</tt> <tt class="py-name">help</tt><tt class="py-op">=</tt> <tt class="py-string">'the path of the npz file'</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-16" class="py-name"><a title="code.common_mode.script.parser
+code.ellipsesdrawer.script.parser
+code.outanalyzer.script.parser
+code.powerspectrum.script.parser
+code.stepdetector.script.parser" class="py-name" href="#" onclick="return doclink('link-16', 'parser', 'link-7');">parser</a></tt><tt class="py-op">.</tt><tt class="py-name">parse_args</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="get_colour_plot_base_parser"></a><div id="get_colour_plot_base_parser-def"><a name="L71"></a><tt class="py-lineno"> 71</tt> <a class="py-toggle" href="#" id="get_colour_plot_base_parser-toggle" onclick="return toggle('get_colour_plot_base_parser');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#get_colour_plot_base_parser">get_colour_plot_base_parser</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="get_colour_plot_base_parser-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_colour_plot_base_parser-expanded"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt> <tt class="py-op">=</tt> <tt class="py-name">argparse</tt><tt class="py-op">.</tt><tt class="py-name">ArgumentParser</tt><tt class="py-op">(</tt><tt class="py-name">add_help</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-string">'-cpdn'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'the tag of the directory to put the colour plots. '</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'Append to "colour_plot(_)".'</tt><tt class="py-op">,</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'colour_plot_directory_name'</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-string">'-ncpd'</tt><tt class="py-op">,</tt> <tt class="py-name">action</tt><tt class="py-op">=</tt><tt class="py-string">'store_true'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'If a directory with the same name exist, '</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-string">'then create a new directory.'</tt><tt class="py-op">,</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'new_colour_plot_directory'</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-string">'-al'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'set the limit in the amplitudes colour plots to [min, max]'</tt><tt class="py-op">,</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'amplitude_colour_limit'</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">.</tt><tt class="py-name">add_argument</tt><tt class="py-op">(</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-string">'-nsql'</tt><tt class="py-op">,</tt> <tt class="py-name">default</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">help</tt> <tt class="py-op">=</tt> <tt class="py-string">'set the limit in the norm squared colour plots to [min, max]'</tt><tt class="py-op">,</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">dest</tt> <tt class="py-op">=</tt> <tt class="py-string">'norm_squared_colour_limit'</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">colour_plot_base_parser</tt><tt class="py-op">;</tt> </tt>
+</div><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="interpret_and_run"></a><div id="interpret_and_run-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="interpret_and_run-toggle" onclick="return toggle('interpret_and_run');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#interpret_and_run">interpret_and_run</a><tt class="py-op">(</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="interpret_and_run-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="interpret_and_run-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-17" class="py-name" targets="Variable code.common_mode.script.args=code.common_mode.script-module.html#args,Variable code.ellipsesdrawer.script.args=code.ellipsesdrawer.script-module.html#args,Variable code.outanalyzer.script.args=code.outanalyzer.script-module.html#args,Variable code.powerspectrum.script.args=code.powerspectrum.script-module.html#args,Variable code.stepdetector.script.args=code.stepdetector.script-module.html#args"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-17', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">subcommand</tt> <tt class="py-op">==</tt> <tt class="py-string">'data'</tt> <tt class="py-keyword">or</tt> <tt id="link-18" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-18', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">subcommand</tt> <tt class="py-op">==</tt> <tt class="py-string">'npz'</tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-19" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-19', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">=</tt><tt class="py-name">None</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">=</tt><tt class="py-name">eval</tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-20', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-21" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-21', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">=</tt><tt class="py-name">None</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">=</tt><tt class="py-name">eval</tt><tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-22', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-23" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-23', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">subcommand</tt> <tt class="py-op">==</tt> <tt class="py-string">'data'</tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-24" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-24', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">data_file</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-25" class="py-name"><a title="code.common.exceptions" class="py-name" href="#" onclick="return doclink('link-25', 'exceptions', 'link-5');">exceptions</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Class code.common.exceptions.StupidityError=code.common.exceptions.StupidityError-class.html"><a title="code.common.exceptions.StupidityError" class="py-name" href="#" onclick="return doclink('link-26', 'StupidityError', 'link-26');">StupidityError</a></tt><tt class="py-op">(</tt><tt class="py-string">'No data_file entered.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">unoptimized_size</tt><tt class="py-op">=</tt><tt class="py-name">eval</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-27', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">size</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">center</tt><tt class="py-op">=</tt><tt class="py-name">eval</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-28', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">center</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Variable code.common_mode.common_plotter.CommonPlotter.data=code.common_mode.common_plotter.CommonPlotter-class.html#data,Variable code.common_mode.script.data=code.common_mode.script-module.html#data,Variable code.dipanalyzer.dipanalyzer.DipAnalyzer.data=code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#data,Variable code.innerproduct.pointwiseproduct.PointwiseProduct.data=code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#data,Variable code.outanalyzer.script.data=code.outanalyzer.script-module.html#data,Variable code.powerspectrum.script.data=code.powerspectrum.script-module.html#data,Variable code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data=code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#data,Variable code.stepdetector.stepanalyzer.StepAnalyzer.data=code.stepdetector.stepanalyzer.StepAnalyzer-class.html#data"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-29', 'data', 'link-29');">data</a></tt><tt class="py-op">=</tt><tt id="link-30" class="py-name"><a title="code.interferenceanalyzer.parse_data" class="py-name" href="#" onclick="return doclink('link-30', 'parse_data', 'link-0');">parse_data</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Function code.interferenceanalyzer.parse_data.read_data()=code.interferenceanalyzer.parse_data-module.html#read_data"><a title="code.interferenceanalyzer.parse_data.read_data" class="py-name" href="#" onclick="return doclink('link-31', 'read_data', 'link-31');">read_data</a></tt><tt class="py-op">(</tt><tt id="link-32" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-32', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">data_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">args_dict</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-string">'frequency'</tt><tt class="py-op">:</tt> <tt id="link-33" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-33', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Variable code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.frequency=code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#frequency"><a title="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer.frequency" class="py-name" href="#" onclick="return doclink('link-34', 'frequency', 'link-34');">frequency</a></tt><tt class="py-op">,</tt> <tt class="py-string">'distance'</tt><tt class="py-op">:</tt> <tt id="link-35" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-35', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Variable code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.distance=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#distance"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.distance" class="py-name" href="#" onclick="return doclink('link-36', 'distance', 'link-36');">distance</a></tt><tt class="py-op">,</tt>  </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-string">'resolution'</tt><tt class="py-op">:</tt> <tt id="link-37" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-37', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">resolution</tt><tt class="py-op">,</tt> <tt class="py-string">'size'</tt><tt class="py-op">:</tt> <tt class="py-name">unoptimized_size</tt><tt class="py-op">,</tt>  </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-string">'center'</tt><tt class="py-op">:</tt><tt class="py-name">center</tt><tt class="py-op">,</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-string">'source_locations'</tt><tt class="py-op">:</tt><tt id="link-38" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-38', 'data', 'link-29');">data</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-string">'source_amplitudes'</tt><tt class="py-op">:</tt><tt id="link-39" class="py-name"><a title="code.common_mode.common_plotter.CommonPlotter.data
+code.common_mode.script.data
+code.dipanalyzer.dipanalyzer.DipAnalyzer.data
+code.innerproduct.pointwiseproduct.PointwiseProduct.data
+code.outanalyzer.script.data
+code.powerspectrum.script.data
+code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer.data
+code.stepdetector.stepanalyzer.StepAnalyzer.data" class="py-name" href="#" onclick="return doclink('link-39', 'data', 'link-29');">data</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">}</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">main_directory_path</tt><tt class="py-op">=</tt><tt id="link-40" class="py-name" targets="Function code.interferenceanalyzer.script.initialize_main_directory()=code.interferenceanalyzer.script-module.html#initialize_main_directory"><a title="code.interferenceanalyzer.script.initialize_main_directory" class="py-name" href="#" onclick="return doclink('link-40', 'initialize_main_directory', 'link-40');">initialize_main_directory</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt id="link-41" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-41', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">data_file</tt><tt class="py-op">,</tt> <tt id="link-42" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-42', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">directory_save_location</tt><tt class="py-op">,</tt>  </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt id="link-43" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-43', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">save_directory_name</tt><tt class="py-op">,</tt> <tt id="link-44" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-44', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">new_save_directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">spherical_interpreter</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter" class="py-name" href="#" onclick="return doclink('link-45', 'SphericalInterpreter', 'link-2');">SphericalInterpreter</a></tt><tt class="py-op">(</tt><tt class="py-string">"raw_data"</tt><tt class="py-op">,</tt> <tt class="py-name">args_dict</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.to_analysis_file()=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#to_analysis_file"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.to_analysis_file" class="py-name" href="#" onclick="return doclink('link-46', 'to_analysis_file', 'link-46');">to_analysis_file</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> <tt class="py-string">'analysis_file.txt'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.to_npz_file()=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#to_npz_file"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.to_npz_file" class="py-name" href="#" onclick="return doclink('link-47', 'to_npz_file', 'link-47');">to_npz_file</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> <tt class="py-string">'npz_file.npz'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">=</tt><tt id="link-48" class="py-name" targets="Function code.interferenceanalyzer.script.initialize_colour_plot_directory()=code.interferenceanalyzer.script-module.html#initialize_colour_plot_directory"><a title="code.interferenceanalyzer.script.initialize_colour_plot_directory" class="py-name" href="#" onclick="return doclink('link-48', 'initialize_colour_plot_directory', 'link-48');">initialize_colour_plot_directory</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">            <tt id="link-49" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-49', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">colour_plot_directory_name</tt><tt class="py-op">,</tt> <tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt id="link-50" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-50', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">new_colour_plot_directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt id="link-51" class="py-name" targets="Function code.interferenceanalyzer.script.to_colour_plot()=code.interferenceanalyzer.script-module.html#to_colour_plot"><a title="code.interferenceanalyzer.script.to_colour_plot" class="py-name" href="#" onclick="return doclink('link-51', 'to_colour_plot', 'link-51');">to_colour_plot</a></tt><tt class="py-op">(</tt><tt class="py-name">spherical_interpreter</tt><tt class="py-op">,</tt>  <tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                       <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">,</tt> <tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">    <tt class="py-keyword">elif</tt> <tt id="link-52" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-52', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">subcommand</tt> <tt class="py-op">==</tt> <tt class="py-string">'npz'</tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-53" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-53', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">npz_file</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-54" class="py-name"><a title="code.common.exceptions" class="py-name" href="#" onclick="return doclink('link-54', 'exceptions', 'link-5');">exceptions</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="code.common.exceptions.StupidityError" class="py-name" href="#" onclick="return doclink('link-55', 'StupidityError', 'link-26');">StupidityError</a></tt><tt class="py-op">(</tt><tt class="py-string">'No npz_file entered'</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt id="link-56" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-56', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">npz_file</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">            <tt class="py-name">main_directory_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt><tt id="link-57" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-57', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">npz_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">            <tt class="py-name">args_dict</tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-string">'npz_dict'</tt><tt class="py-op">:</tt> <tt class="py-name">np</tt><tt class="py-op">.</tt><tt class="py-name">load</tt><tt class="py-op">(</tt><tt id="link-58" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-58', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">npz_file</tt><tt class="py-op">)</tt><tt class="py-op">}</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt> <tt class="py-op">(</tt><tt class="py-string">'The specified npz_file does not exist'</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-name">spherical_interpreter</tt> <tt class="py-op">=</tt> <tt id="link-59" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter" class="py-name" href="#" onclick="return doclink('link-59', 'SphericalInterpreter', 'link-2');">SphericalInterpreter</a></tt><tt class="py-op">(</tt><tt class="py-string">'npz_file'</tt><tt class="py-op">,</tt> <tt class="py-name">args_dict</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.to_analysis_file" class="py-name" href="#" onclick="return doclink('link-60', 'to_analysis_file', 'link-46');">to_analysis_file</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> <tt class="py-string">'analysis_file.txt'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">=</tt><tt id="link-61" class="py-name"><a title="code.interferenceanalyzer.script.initialize_colour_plot_directory" class="py-name" href="#" onclick="return doclink('link-61', 'initialize_colour_plot_directory', 'link-48');">initialize_colour_plot_directory</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt id="link-62" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-62', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">colour_plot_directory_name</tt><tt class="py-op">,</tt> <tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt id="link-63" class="py-name"><a title="code.common_mode.script.args
+code.ellipsesdrawer.script.args
+code.outanalyzer.script.args
+code.powerspectrum.script.args
+code.stepdetector.script.args" class="py-name" href="#" onclick="return doclink('link-63', 'args', 'link-17');">args</a></tt><tt class="py-op">.</tt><tt class="py-name">new_colour_plot_directory</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt id="link-64" class="py-name"><a title="code.interferenceanalyzer.script.to_colour_plot" class="py-name" href="#" onclick="return doclink('link-64', 'to_colour_plot', 'link-51');">to_colour_plot</a></tt><tt class="py-op">(</tt><tt class="py-name">spherical_interpreter</tt><tt class="py-op">,</tt> <tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">                       <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">,</tt> <tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="initialize_main_directory"></a><div id="initialize_main_directory-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="initialize_main_directory-toggle" onclick="return toggle('initialize_main_directory');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#initialize_main_directory">initialize_main_directory</a><tt class="py-op">(</tt><tt class="py-param">input_file</tt><tt class="py-op">,</tt> <tt class="py-param">directory_save_location</tt><tt class="py-op">,</tt>  </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                              <tt class="py-param">save_directory_name</tt><tt class="py-op">,</tt> <tt class="py-param">new_save_directory</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="initialize_main_directory-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="initialize_main_directory-expanded"><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">input_file</tt><tt class="py-op">)</tt><tt class="py-op">==</tt><tt class="py-name">False</tt><tt class="py-op">:</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">'The specified input_file does not exist'</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">directory_save_location</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-name">save_directory_prefix</tt><tt class="py-op">=</tt><tt class="py-name">input_file</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">directory_save_location</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">            <tt class="py-name">save_directory_prefix</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">directory_save_location</tt><tt class="py-op">,</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                                                 <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-name">input_file</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">ValueError</tt><tt class="py-op">(</tt><tt class="py-string">'The directory_save_location does not exist'</tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt class="py-name">save_directory_path</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">save_directory_prefix</tt> <tt class="py-op">+</tt> <tt class="py-string">'_'</tt> <tt class="py-op">+</tt> <tt class="py-name">save_directory_name</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">new_save_directory</tt><tt class="py-op">:</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">original_save_directory_path</tt><tt class="py-op">=</tt><tt class="py-name">save_directory_path</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">copy_number</tt><tt class="py-op">=</tt><tt class="py-number">1</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">save_directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-name">copy_number</tt><tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">            <tt class="py-name">save_directory_path</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">original_save_directory_path</tt>  </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                                 <tt class="py-op">+</tt> <tt class="py-string">'_copy('</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">copy_number</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">')'</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">save_directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">rmtree</tt><tt class="py-op">(</tt><tt class="py-name">save_directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">mkdir</tt><tt class="py-op">(</tt><tt class="py-name">save_directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">save_directory_path</tt>     </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt>
+<a name="initialize_colour_plot_directory"></a><div id="initialize_colour_plot_directory-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="initialize_colour_plot_directory-toggle" onclick="return toggle('initialize_colour_plot_directory');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#initialize_colour_plot_directory">initialize_colour_plot_directory</a><tt class="py-op">(</tt><tt class="py-param">colour_plot_directory_name</tt><tt class="py-op">,</tt>  </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                                     <tt class="py-param">main_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                                     <tt class="py-param">new_colour_plot_directory</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="initialize_colour_plot_directory-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="initialize_colour_plot_directory-expanded"><a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">colour_plot_directory_name</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-name">directory_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt> <tt class="py-string">'colour_plot'</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-name">directory_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">            <tt class="py-name">main_directory_path</tt><tt class="py-op">,</tt><tt class="py-op">(</tt><tt class="py-string">'colour_plot_'</tt> <tt class="py-op">+</tt> <tt class="py-name">colour_plot_directory_name</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">new_colour_plot_directory</tt><tt class="py-op">:</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-name">original_directory_path</tt> <tt class="py-op">=</tt> <tt class="py-name">directory_path</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-name">copy_number</tt><tt class="py-op">=</tt><tt class="py-number">1</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">            <tt class="py-name">copy_number</tt><tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">            <tt class="py-name">directory_path</tt> <tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-name">original_directory_path</tt>  </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">                             <tt class="py-op">+</tt> <tt class="py-string">'_copy('</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">copy_number</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">')'</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">            <tt class="py-name">shutil</tt><tt class="py-op">.</tt><tt class="py-name">rmtree</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">    <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">mkdir</tt><tt class="py-op">(</tt><tt class="py-name">directory_path</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">directory_path</tt> </tt>
+</div><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"> </tt>
+<a name="to_colour_plot"></a><div id="to_colour_plot-def"><a name="L196"></a><tt class="py-lineno">196</tt> <a class="py-toggle" href="#" id="to_colour_plot-toggle" onclick="return toggle('to_colour_plot');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="code.interferenceanalyzer.script-module.html#to_colour_plot">to_colour_plot</a><tt class="py-op">(</tt><tt class="py-param">spherical_interpreter</tt><tt class="py-op">,</tt> <tt class="py-param">colour_plot_directory_path</tt><tt class="py-op">,</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                   <tt class="py-param">amplitude_colour_limit</tt><tt class="py-op">,</tt> <tt class="py-param">norm_squared_colour_limit</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="to_colour_plot-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="to_colour_plot-expanded"><a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Method code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw()=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#draw"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw" class="py-name" href="#" onclick="return doclink('link-65', 'draw', 'link-65');">draw</a></tt><tt class="py-op">(</tt><tt class="py-string">'x Amplitudes'</tt><tt class="py-op">,</tt> <tt class="py-name">limit</tt> <tt class="py-op">=</tt> <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt> <tt class="py-op">+</tt> <tt class="py-string">'/x_Amplitudes'</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw" class="py-name" href="#" onclick="return doclink('link-66', 'draw', 'link-65');">draw</a></tt><tt class="py-op">(</tt><tt class="py-string">'y Amplitudes'</tt><tt class="py-op">,</tt> <tt class="py-name">limit</tt> <tt class="py-op">=</tt> <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt> <tt class="py-op">+</tt> <tt class="py-string">'/y_Amplitudes'</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw" class="py-name" href="#" onclick="return doclink('link-67', 'draw', 'link-65');">draw</a></tt><tt class="py-op">(</tt><tt class="py-string">'z Amplitudes'</tt><tt class="py-op">,</tt> <tt class="py-name">limit</tt> <tt class="py-op">=</tt> <tt class="py-name">amplitude_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt> <tt class="py-op">+</tt> <tt class="py-string">'/z_Amplitudes'</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw" class="py-name" href="#" onclick="return doclink('link-68', 'draw', 'link-65');">draw</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt class="py-string">'Norm Squared'</tt><tt class="py-op">,</tt> <tt class="py-name">limit</tt> <tt class="py-op">=</tt> <tt class="py-name">norm_squared_colour_limit</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt> <tt class="py-op">+</tt> <tt class="py-string">'/Absolute_Magnitude'</tt><tt class="py-op">)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">gcf</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">clear</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw_profile()=code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#draw_profile"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw_profile" class="py-name" href="#" onclick="return doclink('link-69', 'draw_profile', 'link-69');">draw_profile</a></tt><tt class="py-op">(</tt><tt class="py-string">'theta'</tt><tt class="py-op">)</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">+</tt><tt class="py-string">'/theta_cross_section'</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">gcf</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">clear</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">    <tt class="py-name">spherical_interpreter</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter.draw_profile" class="py-name" href="#" onclick="return doclink('link-70', 'draw_profile', 'link-69');">draw_profile</a></tt><tt class="py-op">(</tt><tt class="py-string">'phi'</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">    <tt class="py-name">plt</tt><tt class="py-op">.</tt><tt class="py-name">savefig</tt><tt class="py-op">(</tt><tt class="py-name">colour_plot_directory_path</tt><tt class="py-op">+</tt><tt class="py-string">'/phi_cross_section'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:36 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+This project contains C code for a Python module called intanalyzer. To install
+the module on a x86_64 architecture (64 bit Intel):
+
+cd /
+tar xzf PATH_TO_THIS_PROJECT/intanalyzer_x86_64.tar.gz
+
+To install on i686 architecture (32 bit Intel):
+
+cd /
+tar xzf PATH_TO_THIS_PROJECT/intanalyzer_i686.tar.gz
+
+If you want to rebuild from source, or if your architecture is not supported,
+run:
+
+sudo python setup.py install

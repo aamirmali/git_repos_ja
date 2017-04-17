@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.common.functionanalyzer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.common-module.html">Package&nbsp;common</a> ::
+        Module&nbsp;functionanalyzer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.common.functionanalyzer-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module functionanalyzer</h1><p class="nomargin-top"><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape: (2)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#get_fall" class="summary-sig-name">get_fall</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">thres</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">start_index</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">reverse</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Finds the indices of the beginning and the end of the first fall in 
+      data starting from start_index.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_fall">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape: (2)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#get_rise" class="summary-sig-name">get_rise</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">thres</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">start_index</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">reverse</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Finds the indices of the beginning and the end of the first rise in 
+      data starting from start_index.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_rise">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape: (*,2)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#get_all_falls" class="summary-sig-name">get_all_falls</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">thres</span>)</span><br />
+      Finds the indices of the beginnings and the ends of all the falls in 
+      data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_all_falls">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape: (*,2)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#get_all_rises" class="summary-sig-name">get_all_rises</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">thres</span>)</span><br />
+      Finds the indices of the beginnings and the ends of all the rises in 
+      data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_all_rises">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#get_thres_index" class="summary-sig-name">get_thres_index</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">thres_value</span>,
+        <span class="summary-sig-arg">start_index</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">reverse</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Finds the first value in data that crosses or touches the threshold 
+      thres_value, starting from start_index.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_thres_index">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(*)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#correlate" class="summary-sig-name">correlate</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">kernel</span>,
+        <span class="summary-sig-arg">mode</span>)</span><br />
+      Finds the cross-correlation of the kernel on data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#correlate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.functionanalyzer-module.html#plot_range" class="summary-sig-name">plot_range</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">start_index</span>,
+        <span class="summary-sig-arg">end_index</span>,
+        <span class="summary-sig-arg">format</span>=<span class="summary-sig-default">'b-'</span>,
+        <span class="summary-sig-arg">**args</span>)</span><br />
+      Plots the data between start_index and end_index-1 inclusively.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#plot_range">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="plot_const"></a><span class="summary-sig-name">plot_const</span>(<span class="summary-sig-arg">lowerlim</span>,
+        <span class="summary-sig-arg">upperlim</span>,
+        <span class="summary-sig-arg">value</span>)</span><br />
+      Plots a constant value of value, from lowerlim to upperlim</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#plot_const">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_fall"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_fall</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">thres</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">start_index</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">reverse</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_fall">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the indices of the beginning and the end of the first fall in 
+  data starting from start_index. A fall is defined to be a segment of a 
+  function that is monotonically decreasing (non-increasing) for which the 
+  last value is at least thres smaller than the first value. The beginning 
+  of the fall is defined to be the point at where the function stops 
+  rising. If the start_index is in the middle of the fall, the start_index 
+  will be taken to be the beginning. The end of the of the fall is defined 
+  to be the point where the function begins to rise again. If no such end 
+  can be found, no fall is considered to be found. If reverse is True, this
+  method searches the data backwards(from higher indices to lower indices);
+  a fall in this case is a segment that decreases as one moves from right 
+  to left (higher indices to lower indices).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>thres</code></strong> (float)</li>
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+        <li><strong class="pname"><code>reverse</code></strong> (boolean)</li>
+        <li><strong class="pname"><code>start_index</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape: (2)</dt>
+        <dd>[beginning index, end index]; None, if no fall is found or data 
+          size is zero</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_rise"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_rise</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">thres</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">start_index</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">reverse</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_rise">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the indices of the beginning and the end of the first rise in 
+  data starting from start_index. A rise is defined to be a segment of a 
+  function that is monotonically increasing (non-decreasing) for which the 
+  last value is at least thres bigger than the first value. The beginning 
+  of the rise is defined to be the point at where the function stops 
+  falling. If the start_index is in the middle of the rise, the start_index
+  will be taken to be the beginning. The end of the of the rise is defined 
+  to be the point where the function begins to fall again. If no such end 
+  can be found, no rise is considered to be found. If reverse is True, this
+  method searches the data backwards(from higher indices to lower indices);
+  a rise in this case is a segment that increases as one moves from right 
+  to left (higher indices to lower indices).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>thres</code></strong> (float)</li>
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+        <li><strong class="pname"><code>reverse</code></strong> (boolean)</li>
+        <li><strong class="pname"><code>start_index</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape: (2)</dt>
+        <dd>[beginning index, end index]; None, if no fall is found or data 
+          size is zero</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_all_falls"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_all_falls</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">thres</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_all_falls">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the indices of the beginnings and the ends of all the falls in 
+  data. A fall is defined to be a segment of a function that is 
+  monotonically decreasing (non-increasing) for which the last value is at 
+  least thres smaller than the first value. The beginning of the fall is 
+  defined to be the point at where the function stops rising. The end of 
+  the of the fall is defined to be the point where the function begins to 
+  rise again. If no such end can be found, no fall is considered to be 
+  found.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>thres</code></strong> (float)</li>
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape: (*,2)</dt>
+        <dd>a numpy array, where the ith element corresponds to the ith fall,
+          represented by the numpy array [beginning index, end index]</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_all_rises"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_all_rises</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">thres</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_all_rises">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the indices of the beginnings and the ends of all the rises in 
+  data. A rise is defined to be a segment of a function that is 
+  monotonically increasing (non-decreasing) for which the last value is at 
+  least thres bigger than the first value. The beginning of the rise is 
+  defined to be the point at where the function stops falling. The end of 
+  the of the rise is defined to be the point where the function begins to 
+  fall again. If no such end can be found, no rise is considered to be 
+  found.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>thres</code></strong> (float)</li>
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape: (*,2)</dt>
+        <dd>a numpy array, where the ith element corresponds to the ith rise,
+          represented by the numpy array [beginning index, end index]</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_thres_index"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_thres_index</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">thres_value</span>,
+        <span class="sig-arg">start_index</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">reverse</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#get_thres_index">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the first value in data that crosses or touches the threshold 
+  thres_value, starting from start_index. If reverse is True, this method 
+  searches backwards.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+        <li><strong class="pname"><code>reverse</code></strong> (boolean)</li>
+        <li><strong class="pname"><code>start_index</code></strong> (int)</li>
+        <li><strong class="pname"><code>thres_value</code></strong> (float)</li>
+    </ul></dd>
+    <dt>Returns: int</dt>
+        <dd>the index where the value of the data crosses or touches the 
+          threshold thres_value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="correlate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">correlate</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">kernel</span>,
+        <span class="sig-arg">mode</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#correlate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds the cross-correlation of the kernel on data. This method has 
+  big-O of n*logn, and is superior to numpy.correlate for data with length 
+  more than about 3000.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape:(*)) - the data to be cross-correlated.</li>
+        <li><strong class="pname"><code>kernel</code></strong> (numpy array, shape:(*)) - the template for the cross-correlation</li>
+        <li><strong class="pname"><code>mode</code></strong> (str) - controls the length of the output. This parameter is passed 
+          directly into scipy.signal.fftconvolve().</li>
+    </ul></dd>
+    <dt>Returns: numpy array, shape:(*)</dt>
+        <dd>the cross-correlation of the kernel on data.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_range"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_range</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">start_index</span>,
+        <span class="sig-arg">end_index</span>,
+        <span class="sig-arg">format</span>=<span class="sig-default">'b-'</span>,
+        <span class="sig-arg">**args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.functionanalyzer-pysrc.html#plot_range">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the data between start_index and end_index-1 inclusively. The 
+  parameters of plot is specified with format, and **args.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>format</code></strong> - a format string that is directly passed into 
+          matplotlib.pyplot.plot() @type format: string</li>
+        <li><strong class="pname"><code>args</code></strong> - arguments that control the format of the plot; these are passed 
+          directly into matplotlib.pyplot.plot()</li>
+        <li><strong class="pname"><code>data</code></strong> (numpy array, shape: (*))</li>
+        <li><strong class="pname"><code>start_index</code></strong> (int)</li>
+        <li><strong class="pname"><code>end_index</code></strong> (int)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>None</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

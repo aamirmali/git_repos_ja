@@ -1,0 +1,24 @@
+--filenames
+/data/cryo/20130626/1372261781_bc3_step_bias_6000_185mK
+/data/cryo/20130626/1372261830_bc3_step_bias_5500_185mK
+/data/cryo/20130626/1372261874_bc3_step_bias_5000_185mK
+/data/cryo/20130626/1372261920_bc3_step_bias_4500_185mK
+/data/cryo/20130626/1372261965_bc3_step_bias_4000_185mK
+/data/cryo/20130626/1372262009_bc3_step_bias_3500_185mK
+/data/cryo/20130626/1372262052_bc3_step_bias_3000_185mK
+/data/cryo/20130628/1372455029_bc3_step_bias_3500_185mK
+/data/cryo/20130628/1372455071_bc3_step_bias_3400_185mK
+/data/cryo/20130628/1372455113_bc3_step_bias_3350_185mK
+/data/cryo/20130628/1372455157_bc3_step_bias_3300_185mK
+/data/cryo/20130628/1372455202_bc3_step_bias_3250_185mK
+/data/cryo/20130628/1372455248_bc3_step_bias_3200_185mK
+--row
+14
+--col
+2
+--G_guess
+65e-12
+--sampfreq
+411
+--title
+rs14 Tbath 185mK 50dac bias steps

@@ -1,0 +1,17 @@
+--filenames
+/data/cryo/20130626/1372259379_bc3_step_bias_6000_193mK
+/data/cryo/20130626/1372260815_bc3_step_bias_6000_193mK
+/data/cryo/20130626/1372260857_bc3_step_bias_5500_193mK
+/data/cryo/20130626/1372260899_bc3_step_bias_5000_193mK
+/data/cryo/20130626/1372260946_bc3_step_bias_4500_193mK
+/data/cryo/20130626/1372260989_bc3_step_bias_4000_193mK
+/data/cryo/20130626/1372261036_bc3_step_bias_3500_193mK
+/data/cryo/20130626/1372261079_bc3_step_bias_3000_193mK
+--row
+2
+--col
+2
+--G_guess
+65e-12
+--sampfreq
+411

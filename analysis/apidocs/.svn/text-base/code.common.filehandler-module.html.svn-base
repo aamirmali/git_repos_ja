@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.common.filehandler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.common-module.html">Package&nbsp;common</a> ::
+        Module&nbsp;filehandler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.common.filehandler-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module filehandler</h1><p class="nomargin-top"><span class="codelink"><a href="code.common.filehandler-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 3 dimensional</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#fix_dirfile_signed_field" class="summary-sig-name">fix_dirfile_signed_field</a>(<span class="summary-sig-arg">data</span>)</span><br />
+      dirfile data does not support signed ints, this fuction coverts 
+      data_mode 10 dirfile data to a signed field.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#fix_dirfile_signed_field">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 3 dimensional</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#get_mce_data" class="summary-sig-name">get_mce_data</a>(<span class="summary-sig-arg">datafile</span>,
+        <span class="summary-sig-arg">**args</span>)</span><br />
+      Gets mce data from a mce data file using mce_data.SmallMCEFile.Read</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#get_mce_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#IV_data_to_arr" class="summary-sig-name">IV_data_to_arr</a>(<span class="summary-sig-arg">datafile</span>,
+        <span class="summary-sig-arg">search_string</span>)</span><br />
+      Puts MCE data in datafile into a two-dimensional array, with column 
+      number as first dimension.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#IV_data_to_arr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#printout" class="summary-sig-name">printout</a>(<span class="summary-sig-arg">formatstring</span>,
+        <span class="summary-sig-arg">array</span>,
+        <span class="summary-sig-arg">f</span>)</span><br />
+      Prints out data in array, in the format of the IV .out files, where 
+      formatstring is the string preceding the data for every column.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#printout">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#data_to_pod_feed_fmt" class="summary-sig-name">data_to_pod_feed_fmt</a>(<span class="summary-sig-arg">two_d_data</span>,
+        <span class="summary-sig-arg">row_location</span>,
+        <span class="summary-sig-arg">col_location</span>=<span class="summary-sig-default">2</span>,
+        <span class="summary-sig-arg">map_file</span>=<span class="summary-sig-default">'mce_pod_map.txt'</span>)</span><br />
+      Takes two_d_data, an array in MCE row-col format, and returns a 1D 
+      array where the 0th element is pod 1 feed 1, the 1st is pod 1 feed 2,
+      etc.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#data_to_pod_feed_fmt">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.common.filehandler-module.html#get_correspondance" class="summary-sig-name">get_correspondance</a>(<span class="summary-sig-arg">row_location</span>,
+        <span class="summary-sig-arg">col_location</span>=<span class="summary-sig-default">2</span>,
+        <span class="summary-sig-arg">map_file</span>=<span class="summary-sig-default">'mce_pod_map.txt'</span>)</span><br />
+      Takes MCE data in 2D array data, and puts it in pod-feed format 
+      according to mapfile.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.common.filehandler-pysrc.html#get_correspondance">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="fix_dirfile_signed_field"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fix_dirfile_signed_field</span>(<span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#fix_dirfile_signed_field">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>dirfile data does not support signed ints, this fuction coverts 
+  data_mode 10 dirfile data to a signed field.</p>
+  <dl class="fields">
+    <dt>Returns: numpy array, 3 dimensional</dt>
+        <dd>the mce data</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_mce_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_mce_data</span>(<span class="sig-arg">datafile</span>,
+        <span class="sig-arg">**args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#get_mce_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets mce data from a mce data file using 
+  mce_data.SmallMCEFile.Read</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>datafile</code></strong> (str) - the file to be passed into mce_data.SmallMCEFile</li>
+        <li><strong class="pname"><code>args</code></strong> - arguments to be passed into mce_data.SmallMCEFile.Read</li>
+    </ul></dd>
+    <dt>Returns: numpy array, 3 dimensional</dt>
+        <dd>the mce data</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="IV_data_to_arr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">IV_data_to_arr</span>(<span class="sig-arg">datafile</span>,
+        <span class="sig-arg">search_string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#IV_data_to_arr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Puts MCE data in datafile into a two-dimensional array, with column 
+  number as first dimension.  Does this by searching datafile for lines 
+  starting with search_string.  Returns the 2D array</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="printout"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">printout</span>(<span class="sig-arg">formatstring</span>,
+        <span class="sig-arg">array</span>,
+        <span class="sig-arg">f</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#printout">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Prints out data in array, in the format of the IV .out files, where 
+  formatstring is the string preceding the data for every column. Prints 
+  out to file pointer f.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="data_to_pod_feed_fmt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">data_to_pod_feed_fmt</span>(<span class="sig-arg">two_d_data</span>,
+        <span class="sig-arg">row_location</span>,
+        <span class="sig-arg">col_location</span>=<span class="sig-default">2</span>,
+        <span class="sig-arg">map_file</span>=<span class="sig-default">'mce_pod_map.txt'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#data_to_pod_feed_fmt">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Takes two_d_data, an array in MCE row-col format, and returns a 1D 
+  array where the 0th element is pod 1 feed 1, the 1st is pod 1 feed 2, 
+  etc. map_file should contain the correspondance between pod/feed and 
+  row/col.  The first line is ignored.  The second line should be for pod 1
+  feed 1, the third for pod 1 feed 2, etc. row_location is the column in 
+  the file that contains the MCE row; similarly for col_location.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_correspondance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_correspondance</span>(<span class="sig-arg">row_location</span>,
+        <span class="sig-arg">col_location</span>=<span class="sig-default">2</span>,
+        <span class="sig-arg">map_file</span>=<span class="sig-default">'mce_pod_map.txt'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.common.filehandler-pysrc.html#get_correspondance">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Takes MCE data in 2D array data, and puts it in pod-feed format 
+  according to mapfile.  Uses probe A_or_B.  Returns formatted data as a 1D
+  array that's ordered pod 1 feed 1, pod 1 feed 2, etc.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

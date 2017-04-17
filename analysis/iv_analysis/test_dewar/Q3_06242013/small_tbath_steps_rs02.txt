@@ -1,0 +1,24 @@
+--filenames
+/data/cryo/20130625/iv_192mK_res10_v2
+/data/cryo/20130625/iv_192.5mK_res10_v1
+/data/cryo/20130625/iv_192.75mK_res10_v2
+/data/cryo/20130625/iv_193mK_res10_v1
+--row
+2
+--col
+2
+--index
+100
+--temp
+0.192
+0.1925
+0.19275
+0.193
+--PsatRn
+0.7
+--G_guess
+65e-12
+--To_guess
+195e-3
+--title
+Q3 low-G Dark detector rs.02 JHU-20130625

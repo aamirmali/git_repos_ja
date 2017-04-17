@@ -1,0 +1,18 @@
+--filenames
+/data/cryo/current_data/1372453017_bc3_step_bias_3200_193mK
+/data/cryo/current_data/1372453060_bc3_step_bias_3100_193mK
+/data/cryo/current_data/1372453102_bc3_step_bias_3000_193mK
+/data/cryo/current_data/1372453147_bc3_step_bias_2900_193mK
+/data/cryo/current_data/1372453193_bc3_step_bias_2850_193mK
+/data/cryo/current_data/1372453238_bc3_step_bias_2800_193mK
+/data/cryo/current_data/1372453282_bc3_step_bias_2750_193mK
+--row
+2
+--col
+2
+--G_guess
+65e-12
+--sampfreq
+411
+--title
+rs02 Tbath 193mK 50dac bias steps

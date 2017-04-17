@@ -1,0 +1,1556 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>code.innerproduct.similaritydrawer.SimilarityDrawer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="code-module.html">Package&nbsp;code</a> ::
+        <a href="code.innerproduct-module.html">Package&nbsp;innerproduct</a> ::
+        <a href="code.innerproduct.similaritydrawer-module.html">Module&nbsp;similaritydrawer</a> ::
+        Class&nbsp;SimilarityDrawer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SimilarityDrawer</h1><p class="nomargin-top"><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer">source&nbsp;code</a></span></p>
+<p>Draws rectangles showing pointwise products.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">npzdict</span>,
+        <span class="summary-sig-arg">non_cols</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">non_rows</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">non_detectors</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">cut_nons</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">class_limit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">data_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">row_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">col_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">array_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">row_sum_row_sum_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">col_sum_col_sum_limit</span>=<span class="summary-sig-default">[]</span>)</span><br />
+      Initializes the class.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#set_indices_and_length" class="summary-sig-name">set_indices_and_length</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">number_of_cols</span>,
+        <span class="summary-sig-arg">number_of_rows</span>,
+        <span class="summary-sig-arg">non_cols</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">non_rows</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">cut_nons</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Class internal method.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.set_indices_and_length">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#erase" class="summary-sig-name">erase</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">non_cols</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">non_rows</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">non_detectors</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">cut_nons</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Class internal method.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.erase">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#set_class_limits" class="summary-sig-name">set_class_limits</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">class_limit</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">data_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">row_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">col_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">array_sum_data_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">row_sum_row_sum_limit</span>=<span class="summary-sig-default">[]</span>,
+        <span class="summary-sig-arg">col_sum_col_sum_limit</span>=<span class="summary-sig-default">[]</span>)</span><br />
+      Class internal Function.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.set_class_limits">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_single_block" class="summary-sig-name">plot_single_block</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">index1</span>,
+        <span class="summary-sig-arg">index2</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">dominance</span>=<span class="summary-sig-default">'column'</span>)</span><br />
+      Plots a single block of the pointwise product.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_single_block">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_data_data" class="summary-sig-name">plot_data_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">dominance</span>=<span class="summary-sig-default">'column'</span>)</span><br />
+      Plots all the data as a 2 dimensional array.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_data_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_data_data_average" class="summary-sig-name">plot_data_data_average</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">dominance</span>=<span class="summary-sig-default">'column'</span>)</span><br />
+      For each i, and j, takes the average of the array data[i][j], and 
+      plots it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_data_data_average">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_row_data" class="summary-sig-name">plot_row_sum_row_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">row_sum_row_num</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the sum of a row crossed with all of data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_row_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_data" class="summary-sig-name">plot_row_sum_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the pointwise product of every row's sum against all of data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_col_data" class="summary-sig-name">plot_col_sum_col_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">col_sum_col_num</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the sum of a column crossed with all of data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_col_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_data" class="summary-sig-name">plot_col_sum_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the pointwise product of every column's sum against all of 
+      data.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_array_sum_data" class="summary-sig-name">plot_array_sum_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      plots the pointwise product of the sum all the detectors against all 
+      the detectors.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_array_sum_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_row_sum" class="summary-sig-name">plot_row_sum_row_sum</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the pointwise product of the every row's sum against every 
+      row's sum.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_row_sum">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_col_sum" class="summary-sig-name">plot_col_sum_col_sum</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">function</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">limit</span>=<span class="summary-sig-default">'class'</span>,
+        <span class="summary-sig-arg">colorbar</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Plots the pointwise product of the every column's sum against every 
+      column's sum.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_col_sum">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 4 dimensional</span>
+    </td><td class="summary">
+        <a name="data_data_col_dom"></a><span class="summary-name">data_data_col_dom</span> = <code title="None">None</code><br />
+      The column dominated array of pointwise product between data and 
+      data; data_data_col_dom[i][j][k][l] is the pointwise product between 
+      the detector at column i and row k and the detector at column j and 
+      row l.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 4 dimensional</span>
+    </td><td class="summary">
+        <a name="data_data_row_dom"></a><span class="summary-name">data_data_row_dom</span> = <code title="None">None</code><br />
+      The row dominated array of pointwise product between data and data; 
+      data_data_row_dom[i][j][k][l] is the pointwise product between the 
+      detector at column k and row i and the detector at column l and row 
+      j.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 3 dimensional</span>
+    </td><td class="summary">
+        <a name="row_sum_data"></a><span class="summary-name">row_sum_data</span> = <code title="None">None</code><br />
+      An array of the pointwise product between the sum within rows and 
+      data; row_sum_data[i][j][k] is the pointwise product between the sum 
+      of all columns in row i with the detector at column j and row k.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 3 dimensional</span>
+    </td><td class="summary">
+        <a name="col_sum_data"></a><span class="summary-name">col_sum_data</span> = <code title="None">None</code><br />
+      An array of the pointwise product between the sum within columns and 
+      data; col_sum_data[i][j][k] is the pointwise product between the sum 
+      of all rows in column i with the detector at column j and row k.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 2 dimensional</span>
+    </td><td class="summary">
+        <a name="array_sum_data"></a><span class="summary-name">array_sum_data</span> = <code title="None">None</code><br />
+      An array of the pointwise product between the sum of all detectors 
+      and data; The value at index [i][j] is the pointwise product of the 
+      sum with the detector at column i and row j.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 2 dimensional</span>
+    </td><td class="summary">
+        <a name="row_sum_row_sum"></a><span class="summary-name">row_sum_row_sum</span> = <code title="None">None</code><br />
+      An array of the pointwise product between sum within rows and sum 
+      within rows.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, 2 dimensional</span>
+    </td><td class="summary">
+        <a name="col_sum_col_sum"></a><span class="summary-name">col_sum_col_sum</span> = <code title="None">None</code><br />
+      An array of the pointwise product between sum within columns and sum 
+      within columns.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="number_of_cols"></a><span class="summary-name">number_of_cols</span> = <code title="None">None</code><br />
+      the number of columns in the original data, including non columns
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a name="number_of_rows"></a><span class="summary-name">number_of_rows</span> = <code title="None">None</code><br />
+      the number of rows in the original data, including non rows
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_plotted_cols" class="summary-name">number_of_plotted_cols</a> = <code title="None">None</code><br />
+      the number of columns actually shown in plots.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_plotted_rows" class="summary-name">number_of_plotted_rows</a> = <code title="None">None</code><br />
+      the number of rows actually shown in plots.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_indices" class="summary-name">col_indices</a> = <code title="np.array([])">np.array([])</code><br />
+      maps the original column indices to the column indices after non_cols
+      and cut_nons are taken into account.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_indices" class="summary-name">row_indices</a> = <code title="np.array([])">np.array([])</code><br />
+      maps the original row indices to the row indices after non_rows and 
+      cut_nons are taken into account.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#inverse_col_indices" class="summary-name">inverse_col_indices</a> = <code title="np.array([])">np.array([])</code><br />
+      the map from the plotted column indices to the column indices in the 
+      original data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">numpy array, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#inverse_row_indices" class="summary-name">inverse_row_indices</a> = <code title="np.array([])">np.array([])</code><br />
+      the map from the plotted row indices to the row indices in the 
+      original data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sorted list, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_cols" class="summary-name">non_cols</a> = <code title="[]">[]</code><br />
+      indicates the columns to be ignored.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sorted list, shape:(*)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_rows" class="summary-name">non_rows</a> = <code title="[]">[]</code><br />
+      indicates the rows to be ignored.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sorted list, shape:(*,2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_detectors" class="summary-name">non_detectors</a> = <code title="[]">[]</code><br />
+      indicates the detectors to be ignored.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#data_data_limit" class="summary-name">data_data_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for data_data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_data_limit" class="summary-name">row_sum_data_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for row_sum_data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_data_limit" class="summary-name">col_sum_data_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for col_sum_data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#array_sum_data_limit" class="summary-name">array_sum_data_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for array_sum_data.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_row_sum_limit" class="summary-name">row_sum_row_sum_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for row_sum_row_sum.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple, shape:(2)</span>
+    </td><td class="summary">
+        <a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_col_sum_limit" class="summary-name">col_sum_col_sum_limit</a> = <code title="[]">[]</code><br />
+      the default colour limit for col_sum_col_sum.
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">npzdict</span>,
+        <span class="sig-arg">non_cols</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">non_rows</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">non_detectors</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">cut_nons</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">class_limit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">data_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">row_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">col_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">array_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">row_sum_row_sum_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">col_sum_col_sum_limit</span>=<span class="sig-default">[]</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initializes the class.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>npzdict</code></strong> (Npzfile/Dictionary) - the NpzFile object that contains the required data. The object is
+          to be a dictionary containing arrays with keyword 'data_data', 
+          'row_sum_data', 'col_sum_data', 'array_sum_data', 
+          'row_sum_row_sum', and 'col_sum_col_sum'.</li>
+        <li><strong class="pname"><code>non_cols</code></strong> (numpy array/list/tuple, shape:(*)) - indicates the cols to be ignored. The data in these columns will 
+          not be shown and will not be considered in calculations.</li>
+        <li><strong class="pname"><code>non_rows</code></strong> (numpy array/list/tuple, shape:(*)) - indicates the rows to be ignored. The data in these rows will not
+          be shown and will not be considered in calculations.</li>
+        <li><strong class="pname"><code>non_detectors</code></strong> (numpy array/list, shape:(*,2)) - indicates the detectors to be ignored. The data in these 
+          detectors will not be shown and will not be included in any 
+          calculations.  This parameter is to be an array of detectors, 
+          with each detector represented by (col, row).</li>
+        <li><strong class="pname"><code>cut_nons</code></strong> (boolean) - if this parameter is set to True, the data in non_rows and 
+          non_cols will be removed from the data. If it is set to False, 
+          the data will be set to NaN, and will be shown as white spaces in
+          plots.</li>
+        <li><strong class="pname"><code>class_limit</code></strong> (str; numpy array/list/tuple, shape:(2)) - The overarching limit for the class. All other class limit 
+          parameters, if not specified, will be set to this limit. This 
+          parameter can be None, 'full', 'non_auto', 'inliers' or (x, y). 
+          None: limit is not set. 'full': limit is set to (min of 
+          data_data, max of data_data). 'non_auto': the limit is set to 
+          (min of data_data, max of data_data) with the pointwise product 
+          between the same detector removed. 'inliers' the limit is set to 
+          (min of data_data, max of data_data) with outliers removed. (x, 
+          y): the limit is set to (x, y).</li>
+        <li><strong class="pname"><code>data_data_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.data_data_limit</li>
+        <li><strong class="pname"><code>row_sum_data_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.row_sum_data_limit</li>
+        <li><strong class="pname"><code>col_sum_data_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.col_sum_data_limit</li>
+        <li><strong class="pname"><code>array_sum_data_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.array_sum_data_limit</li>
+        <li><strong class="pname"><code>row_sum_row_sum_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.row_sum_row_sum_limit</li>
+        <li><strong class="pname"><code>col_sum_col_sum_limit</code></strong> (numpy array/list/tuple, shape:(2)) - sets the value of self.col_sum_col_sum_limit</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_indices_and_length"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_indices_and_length</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">number_of_cols</span>,
+        <span class="sig-arg">number_of_rows</span>,
+        <span class="sig-arg">non_cols</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">non_rows</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">cut_nons</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.set_indices_and_length">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class internal method. Sets self.number_of_cols, self.number_of_rows, 
+  self.number_of_plotted_cols, self.number_of_plotted_rows, 
+  self.col_indices, self.row_indices, self.inverse_col_indices, and 
+  self.inverse_row_indices.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        class variables
+      </p>
+</div></td></tr></table>
+</div>
+<a name="erase"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">erase</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">non_cols</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">non_rows</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">non_detectors</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">cut_nons</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.erase">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class internal method. Removes non_cols, non_rows, and 
+  non_detectors.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        __init__ and class variables
+      </p>
+</div></td></tr></table>
+</div>
+<a name="set_class_limits"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_class_limits</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">class_limit</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">data_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">row_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">col_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">array_sum_data_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">row_sum_row_sum_limit</span>=<span class="sig-default">[]</span>,
+        <span class="sig-arg">col_sum_col_sum_limit</span>=<span class="sig-default">[]</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.set_class_limits">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class internal Function. Sets the class limit parameters.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        __init__ and class variables
+      </p>
+</div></td></tr></table>
+</div>
+<a name="plot_single_block"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_single_block</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">index1</span>,
+        <span class="sig-arg">index2</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">dominance</span>=<span class="sig-default">'column'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_single_block">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots a single block of the pointwise product. The block is either a 
+  whole column crossed with another whole column or a whole row crossed 
+  with another whole row depending on dominance. The column or row to be 
+  crossed is specified with index1 and index2.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each pointwise product.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', 'non_auto', or (x,y). None: no limit is set. 'class': 
+          the limit is set to self.data_data_limit. 'non_auto': the limit 
+          is set to (min in the block, max in the block) with the main 
+          diagonals removed. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+        <li><strong class="pname"><code>dominance</code></strong> (str) - indicates whether a block is a whole column crossed with another 
+          whole column or a whole row crossed with another whole row. This 
+          parameter can be 'column' or 'row'.</li>
+        <li><strong class="pname"><code>index2</code></strong> (int)</li>
+        <li><strong class="pname"><code>index1</code></strong> (int)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_data_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_data_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">dominance</span>=<span class="sig-default">'column'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_data_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots all the data as a 2 dimensional array. if the data is an array 
+  of shape (m,n,o,p), it is plotted as a shape(m*o, n*p) array. 
+  Data[i][j][k][l] is plotted at point [i*(m-1)+j][k*(n-1)+l]. The data is 
+  drawn as a 2 dimensional array of 2 dimensional arrays.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each pointwise product.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', 'non_auto', or (x,y). None: no limit is set. 'class': 
+          the limit is set to self.data_data_limit. 'non_auto': the limit 
+          is set to (min in the block, max in the block) with the main 
+          diagonals removed. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+        <li><strong class="pname"><code>dominance</code></strong> (str) - indicates whether a large block is column crossed with column or 
+          row crossed with row. This parameter can be 'column' or 'row'. 
+          'column': data_data_col_dom is used for data. Big blocks 
+          represent columns crossed with columns 'row': data_data_row_dom 
+          is used for data. Big blocks represent rows crossed with rows.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_data_data_average"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_data_data_average</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">dominance</span>=<span class="sig-default">'column'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_data_data_average">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>For each i, and j, takes the average of the array data[i][j], and 
+  plots it.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each average.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.data_data_limit. 'non_auto': the limit is set to (min
+          in the average, max in the average) with the main diagonals 
+          removed. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+        <li><strong class="pname"><code>dominance</code></strong> (str) - indicates whether a whole column crossed with another whole 
+          column is averaged or whether a whole row crossed with another 
+          whole row is averaged. This parameter can be 'column' or 'row'. 
+          'column': data_data_col_dom is used for data. Whole column 
+          crossed with another whole column is averaged.  'row': 
+          data_data_row_dom is used for data. Big blocks represent rows 
+          crossed with rows. Whole row crossed with another whole row is 
+          averaged.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_row_sum_row_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_row_sum_row_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">row_sum_row_num</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_row_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the sum of a row crossed with all of data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>row_sum_row_num</code></strong> (int) - indicates which row's sum is crossed with all of data.</li>
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each average.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.row_sum_data_limit. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_row_sum_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_row_sum_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the pointwise product of every row's sum against all of data. 
+  The data is displayed as large blocks ordered horizontally. The ith block
+  is the pointwise product of the sum of the ith row with all of data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each data element.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.row_sum_data_limit. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_col_sum_col_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_col_sum_col_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">col_sum_col_num</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_col_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the sum of a column crossed with all of data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>col_sum_col_num</code></strong> (int) - indicates which column's sum is crossed with all of data.</li>
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each data element.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.col_sum_data_limit. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_col_sum_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_col_sum_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the pointwise product of every column's sum against all of data.
+  The data is displayed as large blocks ordered vertically. The ith block 
+  is the pointwise product of the sum of the ith column with all of 
+  data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each data element.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.col_sum_data_limit. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_array_sum_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_array_sum_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_array_sum_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>plots the pointwise product of the sum all the detectors against all 
+  the detectors.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each data element.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', or (x,y). None: no limit is set. 'class': the limit is 
+          set to self.array_sum_data_limit. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_row_sum_row_sum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_row_sum_row_sum</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_row_sum_row_sum">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the pointwise product of the every row's sum against every row's
+  sum.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each pointwise product.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', 'non_auto', or (x,y). None: no limit is set. 'class': 
+          the limit is set to self.row_sum_row_sum_limit. 'non_auto': the 
+          limit is set to (min in the data, max in the data) with the main 
+          diagonals removed. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="plot_col_sum_col_sum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">plot_col_sum_col_sum</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">function</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">limit</span>=<span class="sig-default">'class'</span>,
+        <span class="sig-arg">colorbar</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="code.innerproduct.similaritydrawer-pysrc.html#SimilarityDrawer.plot_col_sum_col_sum">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Plots the pointwise product of the every column's sum against every 
+  column's sum.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>function</code></strong> (function(element, index)) - a function to be applied to each pointwise product.</li>
+        <li><strong class="pname"><code>limit</code></strong> (str; numpy array/list/tuple, shape:(*)) - sets the colour limit. If an element is outside of the limit, it 
+          will be set to the respective limit.This parameter can be None, 
+          'class', 'non_auto', or (x,y). None: no limit is set. 'class': 
+          the limit is set to self.col_sum_col_sum_limit. 'non_auto': the 
+          limit is set to (min in the data, max in the data) with the main 
+          diagonals removed. (x,y): limit is set to (x,y).</li>
+        <li><strong class="pname"><code>colorbar</code></strong> (boolean) - indicates whether or not a colorbar is shown.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== INSTANCE VARIABLE DETAILS ==================== -->
+<a name="section-InstanceVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="number_of_plotted_cols"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">number_of_plotted_cols</h3>
+  the number of columns actually shown in plots. If cut_nons is true, the 
+  non_columns are not included; else, they are included.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>int</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+None
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="number_of_plotted_rows"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">number_of_plotted_rows</h3>
+  the number of rows actually shown in plots. If cut_nons is true, the 
+  non_rows are not included; else, they are included.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>int</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+None
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="col_indices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">col_indices</h3>
+  maps the original column indices to the column indices after non_cols and
+  cut_nons are taken into account. Inputted column indices will be 
+  converted with this array before they are passed into a function. If the 
+  ith value of this array is j, an inputted column index with a value of i 
+  will be converted to j.  A column that is in non_cols will be converted 
+  to -1.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>numpy array, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+np.array([])
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="row_indices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">row_indices</h3>
+  maps the original row indices to the row indices after non_rows and 
+  cut_nons are taken into account. Inputted row indices will be converted 
+  with this array before they are passed into a function. If the ith value 
+  of this array is j, an inputed row index with a value of i will be 
+  converted to j.  A row that is in non_rows will be converted to -1.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>numpy array, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+np.array([])
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="inverse_col_indices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">inverse_col_indices</h3>
+  the map from the plotted column indices to the column indices in the 
+  original data. If the ith value of this array is j, then the ith plotted 
+  column is the jth column in the original data.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>numpy array, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+np.array([])
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="inverse_row_indices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">inverse_row_indices</h3>
+  the map from the plotted row indices to the row indices in the original 
+  data. If the ith value of this array is j, then the ith plotted row is 
+  the jth row in the original data.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>numpy array, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+np.array([])
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="non_cols"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">non_cols</h3>
+  indicates the columns to be ignored. The data in these columns will not 
+  be shown, and will not be included in any calculations.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>sorted list, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="non_rows"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">non_rows</h3>
+  indicates the rows to be ignored. The data in these rows will not be 
+  shown, and will not be included in any calculations.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>sorted list, shape:(*)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="non_detectors"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">non_detectors</h3>
+  indicates the detectors to be ignored. The data in these detectors will 
+  not be shown, and will not be included in any calculations. This 
+  parameter is an array of detectors, with each detector represented by 
+  (col, row).
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>sorted list, shape:(*,2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="data_data_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">data_data_limit</h3>
+  the default colour limit for data_data. In any functions that plots 
+  data_data, any pointwise product outside of this range will be shown at 
+  the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="row_sum_data_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">row_sum_data_limit</h3>
+  the default colour limit for row_sum_data. In any functions that plots 
+  row_sum_data, any pointwise product outside of this range will be shown 
+  at the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="col_sum_data_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">col_sum_data_limit</h3>
+  the default colour limit for col_sum_data. In any functions that plots 
+  col_sum_data, any pointwise product outside of this range will be shown 
+  at the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="array_sum_data_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">array_sum_data_limit</h3>
+  the default colour limit for array_sum_data. In any functions that plots 
+  array_sum_data, any pointwise product outside of this range will be shown
+  at the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="row_sum_row_sum_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">row_sum_row_sum_limit</h3>
+  the default colour limit for row_sum_row_sum. In any functions that plots
+  row_sum_row_sum, any pointwise product outside of this range will be 
+  shown at the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="col_sum_col_sum_limit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">col_sum_col_sum_limit</h3>
+  the default colour limit for col_sum_col_sum. In any functions that plots
+  col_sum_col_sum, any pointwise product outside of this range will be 
+  shown at the respective limits if the parameter limit is set to 'class'.
+  <dl class="fields">
+    <dt>Type:</dt>
+      <dd>tuple, shape:(2)</dd>
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

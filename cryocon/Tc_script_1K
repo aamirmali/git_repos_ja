@@ -1,0 +1,23 @@
+#!/bin/bash
+
+label='tc_sweep_1K_set1'
+#temps="1.150 1.145 1.140 1.135 1.130 1.125 1.120 1.115 1.110 1.105 1.100 1.095 1.090 1.085 1.080 1.075 1.070 1.065 1.060 1.055 1.050 1.045 1.040 1.035 1.030 1.025 1.020 1.015 1.010 1.005 1.000"
+temps="1.180 1.175 1.170 1.165 1.160 1.155"
+#temps="1.125 1.124 1.123 1.122 1.121 1.120 1.119 1.118 1.117 1.116 1.115 1.114 1.113 1.112 1.111 1.110 1.109 1.108 1.107 1.106 1.105 1.104 1.103 1.102 1.101 1.100 1.099 1.098 1.097 1.996 1.095 1.094 1.093 1.092 1.091 1.090 1.089 1.088 1.087 1.086 1.085 1.084 1.083 1.082 1.081 1.080 1.079 1.078 1.077 1.076 1.075 1.074 1.073 1.072 1.071 1.070 1.069 1.068 1.067 1.066 1.065 1.064 1.063 1.062 1.061 1.060 1.059 1.058 1.057"
+
+
+for temp in $temps
+do
+     python set_tempservo_param.py --servotemp $temp --factor 5e-6
+     python daemon_servo_dirfile_v2.py start
+     sleep 160
+#     ./change_to_MUX09
+#     filename_mux09=$label'_MUX09_'$temp
+#     ramp_sq1_tes_bias $filename_mux09 s
+#     echo $filename_mux09
+     ./change_to_MUX11
+     filename_mux11=$label'_MUX11_'$temp
+     ramp_sq1_tes_bias $filename_mux11 s
+     echo $filename_mux11
+     python daemon_servo_dirfile_v2.py stop
+done

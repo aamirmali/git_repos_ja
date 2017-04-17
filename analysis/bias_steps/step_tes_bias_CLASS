@@ -1,0 +1,132 @@
+#!/bin/bash
+#
+# Adapted from ramp_tes_bias_ABS 
+#
+
+source $MAS_SCRIPT/mas_library.bash
+
+if [ "$#" -lt "2" ]; then
+  echo "----------------"
+  echo "Usage: step_tes_bias datafile n  bias_start0 bias_start1 bias_start2 bias_start3 bias_start4 bias_start5 bias_start6 bias_start7 bias_step bias_count bias_pause "
+  echo "   datafile      is the name of the datafile"
+  echo "   n             is the rc card number (1 to 4)"
+  echo
+  echo "   bias_start#    is the nominal bias applied to bias line #"
+  echo "   bias_step     is the change in bias in each step "
+  echo "   bias_count    is the total number of bias steps to apply"
+  echo "   bias_pause    is the delay time (in seconds) between bias steps"
+
+  echo "At the end of the script, the biases are returned to the values they had when the script was called."
+  echo "Note that the file will be saved under the data directory."
+  echo ""
+  echo "To pass an observing log id to the registration program, set the variable "
+  echo "      export MAS_LOGID='observinglog.id=xxxx'"
+  echo "----------------"
+  exit 1
+fi
+
+
+if [ "$#" -gt "2" ]; then
+    bias_start0=$3
+    bias_start1=$4
+    bias_start2=$5
+    bias_start3=$6
+    bias_start4=$7
+    bias_start5=$8
+    bias_start6=$9
+    bias_start7=${10}
+    bias_step=${11}
+    bias_count=${12}
+    data_pause_us=`float_multiply 1000000.0 ${13}`
+    if [ "$data_pause_us" == "" ]; then data_pause_us="0"; fi
+fi
+
+ct=`print_ctime`
+dt=`cat /data/cryo/current_data_name`
+
+data_root=$1
+n=$2
+datafile=$MAS_DATA/$data_root
+
+runfile=$datafile.run
+biasfile=$datafile.bias
+logfile=$datafile.log
+
+if [ -e "$datafile" ]; then
+    echo "Target data file $datafile exists, aborting."
+    exit 1
+fi
+
+# Help data mode into frame header...
+mce_update_userword $n
+
+# Don't register the acq here, it's done in auto_iv or not at all.
+#acq_register $ct iv $datafile $total_bias "$MAS_LOGID"
+
+#Generate .run file
+mce_status >> $runfile
+
+# Apply frameacq stamp
+frameacq_stamp $n $datafile $(($bias_count)) >> $runfile
+if [ "$?" != "0" ]; then
+  echo "frameacq_stamp failed!"
+  exit 1
+fi
+
+echo "<tes_bias>" >> $biasfile
+echo "Acquiring bias steps into data file $datafile"
+
+script=$MAS_TEMP/`whoami`_step_tes_bias.scr
+[ -e $script ] && rm $script
+
+
+if [ "$data_pause_us" -gt "0" ]; then
+    sleep_arg="-P 'sleep $data_pause_us' 0"
+else
+    sleep_arg=""
+fi
+
+echo "acq_config $datafile rc$n" > $script
+
+for i in `seq 0 $(( $bias_count - 1 ))`; do
+   step_level=$(($i % 2))
+   if [ "$step_level" == "0" ]; then
+      bias0=$(( $bias_start0 ))
+      bias1=$(( $bias_start1 ))
+      bias2=$(( $bias_start2 ))
+      bias3=$(( $bias_start3 ))
+      bias4=$(( $bias_start4 ))
+      bias5=$(( $bias_start5 ))
+      bias6=$(( $bias_start6 ))
+      bias7=$(( $bias_start7 ))
+   else
+      bias0=$(( $bias_start0 + $bias_step ))
+      bias1=$(( $bias_start1 + $bias_step ))
+      bias2=$(( $bias_start2 + $bias_step ))
+      bias3=$(( $bias_start3 + $bias_step ))
+      bias4=$(( $bias_start4 + $bias_step ))
+      bias5=$(( $bias_start5 + $bias_step ))
+      bias6=$(( $bias_start6 + $bias_step ))
+      bias7=$(( $bias_start7 + $bias_step ))
+   fi
+   echo $bias0 $bias1 $bias2 $bias3 $bias4 $bias5 $bias6 $bias7 >> $biasfile
+   echo "wb tes bias $bias0 $bias1 $bias2 $bias3 $bias4 $bias5 $bias6 $bias7"
+   if [ "$data_pause_us" -gt "0" ]; then
+       echo "sleep $data_pause_us"
+   fi
+   echo "acq_go 20"
+done >> $script
+
+mce_cmd -qf $script
+
+my_data=/data/cryo
+
+echo "Completed bias step acquisition!"
+
+echo "Bias step run time: " `print_elapsed $ct` "s"
+
+last_bias_step=$my_data/last_bias_step_completed
+[ -h $last_bias_step ] && rm -f $last_bias_setp
+ln -s $datafile $last_bias_step
+
+echo "$datafile" > $my_data/last_bias_step_completed_name

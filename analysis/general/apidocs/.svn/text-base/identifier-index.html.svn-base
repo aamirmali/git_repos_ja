@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Identifier Index</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Indices&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="identifier-index.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%">
+<tr valign="bottom"><td>
+<h1 class="epydoc">Identifier Index</h1>
+</td><td>
+[
+ <a href="#A">A</a>
+ <a href="#B">B</a>
+ <a href="#C">C</a>
+ <a href="#D">D</a>
+ <a href="#E">E</a>
+ <a href="#F">F</a>
+ <a href="#G">G</a>
+ <a href="#H">H</a>
+ <a href="#I">I</a>
+  J
+  K
+ <a href="#L">L</a>
+ <a href="#M">M</a>
+ <a href="#N">N</a>
+ <a href="#O">O</a>
+ <a href="#P">P</a>
+  Q
+ <a href="#R">R</a>
+ <a href="#S">S</a>
+ <a href="#T">T</a>
+ <a href="#U">U</a>
+ <a href="#V">V</a>
+ <a href="#W">W</a>
+ <a href="#X">X</a>
+ <a href="#Y">Y</a>
+ <a href="#Z">Z</a>
+ <a href="#_">_</a>
+]
+</td></table>
+<table border="0" width="100%">
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="A">A</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#all_amps">all_amps</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.parse_data-module.html#analyze">analyze()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.parse_data-module.html">code.interferenceanalyzer.parse_data</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#args">args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#all_amps_log">all_amps_log</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html#analyze_all">analyze_all()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.script-module.html">code.dipanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#args">args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#all_data">all_data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#analyzer_description">analyzer_description</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#array_sum_data">array_sum_data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#all_psds">all_psds</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#angle_file">angle_file</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#array_sum_data_limit">array_sum_data_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html#amplitude">amplitude</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#anparse">anparse</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html">arrayfunctions</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#amplitudes">amplitudes</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#args">args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#auto_update">auto_update</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#amplitudes_to_list">amplitudes_to_list()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#args">args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#analyze">analyze()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#args">args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="B">B</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#bad_cols">bad_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_Bx">beam_centers_Bx</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#bound_thres_ratio">bound_thres_ratio</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#bad_cols">bad_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_By">beam_centers_By</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#build_valid_coordinates_array">build_valid_coordinates_array()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_Ax">beam_centers_Ax</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_file">beam_centers_file</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#beam_centers_Ay">beam_centers_Ay</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#bound_ref">bound_ref</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="C">C</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#cal_description">cal_description</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html#collections">collections</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html">fig</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#correlate">correlate()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.power_filter-module.html#calc_pow_response">calc_pow_response()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.power_filter-module.html">code.powerspectrum.power_filter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#combine_transitions">combine_transitions()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#create">create()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.power_filter-module.html#calc_pow_response2">calc_pow_response2()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.power_filter-module.html">code.powerspectrum.power_filter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common-module.html">common</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html#create_control">create_control()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.script-module.html">code.dipanalyzer.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#calparse">calparse</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#common_all">common_all</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html#create_save_directory">create_save_directory()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.script-module.html">code.dipanalyzer.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#clim">clim</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#common_args">common_args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#cross_corr_block">cross_corr_block()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code-module.html">code</a></td>
+<td width="33%" class="link-index"><a href="code.common_mode-module.html">common_mode</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#cross_corr_sine">cross_corr_sine()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#col_commons">col_commons</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter-module.html">common_plotter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode-module.html">code.common_mode</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html">crosscorr_detect</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector-module.html">code.stepdetector</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_indices">col_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter-module.html">code.common_mode.common_plotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#crosscorr_error">crosscorr_error</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_col_sum">col_sum_col_sum</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_block">compute_amplitudes_block()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#crosscorr_error_thres">crosscorr_error_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_col_sum_limit">col_sum_col_sum_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#compute_amplitudes_sine">compute_amplitudes_sine()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#curr_ellipses">curr_ellipses</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_data">col_sum_data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#conversion">conversion</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#col_sum_data_limit">col_sum_data_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#converter">converter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="D">D</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dac_bits">dac_bits</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer-module.html">dipanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer-module.html">code.dipanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#dac_bits">dac_bits</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer-module.html">code.dipanalyzer.dipanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dark_detector_peak_strength_thres">dark_detector_peak_strength_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#data_data_col_dom">data_data_col_dom</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#distance">distance</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dark_detectors">dark_detectors</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#data_data_limit">data_data_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#domination">domination</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dark_squid_ref_freq">dark_squid_ref_freq</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#data_data_pointwise_product">data_data_pointwise_product()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#draw">draw()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dark_squid_thres">dark_squid_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#data_data_row_dom">data_data_row_dom</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#draw_ellipses">draw_ellipses()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#dark_squids">dark_squids</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#data_to_pod_feed_fmt">data_to_pod_feed_fmt()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#draw_ellipses_data">draw_ellipses_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#diff_description">diff_description</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#draw_hist">draw_hist()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#diffparse">diffparse</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.drawer-module.html#draw_image">draw_image()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.drawer-module.html">code.common.drawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#dip_ends_indices">dip_ends_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#draw_profile">draw_profile()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#dip_rise_thres">dip_rise_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.drawer-module.html">drawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#dip_widths">dip_widths</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#drawer">drawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#data">data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer-module.html">dipanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="E">E</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#ellipses_args">ellipses_args</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.enigma-module.html">enigma</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.exceptions-module.html">exceptions</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer-module.html">ellipsesdrawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#erase">erase()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.exceptions.ExistenceError-class.html">ExistenceError</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.exceptions-module.html">code.common.exceptions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html#end_pos">end_pos</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#error_detected">error_detected</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="F">F</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#f">f</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#filter_params">filter_params</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#formatset">formatset</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#f">f</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#filtgain">filtgain</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#formatset">formatset</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#falls">falls</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#find_common">find_common()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#formatstring">formatstring</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html">fig</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer-module.html">code.ellipsesdrawer.prettythingsdrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#find_larger_neighbor">find_larger_neighbor()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#freq">freq</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html#figure">figure</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html">fig</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#find_period">find_period()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#frequency">frequency</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html">filehandler</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#find_smaller_neighbor">find_smaller_neighbor()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.enigma.fun-module.html">fun</a><br />
+<span class="index-where">(in&nbsp;<a href="code.enigma-module.html">code.enigma</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#fill">fill()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#finder">finder</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html">functionanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.filter-module.html">filter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct-module.html">code.innerproduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.gaussianfitter-module.html#fitgaussian">fitgaussian()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.gaussianfitter-module.html">code.interferenceanalyzer.gaussianfitter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#filter_params">filter_params</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#fix_dirfile_signed_field">fix_dirfile_signed_field()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="G">G</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#gauss_fit">gauss_fit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#get_correspondance">get_correspondance()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_psd_for_detector">get_psd_for_detector()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.gaussianfitter-module.html#gaussian">gaussian()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.gaussianfitter-module.html">code.interferenceanalyzer.gaussianfitter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_dark_detectors">get_dark_detectors()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#get_quartile_amplitude">get_quartile_amplitude()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.gaussianfitter-module.html">gaussianfitter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_dark_squids">get_dark_squids()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#get_quartile_outliers">get_quartile_outliers()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.filter-module.html#general_filter">general_filter()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.filter-module.html">code.innerproduct.filter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#get_dip_ends">get_dip_ends()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_ramping_detectors">get_ramping_detectors()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_all_avg_strength">get_all_avg_strength()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#get_dip_widths">get_dip_widths()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#get_rise">get_rise()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#get_all_falls">get_all_falls()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#get_fall">get_fall()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#get_spec_range">get_spec_range()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#get_all_rises">get_all_rises()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#get_mce_data">get_mce_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#get_specs">get_specs()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.crosscorr_detect-module.html#get_amplitudes">get_amplitudes()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.crosscorr_detect-module.html">code.stepdetector.crosscorr_detect</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#get_med_amplitude">get_med_amplitude()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_specs">get_specs()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#get_angles">get_angles()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#get_method_used">get_method_used()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_strength_near_freq">get_strength_near_freq()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_avg_strength">get_avg_strength()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#get_npz_base_parser">get_npz_base_parser()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#get_thres_index">get_thres_index()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#get_base_parser">get_base_parser()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#get_pic_base_parser">get_pic_base_parser()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#get_unshaped_cartesian_coor_array">get_unshaped_cartesian_coor_array()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#get_colour_plot_base_parser">get_colour_plot_base_parser()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.power_filter-module.html#get_pow_response">get_pow_response()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.power_filter-module.html">code.powerspectrum.power_filter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#get_corr_min_indices">get_corr_min_indices()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#get_psd">get_psd()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="H">H</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#halfsize">halfsize</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#handle_cal">handle_cal()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#handle_analyze">handle_analyze()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#handle_diff">handle_diff()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="I">I</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.common.exceptions.IdenticalStateElectronBug-class.html">IdenticalStateElectronBug</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.exceptions-module.html">code.common.exceptions</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct-module.html">innerproduct</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#is_dark_squid">is_dark_squid()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#ignore_end_dips">ignore_end_dips</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer-module.html">interferenceanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#is_data_noise">is_data_noise()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#include_col">include_col</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html#interpret_and_run">interpret_and_run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.script-module.html">code.dipanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#is_noise">is_noise</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#include_col">include_col</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#interpret_and_run">interpret_and_run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#is_off">is_off</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#include_parser">include_parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#interpret_and_run">interpret_and_run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#is_ramping">is_ramping</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#initialize_colour_plot_directory">initialize_colour_plot_directory()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#inverse_col_indices">inverse_col_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#is_ramping_detector">is_ramping_detector()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#initialize_data_save_directory">initialize_data_save_directory()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#inverse_row_indices">inverse_row_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#IV_data_to_arr">IV_data_to_arr()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#initialize_main_directory">initialize_main_directory()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#is_col_invalid">is_col_invalid</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#initialize_picture_directory">initialize_picture_directory()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#is_dark_detector">is_dark_detector()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="L">L</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#legend">legend</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="M">M</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#M_ratio">M_ratio</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#method_used">method_used</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.setup-module.html#module">module</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.setup-module.html">code.interferenceanalyzer.setup</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#M_ratio">M_ratio</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#min_indices">min_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.gaussianfitter-module.html#moments">moments()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.gaussianfitter-module.html">code.interferenceanalyzer.gaussianfitter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#map_file">map_file</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#min_thres">min_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.multistreamfunctions-module.html">multistreamfunctions</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common-module.html">code.common</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#mce">mce</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#modify_array">modify_array()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#meshgrid">meshgrid()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#modify_data">modify_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="N">N</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#n_invalid">n_invalid</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#noise_thres">noise_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#normalize">normalize()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#n_invalid_all">n_invalid_all</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_cols">non_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#nrows">nrows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#ncols">ncols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_cols">non_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#nrows">nrows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#ncols">ncols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_detectors">non_detectors</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#nrows">nrows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#ncols">ncols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_elements">non_elements</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#nthres">nthres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#new_fig">new_fig()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#non_rows">non_rows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_cols">number_of_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#new_fig">new_fig()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#non_rows">non_rows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_plotted_cols">number_of_plotted_cols</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#NFFT">NFFT</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#norm_squared">norm_squared</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_plotted_rows">number_of_plotted_rows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#noise_freq">noise_freq</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#normalize">normalize</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#number_of_rows">number_of_rows</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="O">O</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer-module.html">outanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="P">P</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.common.multistreamfunctions-module.html#parent_dir">parent_dir</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.multistreamfunctions-module.html">code.common.multistreamfunctions</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_data_data_average">plot_data_data_average()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#plotter">plotter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html#parse_arguments">parse_arguments()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.script-module.html">code.dipanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#plot_hist">plot_hist()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct-module.html">pointwiseproduct</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct-module.html">code.innerproduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#parse_arguments">parse_arguments()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#plot_hist">plot_hist()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct-module.html">code.innerproduct.pointwiseproduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#parse_arguments">parse_arguments()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_psd_all">plot_psd_all()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#pos_in_formatset">pos_in_formatset</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.parse_data-module.html">parse_data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#plot_psds">plot_psds</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#pos_in_formatset">pos_in_formatset</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#parser">parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_psds">plot_psds()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#pow_response">pow_response</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#parser">parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#plot_range">plot_range()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.power_filter-module.html">power_filter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum-module.html">code.powerspectrum</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#parser">parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_result">plot_result()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum-module.html">powerspectrum</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#parser">parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_data">plot_row_sum_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer-module.html">prettythingsdrawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer-module.html">code.ellipsesdrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#parser">parser</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_row_data">plot_row_sum_row_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer-module.html">code.ellipsesdrawer.prettythingsdrawer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#period">period</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_row_sum_row_sum">plot_row_sum_row_sum()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#print_analysis">print_analysis()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#phi_domain">phi_domain</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_single_block">plot_single_block()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#print_analysis">print_analysis()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_array_sum_data">plot_array_sum_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#plot_spec">plot_spec()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#print_psd_level">print_psd_level()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_col_data">plot_col_sum_col_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_spec_hist">plot_spec_hist()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#print_spec_analysis">print_spec_analysis()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_col_sum">plot_col_sum_col_sum()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_spec_psd">plot_spec_psd()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#print_specs">print_specs()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_col_sum_data">plot_col_sum_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#plot_timestream">plot_timestream</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.filehandler-module.html#printout">printout()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.filehandler-module.html">code.common.filehandler</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common.functionanalyzer-module.html#plot_const">plot_const()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.functionanalyzer-module.html">code.common.functionanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_timestream">plot_timestream()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#probe">probe</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_custom_psds">plot_custom_psds()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_timestream_all">plot_timestream_all()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#product_space_array_function">product_space_array_function()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_data">plot_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#plot_timestreams">plot_timestreams()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#projection_filter">projection_filter()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#plot_data">plot_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#plot_transitions_and_avgs">plot_transitions_and_avgs()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#plot_data_data">plot_data_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#plot_waterfall">plot_waterfall()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="R">R</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#ramping_detectors">ramping_detectors</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#Rfb">Rfb</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.run-module.html">run</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct-module.html">code.innerproduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#ramping_med_thres">ramping_med_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#rises">rises</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.run-module.html">run</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#ramping_std_thres">ramping_std_thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_indices">row_indices</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.run-module.html#run">run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.run-module.html">code.dipanalyzer.run</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.parse_data-module.html#read_data">read_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.parse_data-module.html">code.interferenceanalyzer.parse_data</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_data">row_sum_data</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.enigma.fun-module.html#run">run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.enigma.fun-module.html">code.enigma.fun</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#remove_transitions">remove_transitions()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_data_limit">row_sum_data_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.run-module.html#run">run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.run-module.html">code.innerproduct.run</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#responsivities">responsivities</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_row_sum">row_sum_row_sum</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.run-module.html#run">run()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.run-module.html">code.interferenceanalyzer.run</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#results_path">results_path</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#row_sum_row_sum_limit">row_sum_row_sum_limit</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#run_pointwiseproduct">run_pointwiseproduct()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#Rfb">Rfb</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.run-module.html">run</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer-module.html">code.dipanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html#run_similaritydrawer">run_similaritydrawer()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.script-module.html">code.innerproduct.script</a>)</span></td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="S">S</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#sampling_freq">sampling_freq</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#set_domain_and_data">set_domain_and_data()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter-module.html">sphericalinterpreter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html#save_dir">save_dir</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.script-module.html">code.common_mode.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#set_indices_and_length">set_indices_and_length()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter-module.html">code.interferenceanalyzer.sphericalinterpreter</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html#save_dir">save_dir</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer.script-module.html">code.outanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#set_legend">set_legend()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#standard_sum">standard_sum()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode-module.html">code.common_mode</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.drawer-module.html#set_size_weight">set_size_weight()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.drawer-module.html">code.common.drawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#standardize">standardize()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer-module.html">code.dipanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.drawer-module.html#set_ticks">set_ticks()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.drawer-module.html">code.common.drawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html#start_pos">start_pos</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer-module.html">code.ellipsesdrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#set_title">set_title()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer-module.html">stepanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector-module.html">code.stepdetector</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct-module.html">code.innerproduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#set_var">set_var()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer-module.html">code.stepdetector.stepanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.setup-module.html">setup</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer-module.html">code.interferenceanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector-module.html">stepdetector</a><br />
+<span class="index-where">(in&nbsp;<a href="code-module.html">code</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.outanalyzer.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.outanalyzer-module.html">code.outanalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#show">show()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.exceptions.StupidityError-class.html">StupidityError</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.exceptions-module.html">code.common.exceptions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum-module.html">code.powerspectrum</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#show">show()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html#subparsers">subparsers</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.script-module.html">code.stepdetector.script</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.script-module.html">script</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector-module.html">code.stepdetector</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#show">show()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#sum_data_pointwise_product">sum_data_pointwise_product()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#set_amplitudes">set_amplitudes()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer-module.html">similaritydrawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct-module.html">code.innerproduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.multistreamfunctions-module.html#sum_filter">sum_filter()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.multistreamfunctions-module.html">code.common.multistreamfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#set_amplitudes">set_amplitudes()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer-module.html">code.innerproduct.similaritydrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#sum_space_array_function">sum_space_array_function()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#set_beam_centers">set_beam_centers()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer-module.html">spectrumanalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum-module.html">code.powerspectrum</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#sum_sum_pointwise_product">sum_sum_pointwise_product()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#set_class_limits">set_class_limits()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer-module.html">code.powerspectrum.spectrumanalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="T">T</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#theta_domain">theta_domain</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#to_analysis_file">to_analysis_file()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer-module.html">code.stepdetector.stepanalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#thres">thres</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.script-module.html#to_colour_plot">to_colour_plot()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.script-module.html">code.interferenceanalyzer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#transitions">transitions</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.script-module.html#threshold">threshold()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.script-module.html">code.ellipsesdrawer.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#to_file">to_file()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html#type">type</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html#title">title</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.fig-class.html">fig</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#to_npz_file">to_npz_file()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#title_suffix">title_suffix</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#TransDisplay">TransDisplay()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="U">U</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#update">update()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.script-module.html#use_mapfile">use_mapfile</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.script-module.html">code.powerspectrum.script</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#use_responsivities">use_responsivities</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="V">V</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#valid_coors">valid_coors</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#verbose">verbose</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="W">W</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.common.arrayfunctions-module.html#wrap">wrap()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common.arrayfunctions-module.html">code.common.arrayfunctions</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="X">X</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#x_amplitudes">x_amplitudes</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="Y">Y</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#y_amplitudes">y_amplitudes</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="Z">Z</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#z_amplitudes">z_amplitudes</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index">&nbsp;</td>
+<td width="33%" class="link-index">&nbsp;</td>
+</tr>
+<tr><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td><td class="link-index">&nbsp;</td></tr>
+</table>
+</td></tr>
+<tr valign="top"><td valign="top" width="1%"><h2 class="epydoc"><a name="_">_</a></h2></td>
+<td valign="top">
+<table class="link-index" width="100%" border="1">
+<tr>
+<td width="33%" class="link-index"><a href="code.common_mode.common_plotter.CommonPlotter-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.common_mode.common_plotter.CommonPlotter-class.html">CommonPlotter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.pointwiseproduct.PointwiseProduct-class.html">PointwiseProduct</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.powerspectrum.spectrumanalyzer.SpectrumAnalyzer-class.html">SpectrumAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.dipanalyzer.dipanalyzer.DipAnalyzer-class.html">DipAnalyzer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.innerproduct.similaritydrawer.SimilarityDrawer-class.html">SimilarityDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.StepAnalyzer-class.html">StepAnalyzer</a>)</span></td>
+</tr>
+<tr>
+<td width="33%" class="link-index"><a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.ellipsesdrawer.prettythingsdrawer.PrettyThingsDrawer-class.html">PrettyThingsDrawer</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.interferenceanalyzer.sphericalinterpreter.SphericalInterpreter-class.html">SphericalInterpreter</a>)</span></td>
+<td width="33%" class="link-index"><a href="code.stepdetector.stepanalyzer.Transition-class.html#__init__">__init__()</a><br />
+<span class="index-where">(in&nbsp;<a href="code.stepdetector.stepanalyzer.Transition-class.html">Transition</a>)</span></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<br /><br /><!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="code-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Indices&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >All</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Nov  6 16:28:35 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

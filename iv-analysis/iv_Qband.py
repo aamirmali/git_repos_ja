@@ -1,0 +1,177 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import iv
+import filehandler as fh
+from Qband_param import Qband_param 
+from clean_timestream import Clean
+import argparse
+from matplotlib.backends.backend_pdf import PdfPages
+
+parser=argparse.ArgumentParser(description= 'analyses CLASS Qband array iv, picks optimal bias for each group', formatter_class=argparse.ArgumentDefaultsHelpFormatter,fromfile_prefix_chars='@')
+parser.add_argument('filename', type=str,help='I-V file to analyze')
+parser.add_argument('--plot', action='store_true', help='plot I-V raw data and results for all detectors')
+args=parser.parse_args()
+
+filename=args.filename
+Qband=Qband_param()
+clean=Clean(thres_jump=Qband.thres_jump)
+
+
+def find_optimal_bias_DAC(PRn_group,DAC_bias_group, PRn_low, PRn_high, optimal_DAC_default):
+    DAC_bias_group_Rn_cut=[]
+    for i in np.arange(len(DAC_bias_group)):
+        bias_set=DAC_bias_group[i]
+        PRn_set=PRn_group[i]
+        bias_set_cut=bias_set[np.where(np.logical_and(PRn_set > PRn_low, PRn_set < PRn_high))]
+        DAC_bias_group_Rn_cut.append(bias_set_cut)
+
+    all_bias=np.concatenate(DAC_bias_group_Rn_cut,axis=0)
+    if len(all_bias) == 0:
+        all_bias=[optimal_DAC_default]
+    bias_count=np.bincount(np.int0(all_bias))
+    common_biases=np.where(bias_count == np.max(bias_count))[0]
+    optimal_bias_DAC=common_biases[0]
+#    print optimal_bias_DAC, common_biases
+    if optimal_bias_DAC > 10000 or optimal_bias_DAC < 10:    
+        optimal_bias_DAC=optimal_DAC_default
+        print "choose default DAC 1000"
+    return np.float(optimal_bias_DAC)
+
+
+
+target_bias_DAC=np.zeros([Qband.num_rows,Qband.num_cols])
+target_index_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Ibias_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Ites_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Vtes_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Rtes_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Ptes_array=np.zeros([Qband.num_rows,Qband.num_cols])
+resp_array=np.zeros([Qband.num_rows,Qband.num_cols])
+PRn_array=np.zeros([Qband.num_rows,Qband.num_cols])
+inf_tr_array=np.zeros([Qband.num_rows,Qband.num_cols])
+inf_sc_array=np.zeros([Qband.num_rows,Qband.num_cols])
+resp_fit_array=np.zeros([Qband.num_rows,Qband.num_cols])
+tau_factor_fit_array=np.zeros([Qband.num_rows,Qband.num_cols])
+Psat_array=np.zeros([Qband.num_rows,Qband.num_cols])
+
+
+
+target_PRn_low=Qband.PRn_low
+target_PRn_high=Qband.PRn_high
+
+data=fh.get_mce_data(filename,row_col=True)
+db_bias=np.genfromtxt(filename+'.bias',skiprows=1)
+
+# find optimal target bias DAC
+for col in np.arange(Qband.num_cols):
+    PRn_group=[]
+    DAC_bias_group=[]
+    for row in np.arange(Qband.num_rows):
+        data_tes=data[row,col,:]
+        if np.median(np.diff(data_tes[0:Qband.index_normal])) > 0:
+            data_tes=data_tes*-1
+
+        data_tes=clean.data_fix_jumps(data_tes)
+        tes=iv.IV(data=data_tes,db_bias=db_bias,Rsh=Qband.Rsh[col],filtgain=Qband.filtgain,Rfb=Qband.Rfb[col],Rdetb=Qband.Rdetb[col], index_normal=Qband.index_normal, dac_bits=Qband.dac_bits, M_ratio=Qband.M_ratio[col], db_bits=Qband.db_bits, fb_DAC_volts=Qband.fb_DAC_volts, db_DAC_volts=Qband.db_DAC_volts)
+        PRn_group.append(tes.Rtes[tes.inf_tr:tes.inf_sc]/tes.Rn)
+        DAC_bias_group.append(tes.db_bias[tes.inf_tr:tes.inf_sc])
+    target_bias_DAC[:,col]=find_optimal_bias_DAC(PRn_group,DAC_bias_group, Qband.PRn_low[col],Qband.PRn_high[col],Qband.bias_DAC_default)
+
+# fill arrays with TES parameter values
+
+if args.plot:
+    figivraw=plt.figure(1,figsize=(12,6),dpi=300)
+    figivPR=plt.figure(2,figsize=(12,6),dpi=300)
+    figivTauR=plt.figure(3, figsize=(12,6),dpi=300)
+    ax=[]
+    axPR=[]
+    axTauR=[]
+
+for col in np.arange(Qband.num_cols):
+    if args.plot:
+        axplot=figivraw.add_subplot(2,4,col)
+        axplotPR=figivPR.add_subplot(2,4,col)
+        axplotTauR=figivTauR.add_subplot(2,4,col)
+        ax.append(axplot)
+        axPR.append(axplotPR)
+        axplotPR.set_xlim([0,10])
+        axplotPR.set_ylim([0,10])
+        axTauR.append(axplotTauR)
+        axplotTauR.set_xlim([0,1])
+        axplotTauR.set_ylim([0,1])
+    for row in np.arange(Qband.num_rows):
+        data_tes=data[row,col,:]
+        if np.median(np.diff(data_tes[0:Qband.index_normal])) > 0:
+            data_tes=data_tes*-1
+
+        data_tes=clean.data_fix_jumps(data_tes)
+        if args.plot:
+            ax[col].plot(data_tes)
+        tes=iv.IV(data=data_tes,db_bias=db_bias,Rsh=Qband.Rsh[col],filtgain=Qband.filtgain,Rfb=Qband.Rfb[col],Rdetb=Qband.Rdetb[col], index_normal=Qband.index_normal, dac_bits=Qband.dac_bits, M_ratio=Qband.M_ratio[col], db_bits=Qband.db_bits, fb_DAC_volts=Qband.fb_DAC_volts, db_DAC_volts=Qband.db_DAC_volts)
+        Ibias_target=tes.detbias_dac_to_Ibias(target_bias_DAC[row,col])
+        target_index_center=np.where(tes.Ibias < Ibias_target)[0][0]
+        if target_index_center > len(tes.Ibias)-Qband.buff/2:
+            target_index_center=len(tes.Ibias)-Qband.buff/2
+
+        target_index=np.arange(Qband.buff)+target_index_center-Qband.buff/2
+        target_index_array[row,col]=target_index_center
+
+
+        Ibias_array[row,col]=np.median(tes.Ibias[target_index])
+        Ites_array[row,col]=np.median(tes.Ites[target_index])
+        Vtes_array[row,col]=np.median(tes.Vtes[target_index])
+        Rtes_array[row,col]=np.median(tes.Rtes[target_index])
+        Ptes_array[row,col]=np.median(tes.Ptes[target_index])
+        Psat_array[row,col]=np.median(tes.Psat)
+        Rnormal=np.median(tes.Rtes[0:Qband.index_normal])
+        PRn_array[row,col]=np.median(tes.Rtes[target_index]/Rnormal)
+        resp_array[row,col]=np.median(tes.resp[target_index])
+
+        inf_tr_array[row,col]=tes.inf_tr
+        inf_sc_array[row,col]=tes.inf_sc
+
+        tr_fit=tes.fit_transition(plot=False)
+        resp_fit_array[row,col]=np.mean(tr_fit[0][target_index])
+        tau_factor_fit_array[row,col]=np.mean(tr_fit[1][target_index])
+        if tes.inf_tr < tes.inf_sc and args.plot:
+            axPR[col].plot(tes.Ptes[tes.inf_tr:tes.inf_sc]*1e12,tes.Rtes[tes.inf_tr:tes.inf_sc]*1e3)
+            axTauR[col].plot(tes.Rtes[tes.inf_tr:tes.inf_sc]/Rnormal,tr_fit[1][tes.inf_tr:tes.inf_sc])
+
+
+# write .out file
+savedir=filename.split('iv')[0]
+print savedir
+savefilename=savedir+filename.split('/')[-1]+'.out'
+#print savefilename
+f=open(savefilename,'w')
+fh.printout('target_bias_DAC',np.int0(target_bias_DAC),f)
+fh.printout('target_index',np.int0(target_index_array),f)
+fh.printout('Ibias_(uA)',np.round(Ibias_array*1e6,1),f)
+fh.printout('Ites_(uA)',np.round(Ites_array*1e6,1),f)
+fh.printout('Vtes_(nV)',np.round(Vtes_array*1e9,1),f)
+fh.printout('Rtes_(mOhms)',np.round(Rtes_array*1e3,1),f)
+fh.printout('Ptes_(pW)',np.round(Ptes_array*1e12,1),f)
+fh.printout('Psat_(pW)',np.round(Psat_array*1e12,1),f)
+fh.printout('PRn',np.round(PRn_array*1e2,0),f)
+fh.printout('resp',np.round(resp_array*1e9,1),f)
+fh.printout('inf_tr',np.int0(inf_tr_array),f)
+fh.printout('inf_sc',np.int0(inf_sc_array),f)
+fh.printout('resp_fit',np.round(resp_fit_array*1e9,1),f)
+fh.printout('tau_factor_fit',np.round(tau_factor_fit_array,3),f)
+f.close()
+
+
+# write target bias file
+bias_file=savedir+'bias_target.txt'
+f=open(bias_file,'a')
+bias_set=filename.split('/')[-1]+' '+str(target_bias_DAC[0,:])+'\n'
+f.write(bias_set)
+f.close()
+
+if args.plot:
+    plot_iv_filename=savedir+filename.split('/')[-1]+'.pdf'
+    pp=PdfPages(plot_iv_filename)
+    pp.savefig(figivraw)
+    pp.savefig(figivPR)
+    pp.savefig(figivTauR)
+    pp.close()

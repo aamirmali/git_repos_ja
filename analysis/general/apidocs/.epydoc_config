@@ -1,0 +1,6 @@
+[epydoc]
+name: All
+modules: ../code
+
+output: html
+target:.

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+label='tc_sweep_set1'
+temps="0.700 0.650 0.600 0.550 0.500 0.450 0.400 0.350 0.300 0.250 0.200 0.150 0.100"
+for temp in $temps
+do
+     python set_tempservo_param.py --servotemp $temp --factor 1e-6
+     python daemon_servo_dirfile_v2.py start
+     sleep 320
+#     sleep 120
+     ./change_to_MUX09
+     filename_mux09=$label'_MUX09_'$temp
+     ramp_sq1_tes_bias $filename_mux09 s
+     echo $filename_mux09
+     ./change_to_MUX11
+     filename_mux11=$label'_MUX11_'$temp
+     ramp_sq1_tes_bias $filename_mux11 s
+     echo $filename_mux11
+     python daemon_servo_dirfile_v2.py stop
+done
